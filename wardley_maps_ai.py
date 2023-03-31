@@ -37,7 +37,7 @@ def app():
         
     # Define the form to enter the map ID
     map_id = st.text_input("Enter the ID of the Wardley Map")
-    question = st.text_input(label="Question ", placeholder="How many components are in this map?", key="q_input", max_chars="150")
+    question = st.text_input(label="Question ", placeholder="How many components are in this map?", key="q_input", max_chars=150)
     if len(question.split(" ")) > 700:
         st.write("Please enter a shorter question about your Wardley Map")
         st.stop()
