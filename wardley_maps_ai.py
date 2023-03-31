@@ -54,14 +54,14 @@ def app():
             def load_LLM(openai_api_key):
                 """Logic for loading the chain you want to use should go here."""
                 # Make sure your openai_api_key is set as an environment variable
-                llm = OpenAI(temperature=.7, openai_api_key=st.secrets["OPENAI_API_KEY"])
+                llm = OpenAI(temperature=0, openai_api_key=st.secrets["OPENAI_API_KEY"])
                 return llm
                 
             st.markdown("### Response:")
 
             llm = load_LLM(["OPENAI_API_KEY"])
 
-            prompt_wardley_ai = prompt.format(question=question, map=map_data)
+            prompt_wardley_ai = prompt.format(question=question, map=map_data[])
             response = llm(prompt_wardley_ai)
             st.write(response)
             
