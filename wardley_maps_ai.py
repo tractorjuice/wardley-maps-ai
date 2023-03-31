@@ -2,7 +2,8 @@ import streamlit as st
 import requests
 from langchain.prompts import PromptTemplate
 from langchain.llms import OpenAI
-from langchain.chat_models import ChatOpenAI
+#from langchain.chat_models import ChatOpenAI
+from http://langchain.chat_models import ChatOpenAI
 
 API_ENDPOINT = "https://api.onlinewardleymaps.com/v1/maps/fetch?id="
 
