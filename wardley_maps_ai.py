@@ -48,6 +48,8 @@ def app():
                 input_variables=["map", "question"],
                 template=template,
             )
+            
+            st.write(prompt)
 
             def load_LLM(openai_api_key):
                 """Logic for loading the chain you want to use should go here."""
