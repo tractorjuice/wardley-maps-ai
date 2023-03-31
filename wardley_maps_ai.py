@@ -1,6 +1,6 @@
 import streamlit as st
 import requests
-from langchain import PromptTemplate
+from langchain.prompts import PromptTemplate
 from langchain.llms import OpenAI
 
 API_ENDPOINT = "https://api.onlinewardleymaps.com/v1/maps/fetch?id="
