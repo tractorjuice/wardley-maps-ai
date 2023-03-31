@@ -16,17 +16,6 @@ template = """
     YOUR RESPONSE:
 """
 
-prompt = PromptTemplate(
-    input_variables=["map", "question"],
-    template=template,
-)
-
-def load_LLM(openai_api_key):
-    """Logic for loading the chain you want to use should go here."""
-    # Make sure your openai_api_key is set as an environment variable
-    llm = OpenAI(temperature=.7, openai_api_key=st.secrets["OPENAI_API_KEY"])
-    return llm
-
 # Define the Streamlit app
 def app():
 
@@ -54,6 +43,17 @@ def app():
             if len(question.split(" ")) > 700:
                 st.write("Please enter a shorter question about your Wardley Map")
             st.stop()
+            
+            prompt = PromptTemplate(
+                input_variables=["map", "question"],
+                template=template,
+            )
+
+            def load_LLM(openai_api_key):
+                """Logic for loading the chain you want to use should go here."""
+                # Make sure your openai_api_key is set as an environment variable
+                llm = OpenAI(temperature=.7, openai_api_key=st.secrets["OPENAI_API_KEY"])
+                return llm
                 
             st.markdown("### Response:")
 
