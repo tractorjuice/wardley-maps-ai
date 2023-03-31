@@ -41,7 +41,7 @@ def app():
             map_data = response.json()
 
             # Display the map
-            st.write(map_data)
+            #st.write(map_data)
             
             prompt = PromptTemplate(
                 input_variables=["map", "question"],
