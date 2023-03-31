@@ -56,15 +56,15 @@ def app():
             # Display the map
             st.write(map_data)
             
-                st.session_state.email_input = "How many components are in this map?"
+            st.session_state.email_input = "How many components are in this map?"
     
-                st.markdown("### Response:")
+            st.markdown("### Response:")
 
-                llm = load_LLM(["OPENAI_API_KEY"])
+            llm = load_LLM(["OPENAI_API_KEY"])
 
-                prompt_with_email = prompt.format(question=question, map=map)
-                formatted_email = llm(prompt_with_email)
-                st.write(formatted_email)
+            prompt_with_email = prompt.format(question=question, map=map)
+            formatted_email = llm(prompt_with_email)
+            st.write(formatted_email)
                    
         else:
             st.error("Map not found. Please enter a valid ID.")
