@@ -65,7 +65,8 @@ st.button("*See An Example*", type='secondary', help="Click to see an example.",
                                                            
 def update_text_with_example():
     print ("in updated")
-    st.session_state.email_input = "How many components are in this map?"
+    
+st.session_state.email_input = "How many components are in this map?"
     
 st.markdown("### Response:")
 
