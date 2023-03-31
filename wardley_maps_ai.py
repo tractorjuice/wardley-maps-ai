@@ -34,8 +34,7 @@ def app():
     st.set_page_config(page_title="Wardley Maps with AI")
     st.title("Wardley Maps with AI")
     
-    
-        map_id = st.text_input("Enter the ID of the Wardley Map")
+    map_id = st.text_input("Enter the ID of the Wardley Map")
 
     # Load the map data when the user submits the form
     if st.button("Load Map"):
