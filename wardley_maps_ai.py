@@ -22,7 +22,7 @@ template = """
     - Answer the question below about wardley maps.
 
     Below is the map and question:
-    MAP: {map}
+    WARDLEY MAP: {map}
     QUESTION: {question}
     
     YOUR RESPONSE:
