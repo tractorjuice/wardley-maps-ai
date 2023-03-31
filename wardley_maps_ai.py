@@ -54,16 +54,14 @@ def app():
             if len(question.split(" ")) > 700:
                 st.write("Please enter a shorter question about your Wardley Map")
             st.stop()
-            
-            st.session_state.email_input = "How many components are in this map?"
-    
+                
             st.markdown("### Response:")
 
             llm = load_LLM(["OPENAI_API_KEY"])
 
-            prompt_with_email = prompt.format(question=question, map=map_data)
-            formatted_email = llm(prompt_with_email)
-            st.write(formatted_email)
+            prompt_wardley_ai = prompt.format(question=question, map=map_data)
+            response = llm(prompt_wardley_ai)
+            st.write(response)
                    
         else:
             st.error("Map not found. Please enter a valid ID.")
