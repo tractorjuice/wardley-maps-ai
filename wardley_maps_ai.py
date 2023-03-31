@@ -41,7 +41,7 @@ def app():
     q_input = get_text()
     
     if len(q_input.split(" ")) > 700:
-    st.write("Please enter a shorter question about your Wardley Map")
+        st.write("Please enter a shorter question about your Wardley Map")
     st.stop()
                                                            
     st.button("*See An Example*", type='secondary', help="Click to see an example.", on_click=update_text_with_example)
