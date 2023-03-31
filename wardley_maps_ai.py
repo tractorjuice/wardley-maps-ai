@@ -35,7 +35,7 @@ def app():
     st.title("Wardley Maps Viewer")
         
     def get_text():
-    input_text = st.text_area(label="Question", label_visibility='collapsed', placeholder="YWhat ....", key="q_input")
+        input_text = st.text_area(label="Question", label_visibility='collapsed', placeholder="YWhat ....", key="q_input")
     return input_text
 
     q_input = get_text()
