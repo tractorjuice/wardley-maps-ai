@@ -65,7 +65,7 @@ def app():
             
             def load_LLM(openai_api_key):
                 """Logic for loading the chain you want to use should go here."""
-                llm = OpenAI(temperature=0, openai_api_key=st.secrets["OPENAI_API_KEY"],model_name="gpt-4")
+                llm = OpenAI(temperature=0, openai_api_key=st.secrets["OPENAI_API_KEY"])
                 return llm
             
             llm = load_LLM(["OPENAI_API_KEY"])
