@@ -57,18 +57,18 @@ def app():
                 llm = OpenAI(temperature=0, openai_api_key=st.secrets["OPENAI_API_KEY"])
                 return llm
             
-            st.markdown("### Question:")
-            st.write(question)
-            
-            st.markdown("### Map:")
-            st.write(map_data)
-            
-            st.markdown("### Response:")
-                
             llm = load_LLM(["OPENAI_API_KEY"])
 
             prompt_wardley_ai = prompt.format(question=question, map=map_data)
             response = llm(prompt_wardley_ai)
+            
+            st.markdown("### Input Prompt:")
+            st.write(prompt_wardley_ai)
+            
+            st.markdown("### Question:")
+            st.write(question)
+            
+            st.markdown("### Response:")
             st.write(response)
                    
         else:
