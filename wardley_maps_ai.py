@@ -1,8 +1,6 @@
 import streamlit as st
 import requests
 import json
-from onlinewardleymaps import WardleyMap
-
 
 def fetch_wardley_map(map_id):
     url = f"https://api.onlinewardleymaps.com/v1/maps/fetch?id={map_id}"
