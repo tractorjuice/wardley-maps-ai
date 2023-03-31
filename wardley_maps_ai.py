@@ -53,10 +53,10 @@ def app():
             st.error("Map not found. Please enter a valid ID.")
 
 def get_text():
-    input_text = st.text_input(label="Question ",  placeholder="How many components are in this map?", key="q_input")
+    input_text = st.text_input(label="Question ", placeholder="How many components are in this map?", key="q_input")
     return input_text
 
-    q_input = get_text()
+q_input = get_text()
     
 if len(q_input.split(" ")) > 700:
     st.write("Please enter a shorter question about your Wardley Map")
