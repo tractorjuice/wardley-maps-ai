@@ -64,8 +64,6 @@ def app():
             prompt_wardley_ai = prompt.format(question=question, map=map_data)
             response = llm(prompt_wardley_ai)
             st.write(response)
-            
-            st.write(map_data)
                    
         else:
             st.error("Map not found. Please enter a valid ID.")
