@@ -33,9 +33,10 @@ def app():
     # Set the page title and layout
     st.set_page_config(page_title="Wardley Maps Viewer")
     st.title("Wardley Maps Viewer")
-        
-    def get_text():
-        input_text = st.text_area(label="Question", label_visibility='collapsed', placeholder="What ....", key="q_input")
+
+    
+def get_text():
+    input_text = st.text_input(label="Question ",  placeholder="How many components are in this map?", key="q_input")
     return input_text
 
     q_input = get_text()
