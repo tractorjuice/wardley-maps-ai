@@ -1,37 +1,34 @@
 import streamlit as st
 import requests
-from io import BytesIO
-from PIL import Image
+import json
+from onlinewardleymaps import WardleyMap
 
-# Define the URL for the Wardley Maps API
-API_URL = 'https://api.onlinewardleymaps.com/v1/maps/fetch'
 
-# Define the Streamlit app
-def app():
-    # Add a title and a form to the app
-    st.title("Load Wardley Map from Online Wardley Maps API")
+def fetch_wardley_map(map_id):
+    url = f"https://api.onlinewardleymaps.com/v1/maps/fetch?id={map_id}"
+    response = requests.get(url)
+    if response.status_code == 200:
+        return response.json()
+    else:
+        st.error("Failed to fetch Wardley Map.")
+        return None
+
+
+def main():
+    st.set_page_config(page_title="Wardley Maps App")
+
+    st.title("Wardley Maps App")
+
     map_id = st.text_input("Enter the ID of the Wardley Map:")
 
-    # If the form is submitted, retrieve the map using the API
     if st.button("Load Map"):
-        # Construct the API URL with the provided map ID
-        url = f"{API_URL}?id={map_id}"
-        
-        # Send a request to the API to retrieve the map
-        response = requests.get(url)
-        
-        # If the request was successful, display the map
-        if response.status_code == 200:
-            # Convert the response content to an image
-            img = Image.open(BytesIO(response.content))
-            
-            # Display the image in the Streamlit app
-            st.image(img, caption="Wardley Map")
-            
-        # If the request failed, display an error message
-        else:
-            st.error("Failed to load map. Please check the map ID and try again.")
-            
-# Run the Streamlit app
+        map_data = fetch_wardley_map(map_id)
+        if map_data is not None:
+            wardley_map = WardleyMap.from_dict(map_data)
+            st_wardley_map = st_wm_component(wardley_map)
+            st_wardley_map.json_data = json.dumps(map_data)
+            st_wardley_map.render()
+
+
 if __name__ == "__main__":
-    app()
+    main()
