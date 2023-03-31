@@ -36,6 +36,10 @@ def app():
     
     q_input = st.text_input(label="Question ", placeholder="How many components are in this map?", key="q_input")
     
+    if len(q_input.split(" ")) > 700:
+        st.write("Please enter a shorter question about your Wardley Map")
+    st.stop()
+    
     # Define the form to enter the map ID
     map_id = st.text_input("Enter the ID of the Wardley Map")
 
@@ -51,42 +55,19 @@ def app():
 
             # Display the map
             st.write(map_data)
+            
+                st.session_state.email_input = "How many components are in this map?"
+    
+                st.markdown("### Response:")
+
+                llm = load_LLM(["OPENAI_API_KEY"])
+
+                prompt_with_email = prompt.format(question=question, map=map)
+                formatted_email = llm(prompt_with_email)
+                st.write(formatted_email)
+                   
         else:
             st.error("Map not found. Please enter a valid ID.")
-    
-    if len(q_input.split(" ")) > 700:
-        st.write("Please enter a shorter question about your Wardley Map")
-    st.stop()
-                                                           
-    st.button("*See An Example*", type='secondary', help="Click to see an example.", on_click=update_text_with_example)
-                                                           
-    def update_text_with_example():
-        print ("in updated")
-    
-    st.session_state.email_input = "How many components are in this map?"
-    
-    st.markdown("### Response:")
-
-    llm = load_LLM(["OPENAI_API_KEY"])
-
-    prompt_with_email = prompt.format(question=question, map=map)
-
-    formatted_email = llm(prompt_with_email)
-
-    st.write(formatted_email)
-    
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        st.markdown("After a tweet thread on prompt engineering using Wardley Maps \n\n This tool \
-        was created to load your Wardley Maps and ask questions about it using AI. This tool \
-        is powered by [LangChain](https://langchain.com/) and [OpenAI](https://openai.com) and made by \
-        [@mcraddock](https://twitter.com/mcraddock). \n\n View Source Code on [Github](https://github.com/tractorjuice/globalize-text-streamlit2/edit/main/main.py)")
-
-        st.markdown("## Enter your Wardley Map")
-        
-    with col2:
-        st.image(image='prompt-engineering-wardley.png', width=500, caption='https://twitter.com/mcraddock/status/1641537955507347476')
-
+                                                                                                                          
 if __name__ == "__main__":
     app()
