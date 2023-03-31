@@ -25,6 +25,10 @@ def app():
         
     # Define the form to enter the map ID
     map_id = st.text_input("Enter the ID of the Wardley Map")
+    question = st.text_input(label="Question ", placeholder="How many components are in this map?", key="q_input")
+    if len(question.split(" ")) > 700:
+        st.write("Please enter a shorter question about your Wardley Map")
+        st.stop()
 
     # Load the map data when the user submits the form
     if st.button("Load Map"):
@@ -38,11 +42,6 @@ def app():
 
             # Display the map
             st.write(map_data)
-            
-            question = st.text_input(label="Question ", placeholder="How many components are in this map?", key="q_input")
-            if len(question.split(" ")) > 700:
-                st.write("Please enter a shorter question about your Wardley Map")
-                st.stop()
             
             prompt = PromptTemplate(
                 input_variables=["map", "question"],
