@@ -1,9 +1,18 @@
 import streamlit as st
 import requests
-from langchain.prompts import PromptTemplate
 from langchain.llms import OpenAI
-#from langchain.chat_models import ChatOpenAI
-from http://langchain.chat_models import ChatOpenAI
+from langchain.chat_models import ChatOpenAI
+from langchain.prompts.chat import (
+    ChatPromptTemplate,
+    SystemMessagePromptTemplate,
+    AIMessagePromptTemplate,
+    HumanMessagePromptTemplate,
+)
+from langchain.schema import (
+    AIMessage,
+    HumanMessage,
+    SystemMessage
+)
 
 API_ENDPOINT = "https://api.onlinewardleymaps.com/v1/maps/fetch?id="
 
@@ -55,9 +64,8 @@ def app():
             
             def load_LLM(openai_api_key):
                 """Logic for loading the chain you want to use should go here."""
-                # Make sure your openai_api_key is set as an environment variable
-                #llm = OpenAI(temperature=0, openai_api_key=st.secrets["OPENAI_API_KEY"])
-                llm = ChatOpenAI(temperature=0, openai_api_key=st.secrets["OPENAI_API_KEY"], model_name="gpt-4")
+                Make sure your openai_api_key is set as an environment variable
+                llm = OpenAI(temperature=0, openai_api_key=st.secrets["OPENAI_API_KEY"],model_name="gpt-4")
                 return llm
             
             llm = load_LLM(["OPENAI_API_KEY"])
