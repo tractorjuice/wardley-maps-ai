@@ -58,12 +58,11 @@ def app():
                  '''
                 # Use the OpenAI API to generate a response
                 completion = openai.Completion.create(
-                engine = model_engine,
-                prompt = user_query,
-                max_tokens = 1024,
-                n = 1,
-                temperature = 0.0,
-             
+                    engine = model_engine,
+                    prompt = user_query,
+                    max_tokens = 1024,
+                    n = 1,
+                    temperature = 0.0,
                 )
                 response = completion.choices[0].text
                 return response
