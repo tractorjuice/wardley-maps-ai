@@ -34,6 +34,12 @@ def app():
     st.set_page_config(page_title="Wardley Maps with AI")
     st.title("Wardley Maps with AI")
     
+    def get_text():
+        input_text = st.text_input(label="Question ", placeholder="How many components are in this map?", key="q_input")
+    return input_text
+
+    q_input = get_text()
+    
     # Define the form to enter the map ID
     map_id = st.text_input("Enter the ID of the Wardley Map")
 
@@ -51,17 +57,6 @@ def app():
             st.write(map_data)
         else:
             st.error("Map not found. Please enter a valid ID.")
-    else:
-
-    def get_api_key():
-        input_text = st.text_input(label="OpenAI API Key ",  placeholder="Ex: sk-2twmA8tfCb8un4...", key="openai_api_key_input")
-    return input_text
-    
-    def get_text():
-        input_text = st.text_input(label="Question ", placeholder="How many components are in this map?", key="q_input")
-    return input_text
-
-    q_input = get_text()
     
     if len(q_input.split(" ")) > 700:
         st.write("Please enter a shorter question about your Wardley Map")
