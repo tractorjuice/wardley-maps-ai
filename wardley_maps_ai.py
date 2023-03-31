@@ -60,6 +60,7 @@ def app():
             st.markdown("### Response:")
             
             st.write(question)
+            
             st_write(map_data)
 
             llm = load_LLM(["OPENAI_API_KEY"])
