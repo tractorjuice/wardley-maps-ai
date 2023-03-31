@@ -19,7 +19,7 @@ API_ENDPOINT = "https://api.onlinewardleymaps.com/v1/maps/fetch?id="
 
 template = """
     Your goal is to:
-    - Answer the question below about the map below.
+    - Answer the question below about wardley maps.
 
     Below is the map and question:
     MAP: {map}
