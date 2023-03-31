@@ -13,11 +13,11 @@ def fetch_wardley_map(map_id):
 
 
 def main():
-    st.set_page_config(page_title="Wardley Maps App")
+    st.set_page_config(page_title="Wardley Maps with AI")
 
-    st.title("Wardley Maps App")
+    st.title("Wardley Maps with AI")
 
-    map_id = st.text_input("Enter the ID of the Wardley Map:")
+    map_id = st.text_input("Enter the ID of the Wardley Map from OnlineWardleyMaps:")
 
     if st.button("Load Map"):
         map_data = fetch_wardley_map(map_id)
