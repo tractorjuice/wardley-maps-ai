@@ -31,38 +31,32 @@ def load_LLM(openai_api_key):
 def app():
 
     # Set the page title and layout
-    st.set_page_config(page_title="Wardley Maps Viewer")
-    st.title("Wardley Maps Viewer")
+    st.set_page_config(page_title="Wardley Maps with AI")
+    st.title("Wardley Maps with AI")
 
-    
 def get_text():
     input_text = st.text_input(label="Question ",  placeholder="How many components are in this map?", key="q_input")
     return input_text
 
     q_input = get_text()
     
-    if len(q_input.split(" ")) > 700:
-        st.write("Please enter a shorter question about your Wardley Map")
-    st.stop()
+if len(q_input.split(" ")) > 700:
+    st.write("Please enter a shorter question about your Wardley Map")
+st.stop()
                                                            
-    st.button("*See An Example*", type='secondary', help="Click to see an example.", on_click=update_text_with_example)
+st.button("*See An Example*", type='secondary', help="Click to see an example.", on_click=update_text_with_example)
                                                            
-    def update_text_with_example():
-        print ("in updated")
-        st.session_state.email_input = "How many components are in this map?"
+def update_text_with_example():
+    print ("in updated")
+    st.session_state.email_input = "How many components are in this map?"
     
-    st.markdown("### Your Converted Email:")
+st.markdown("### Response:")
 
-    if q_input:
-        if not openai_api_key:
-            st.warning('Please insert OpenAI API Key. Instructions [here](https://help.openai.com/en/articles/4936850-where-do-i-find-my-secret-api-key)', icon="⚠️")
-            st.stop()
+llm = load_LLM(["OPENAI_API_KEY"])
 
-    llm = load_LLM(openai_api_key=openai_api_key)
+prompt_with_email = prompt.format(question=question, map=map)
 
-    prompt_with_email = prompt.format(tone=option_tone, dialect=option_dialect, email=email_input)
-
-    formatted_email = llm(prompt_with_email)
+formatted_email = llm(prompt_with_email)
 
     st.write(formatted_email)
     
@@ -96,6 +90,11 @@ def get_text():
             st.write(map_data)
         else:
             st.error("Map not found. Please enter a valid ID.")
+            
+            
+            
+            
+            
 
 if __name__ == "__main__":
     app()
