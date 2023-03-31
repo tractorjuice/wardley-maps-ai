@@ -61,8 +61,6 @@ def app():
             
             st.write(question)
             
-            st_write(map_data)
-
             llm = load_LLM(["OPENAI_API_KEY"])
 
             prompt_wardley_ai = prompt.format(question=question, map=map_data)
