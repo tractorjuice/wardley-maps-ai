@@ -50,14 +50,33 @@ def app():
             
             st.markdown("### Prompt:")
             st.write(prompt)
-
-            def load_LLM(openai_api_key):
-                """Logic for loading the chain you want to use should go here."""
-                # Make sure your openai_api_key is set as an environment variable
-                llm = OpenAI(temperature=0, openai_api_key=st.secrets["OPENAI_API_KEY"])
-                return llm
             
-            llm = load_LLM(["OPENAI_API_KEY"])
+            def ChatGPT(user_query):
+                ''' 
+                This function uses the OpenAI API to generate a response to the given 
+                user_query using the ChatGPT model
+                 '''
+                # Use the OpenAI API to generate a response
+                completion = openai.Completion.create(
+                engine = model_engine,
+                prompt = user_query,
+                max_tokens = 1024,
+                n = 1,
+                temperature = 0.0,
+             
+                )
+                response = completion.choices[0].text
+                return response
+
+            #def load_LLM(openai_api_key):
+            #    """Logic for loading the chain you want to use should go here."""
+            #    # Make sure your openai_api_key is set as an environment variable
+            #    llm = OpenAI(temperature=0, openai_api_key=st.secrets["OPENAI_API_KEY"])
+            #    return llm
+            
+            #llm = load_LLM(["OPENAI_API_KEY"])
+            
+            llm = ChatGPT(["OPENAI_API_KEY"])
 
             prompt_wardley_ai = prompt.format(question=question, map=map_data)
             response = llm(prompt_wardley_ai)
