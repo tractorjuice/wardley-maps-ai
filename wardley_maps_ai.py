@@ -33,13 +33,7 @@ def app():
     # Set the page title and layout
     st.set_page_config(page_title="Wardley Maps Viewer")
     st.title("Wardley Maps Viewer")
-    
-    def get_api_key():
-    input_text = st.text_input(label="OpenAI API Key ",  placeholder="Ex: sk-2twmA8tfCb8un4...", key="openai_api_key_input")
-    return input_text
-
-    openai_api_key = get_api_key()
-    
+        
     def get_text():
     input_text = st.text_area(label="Question", label_visibility='collapsed', placeholder="YWhat ....", key="q_input")
     return input_text
