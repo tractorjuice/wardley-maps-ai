@@ -34,6 +34,7 @@ def app():
     st.set_page_config(page_title="Wardley Maps with AI")
     st.title("Wardley Maps with AI")
     
+    # Define the form to enter the map ID
     map_id = st.text_input("Enter the ID of the Wardley Map")
 
     # Load the map data when the user submits the form
@@ -76,28 +77,20 @@ prompt_with_email = prompt.format(question=question, map=map)
 
 formatted_email = llm(prompt_with_email)
 
-    st.write(formatted_email)
+st.write(formatted_email)
     
-    col1, col2 = st.columns(2)
+col1, col2 = st.columns(2)
     
-    with col1:
-        st.markdown("After a tweet thread on prompt engineering using Wardley Maps \n\n This tool \
-        was created to load your Wardley Maps and ask questions about it using AI. This tool \
-        is powered by [LangChain](https://langchain.com/) and [OpenAI](https://openai.com) and made by \
-        [@mcraddock](https://twitter.com/mcraddock). \n\n View Source Code on [Github](https://github.com/tractorjuice/globalize-text-streamlit2/edit/main/main.py)")
+with col1:
+    st.markdown("After a tweet thread on prompt engineering using Wardley Maps \n\n This tool \
+    was created to load your Wardley Maps and ask questions about it using AI. This tool \
+    is powered by [LangChain](https://langchain.com/) and [OpenAI](https://openai.com) and made by \
+    [@mcraddock](https://twitter.com/mcraddock). \n\n View Source Code on [Github](https://github.com/tractorjuice/globalize-text-streamlit2/edit/main/main.py)")
 
-        st.markdown("## Enter your Wardley Map")
+    st.markdown("## Enter your Wardley Map")
         
-    with col2:
-        st.image(image='prompt-engineering-wardley.png', width=500, caption='https://twitter.com/mcraddock/status/1641537955507347476')
-
-    # Define the form to enter the map ID
-
-            
-            
-            
-            
-            
+with col2:
+    st.image(image='prompt-engineering-wardley.png', width=500, caption='https://twitter.com/mcraddock/status/1641537955507347476')
 
 if __name__ == "__main__":
     app()
