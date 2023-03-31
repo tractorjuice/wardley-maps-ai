@@ -34,8 +34,6 @@ def app():
     st.set_page_config(page_title="Wardley Maps with AI")
     st.title("Wardley Maps with AI")
     
-    q_input = st.text_input(label="Question ", placeholder="How many components are in this map?", key="q_input")
-    
     if len(q_input.split(" ")) > 700:
         st.write("Please enter a shorter question about your Wardley Map")
     st.stop()
@@ -56,13 +54,15 @@ def app():
             # Display the map
             st.write(map_data)
             
+            question = st.text_input(label="Question ", placeholder="How many components are in this map?", key="q_input")
+            
             st.session_state.email_input = "How many components are in this map?"
     
             st.markdown("### Response:")
 
             llm = load_LLM(["OPENAI_API_KEY"])
 
-            prompt_with_email = prompt.format(question=question, map=map)
+            prompt_with_email = prompt.format(question=question, map=map_data)
             formatted_email = llm(prompt_with_email)
             st.write(formatted_email)
                    
