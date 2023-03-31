@@ -56,11 +56,12 @@ def app():
                 # Make sure your openai_api_key is set as an environment variable
                 llm = OpenAI(temperature=0, openai_api_key=st.secrets["OPENAI_API_KEY"])
                 return llm
-                
-            st.markdown("### Response:")
             
+            st.markdown("### Question:")
             st.write(question)
             
+            st.markdown("### Response:")
+                
             llm = load_LLM(["OPENAI_API_KEY"])
 
             prompt_wardley_ai = prompt.format(question=question, map=map_data)
