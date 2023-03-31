@@ -52,6 +52,10 @@ def app():
         else:
             st.error("Map not found. Please enter a valid ID.")
 
+    def get_api_key():
+        input_text = st.text_input(label="OpenAI API Key ",  placeholder="Ex: sk-2twmA8tfCb8un4...", key="openai_api_key_input")
+    return input_text
+    
     def get_text():
         input_text = st.text_input(label="Question ", placeholder="How many components are in this map?", key="q_input")
     return input_text
