@@ -42,7 +42,7 @@ def app():
             question = st.text_input(label="Question ", placeholder="How many components are in this map?", key="q_input")
             if len(question.split(" ")) > 700:
                 st.write("Please enter a shorter question about your Wardley Map")
-            st.stop()
+                st.stop()
             
             prompt = PromptTemplate(
                 input_variables=["map", "question"],
