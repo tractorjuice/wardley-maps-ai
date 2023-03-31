@@ -34,11 +34,7 @@ def app():
     st.set_page_config(page_title="Wardley Maps with AI")
     st.title("Wardley Maps with AI")
     
-    def get_text():
-        input_text = st.text_input(label="Question ", placeholder="How many components are in this map?", key="q_input")
-    return input_text
-
-    q_input = get_text()
+    q_input = st.text_input(label="Question ", placeholder="How many components are in this map?", key="q_input")
     
     # Define the form to enter the map ID
     map_id = st.text_input("Enter the ID of the Wardley Map")
