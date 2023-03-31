@@ -1,32 +1,38 @@
 import streamlit as st
 import requests
 
-API_ENDPOINT = "https://api.onlinewardleymaps.com/v1/maps/fetch?id="
+st.set_page_config(page_title="Wardley Map Viewer")
 
-# Define the Streamlit app
-def app():
-    # Set app title
-    st.set_page_config(page_title="Wardley Map Viewer", page_icon=":map:")
+# Define the base URL for the API
+BASE_URL = "https://api.onlinewardleymaps.com/v1/maps/fetch?id="
 
-    # Create a form for entering the Wardley map ID
-    map_id = st.text_input("Enter the ID of the Wardley map:")
+def fetch_wardley_map(map_id):
+    """
+    Fetches the wardley map with the given ID from the API.
+    """
+    url = BASE_URL + map_id
+    response = requests.get(url)
+    if response.status_code == 200:
+        return response.json()
+    else:
+        return None
 
-    # Load the map if an ID is entered
-    if map_id:
-        # Build the API endpoint URL
-        url = f"{API_ENDPOINT}{map_id}"
+# Create the sidebar
+st.sidebar.title("Wardley Map Viewer")
+map_id = st.sidebar.text_input("Enter the ID of the wardley map:")
 
-        # Make a GET request to the API
-        response = requests.get(url)
+# Fetch the map data and display it if available
+if map_id:
+    map_data = fetch_wardley_map(map_id)
+    if map_data:
+        st.write("## Wardley Map")
+        st.image(map_data["image_url"])
+    else:
+        st.write("Invalid map ID")
 
-        # Check if the response was successful
-        if response.status_code == 200:
-            # Display the map
-            st.components.v1.html(response.content, width=800, height=600)
-        else:
-            # Display an error message
-            st.error("Failed to load map. Please check the map ID and try again.")
-
-# Run the Streamlit app
-if __name__ == "__main__":
-    app()
+# Create a box to ask questions about the wardley map
+st.write("## Ask a Question")
+question = st.text_input("Enter your question here:")
+if question:
+    st.write(f"You asked: {question}")
+    # Code to process the question and provide an answer goes here
