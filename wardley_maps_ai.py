@@ -58,6 +58,7 @@ def app():
                 return llm
             
             st.markdown("### Question:")
+            question = "How many components are in this map?"
             st.write(question)
             
             st.markdown("### Response:")
