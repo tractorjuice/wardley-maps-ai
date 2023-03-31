@@ -1,30 +1,37 @@
 import streamlit as st
 import requests
+from io import BytesIO
+from PIL import Image
 
-# Define the API URL
-API_URL = "https://api.onlinewardleymaps.com/v1/maps/fetch"
+# Define the URL for the Wardley Maps API
+API_URL = 'https://api.onlinewardleymaps.com/v1/maps/fetch'
 
-def get_wardley_map(map_id):
-    # Call the API with the provided map_id
-    response = requests.get(f"{API_URL}?id={map_id}")
-    # Check the status code of the response
-    if response.status_code == 200:
-        # Return the JSON response
-        return response.json()
-    else:
-        # Raise an exception if there was an error
-        raise Exception(f"Error fetching Wardley Map with ID {map_id}. Status code: {response.status_code}")
-
-# Create a Streamlit app
+# Define the Streamlit app
 def app():
-    # Set the app title
-    st.set_page_config(page_title="Wardley Maps Viewer")
+    # Add a title and a form to the app
+    st.title("Load Wardley Map from Online Wardley Maps API")
+    map_id = st.text_input("Enter the ID of the Wardley Map:")
 
-    # Add a form to input the map ID
-    map_id = st.text_input("Enter the ID of the Wardley Map you want to view:")
-    # Add a button to submit the form
+    # If the form is submitted, retrieve the map using the API
     if st.button("Load Map"):
-        # Call the get_wardley_map function to fetch the map data
-        map_data = get_wardley_map(map_id)
-        # Display the map using an iframe
-        st.components.v1.iframe(src=f"https://onlinewardleymaps.com/maps/{map_id}", height=600, scrolling=True)
+        # Construct the API URL with the provided map ID
+        url = f"{API_URL}?id={map_id}"
+        
+        # Send a request to the API to retrieve the map
+        response = requests.get(url)
+        
+        # If the request was successful, display the map
+        if response.status_code == 200:
+            # Convert the response content to an image
+            img = Image.open(BytesIO(response.content))
+            
+            # Display the image in the Streamlit app
+            st.image(img, caption="Wardley Map")
+            
+        # If the request failed, display an error message
+        else:
+            st.error("Failed to load map. Please check the map ID and try again.")
+            
+# Run the Streamlit app
+if __name__ == "__main__":
+    app()
