@@ -33,6 +33,24 @@ def app():
     # Set the page title and layout
     st.set_page_config(page_title="Wardley Maps with AI")
     st.title("Wardley Maps with AI")
+    
+    
+        map_id = st.text_input("Enter the ID of the Wardley Map")
+
+    # Load the map data when the user submits the form
+    if st.button("Load Map"):
+        # Fetch the map data from the API
+        url = f"https://api.onlinewardleymaps.com/v1/maps/fetch?id={map_id}"
+        response = requests.get(url)
+
+        # Check if the map was found
+        if response.status_code == 200:
+            map_data = response.json()
+
+            # Display the map
+            st.write(map_data)
+        else:
+            st.error("Map not found. Please enter a valid ID.")
 
 def get_text():
     input_text = st.text_input(label="Question ",  placeholder="How many components are in this map?", key="q_input")
@@ -74,22 +92,7 @@ formatted_email = llm(prompt_with_email)
         st.image(image='prompt-engineering-wardley.png', width=500, caption='https://twitter.com/mcraddock/status/1641537955507347476')
 
     # Define the form to enter the map ID
-    map_id = st.text_input("Enter the ID of the Wardley Map")
 
-    # Load the map data when the user submits the form
-    if st.button("Load Map"):
-        # Fetch the map data from the API
-        url = f"https://api.onlinewardleymaps.com/v1/maps/fetch?id={map_id}"
-        response = requests.get(url)
-
-        # Check if the map was found
-        if response.status_code == 200:
-            map_data = response.json()
-
-            # Display the map
-            st.write(map_data)
-        else:
-            st.error("Map not found. Please enter a valid ID.")
             
             
             
