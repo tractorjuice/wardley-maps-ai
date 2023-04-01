@@ -132,10 +132,10 @@ Change the look and feel of a map Example:
 
 style wardley
 style handwritten
-style colour"""
+style colour
 
-    WARDLEY MAP: {map}
-    QUESTION: {question}
+WARDLEY MAP: {map}
+QUESTION: {question}
     
     YOUR RESPONSE:
 """
