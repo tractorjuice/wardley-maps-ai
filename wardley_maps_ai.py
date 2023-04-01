@@ -77,8 +77,8 @@ def app():
                 template=template,
             )
             
-            st.markdown("### Prompt:")
-            st.write(prompt)
+            #st.markdown("### Prompt:")
+            #st.write(prompt)
             
             def load_LLM(openai_api_key):
                 """Logic for loading the chain you want to use should go here."""
@@ -90,11 +90,11 @@ def app():
             prompt_wardley_ai = prompt.format(question=question, map=map_data)
             response = llm(prompt_wardley_ai)
             
-            st.markdown("### Input Prompt:")
-            st.write(prompt_wardley_ai)
+            #st.markdown("### Input Prompt:")
+            #st.write(prompt_wardley_ai)
             
-            st.markdown("### Question:")
-            st.write(question)
+            #st.markdown("### Question:")
+            #st.write(question)
             
             st.markdown("### Response:")
             st.write(response)
