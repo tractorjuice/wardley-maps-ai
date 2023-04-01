@@ -123,6 +123,6 @@ annotations [0.05, 0.02]
 annotation 1,[0.08,0.79] Components not in final positions
 annotation 2,[0.08,0.79] Components not in final positions
 annotation 3,[0.08,0.79] Components not in final positions
-annotation 4,[0.08,0.79]  Memory is the jcapacity of remembering previous interactions with the user. Critical for ChatBots
+annotation 4,[0.08,0.79] Memory is the capacity of remembering previous interactions with the user. Critical for ChatBots
 
 //market Tools [0.56, 0.69] label [-20, -27]
