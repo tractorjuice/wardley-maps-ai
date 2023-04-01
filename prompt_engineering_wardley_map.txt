@@ -1,0 +1,128 @@
+title Prompt Engineering
+anchor Prompt Engineer [0.97, 0.19]
+
+component Prompt Techniques [0.93, 0.44] label [-17, -38]
+component Chunks [0.39, 0.62] label [-17, 23]
+component Text Splitter [0.34, 0.67]
+component Embedding [0.45, 0.59]
+component Tools [0.59, 0.73] label [-19, 24]
+component Agents [0.69, 0.37] label [-22, 20]
+component LLMs [0.18, 0.71]
+component LLaMA [0.09, 0.67] label [-52, 7]
+component Cloud [0.04, 0.87] label [-16, 21]
+component Vector DB [0.26, 0.52] label [-31, -16]
+component QA [0.69, 0.68] label [-8, 21]
+component QA with sources [0.73, 0.45] label [-68, -15]
+component ChatQA [0.90, 0.67] label [-21, 21]
+component Zapier [0.48, 0.84]
+component Pinecone [0.25, 0.65] label [-36, 26]
+component Memory [0.78, 0.32] label [-22, 20]
+component Agents [0.69, 0.37] label [-22, 20]
+component Chains [0.84, 0.40] label [-21, 22]
+component OpenAIEmbeddings [0.44, 0.71] label [-19, 16]
+component CohereEmbeddings [0.44, 0.41] label [-28, 15]
+component Alpaca [0.12, 0.66] label [-60, 5]
+component Laptop [0.04, 0.66] label [-26, 20]
+component Vector [0.51, 0.56] label [13, 3]
+component Propriety Data [0.53, 0.27] label [-53, -12]
+component Metadata [0.59, 0.28] label [-63, -16]
+component Tuning [0.84, 0.32] label [-22, 22]
+component Prompt Templates [0.66, 0.60] label [-29, 11]
+component Chroma [0.25, 0.56] label [-25, 25]
+component Propriety [0.20, 0.23] label [-31, -27]
+component Supabase [0.25, 0.48] label [-33, 25]
+component OpenAI [0.15, 0.81] label [5, -10]
+component API [0.26, 0.84]
+component FastTextEmbeddings [0.44, 0.57] label [-19, 16]
+component ANN [0.20, 0.63] label [-13, 22]
+component kNN [0.20, 0.59] label [-15, 24]
+component SPTAG [0.20, 0.49] label [-27, 25]
+component Faiss [0.20, 0.68] label [-19, 21]
+component HNSW [0.20, 0.44] label [-17, 23]
+component Custom Agents [0.63, 0.22]
+component Vector Search Algos [0.21, 0.55] label [-61, -45]
+component Public Data [0.10, 0.88]
+component Compute [0.05, 0.75]
+component Univercitiy Research [0.20, 0.13] label [-24, 13]
+component PDF [0.33, 0.73] label [-11, 21]
+component Text [0.33, 0.76] label [-11, -23]
+component Weaviate [0.31, 0.33]
+component Dolly [0.14, 0.69]
+component HuggingFace [0.14, 0.75]
+
+pipeline Vector DB [0.40, 0.7]
+pipeline Text Splitter [0.50, 0.8]
+pipeline Embedding [0.30, 0.8]
+pipeline Compute [0.6, 0.90]
+pipeline Vector Search Algos [0.1, 0.8]
+//pipeline Prompt Techniques [0.20, 0.8]
+
+Prompt Engineer -> Prompt Techniques
+Prompt Techniques -> ChatQA
+Prompt Techniques -> QA with sources
+Prompt Techniques -> Tuning
+Prompt Techniques -> Chains
+
+QA -> Prompt Templates
+Prompt Templates -> LLMs
+Prompt Templates -> Vector
+
+Chains -> Agents
+Agents -> Tools
+Agents -> Custom Agents
+Custom Agents -> Propriety Data
+
+Vector -> QA
+ChatQA -> QA
+ChatQA -> Memory
+QA with sources -> QA
+
+Embedding -> Chunks
+
+LLMs -> Public Data
+
+Semantic Search -> Vector
+
+Alpaca -> LLMs
+Alpaca -> LLaMA
+LLaMA -> Laptop
+LLaMA -> Compute
+Dolly -> Alpaca
+Vector DB -> Vector Search Algos
+
+Source Metadata -> Text Splitter
+Propriety Data -> Vector
+Propriety Data -> Metadata
+Metadata -> Vector
+
+VectorQA with sources -> Metadata
+Metadata -> QA with sources
+
+Tools -> Zapier
+
+Chunks -> Text Splitter
+Embedding-> Vector DB
+Vector-> Embedding
+
+LLMs -> Compute
+LLMs -> HuggingFace
+HuggingFace -> Cloud
+
+VectorDB -> Cloud
+OpenAI-> Cloud
+LLMs -> OpenAI
+Zapier -> API
+API -> OpenAI
+
+evolve Prompt Templates 0.8 label [-28, 10]
+
+style wardley
+
+//note +a generic note appeared [0.07, 0.02]
+annotations [0.05, 0.02]
+annotation 1,[0.08,0.79] Components not in final positions
+annotation 2,[0.08,0.79] Components not in final positions
+annotation 3,[0.08,0.79] Components not in final positions
+annotation 4,[0.08,0.79]  Memory is the jcapacity of remembering previous interactions with the user. Critical for ChatBots
+
+//market Tools [0.56, 0.69] label [-20, -27]
