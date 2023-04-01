@@ -48,7 +48,7 @@ component Text [0.33, 0.78] label [-11, -23]
 component Weaviate [0.31, 0.33]
 component Dolly [0.14, 0.69]
 component HuggingFace [0.14, 0.75]
-component Convertation History [0.80, 0.36]
+component Convertation History [0.80, 0.36] label [-67, 15]
 
 pipeline Vector DB [0.40, 0.7]
 pipeline Text Splitter [0.50, 0.8]
@@ -126,6 +126,6 @@ annotations [0.05, 0.02]
 annotation 1,[0.08,0.79] Components not in final positions
 annotation 2,[0.08,0.79] Components not in final positions
 annotation 3,[0.08,0.79] Components not in final positions
-annotation 4,[0.08,0.79]  Memory is the jcapacity of remembering previous interactions with the user. Critical for ChatBots
+annotation 4,[0.08,0.79] Memory is the capacity of remembering previous interactions with the user. Critical for ChatBots
 
 //market Tools [0.56, 0.69] label [-20, -27]
