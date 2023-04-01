@@ -12,11 +12,11 @@ component LLaMA [0.09, 0.67] label [-52, 7]
 component Cloud [0.04, 0.87] label [-16, 21]
 component Vector DB [0.26, 0.52] label [-31, -16]
 component QA [0.69, 0.68] label [-8, 21]
-component QA with sources [0.73, 0.45] label [-68, -15]
+component QA with sources [0.73, 0.45] label [-26, 14]
 component ChatQA [0.90, 0.67] label [-21, 21]
 component Zapier [0.48, 0.84]
 component Pinecone [0.25, 0.65] label [-36, 26]
-component Memory [0.77, 0.38] label [-22, 20]
+component Memory [0.77, 0.43] label [-22, 20]
 component Chains [0.84, 0.40] label [-21, 22]
 component OpenAIEmbeddings [0.44, 0.71] label [-19, 16]
 component CohereEmbeddings [0.44, 0.41] label [-28, 15]
@@ -48,6 +48,7 @@ component Text [0.33, 0.78] label [-11, -23]
 component Weaviate [0.31, 0.33]
 component Dolly [0.14, 0.69]
 component HuggingFace [0.14, 0.75]
+component Convertation History [0.80, 0.36]
 
 pipeline Vector DB [0.40, 0.7]
 pipeline Text Splitter [0.50, 0.8]
@@ -65,6 +66,9 @@ Prompt Techniques -> Chains
 QA -> Prompt Templates
 Prompt Templates -> LLMs
 Prompt Templates -> Vector
+
+ChatQA -> Convertation History
+Convertation History -> Memory
 
 Chains -> Agents
 Agents -> Tools
