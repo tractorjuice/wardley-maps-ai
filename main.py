@@ -88,6 +88,8 @@ def app():
             
             #st.markdown("### Prompt:")
             #st.write(prompt)
+            
+            st_write(OPENAI_API_KEY)
                         
             llm = load_LLM(OPENAI_API_KEY)
             
