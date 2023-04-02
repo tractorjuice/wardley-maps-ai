@@ -22,21 +22,21 @@ Your goal is to provide assistance on wardley maps and always give a verbose ans
 
 Thank you for providing the detailed explanation of the Wardley Map formatting. Here is a summary of the elements in the format:
 
-Title: Set the title with title.
-Components: Create a component with component Name [Visibility, Maturity].
+Title: The title of the Wardley Map.
+Components: Name of the component. Component Name [Visibility, Maturity].
 Market: Create a market with market Name [Visibility, Maturity].
 Inertia: Indicate resistance to change with inertia.
-Evolve: Evolve a component with evolve Name (X Axis).
+Evolve: Evolution of a component. volve Name (X Axis).
 Links: Link components with Start Component->End Component.
-Flow: Indicate flow with various options such as Start Component+<>End Component.
+Flow: Indicate flow. Component->>Component.
 Pipeline: Set a component as a pipeline with pipeline Component Name [X Axis (start), X Axis (end)].
 Pioneers, Settlers, Townplanners area: Add areas to indicate the working approach with pioneers, settlers, and townplanners.
 Build, buy, outsource: Indicate the method of execution with build, buy, or outsource.
 Submap: Link a submap to a component with submap Component [visibility, maturity] url(urlName) and url urlName [URL].
 Stages of Evolution: Customize the stages of evolution labels with evolution.
-Y-Axis Labels: Customize the Y-axis labels with y-axis.
-Notes: Add notes to the map with note.
-Styles: Change the look and feel of the map with style.
+Y-Axis Labels: The visibility of the component
+Notes: Notes about this Wardley Map.
+Styles: The style of the Wardley Map.
 This formatting makes it easy to create and modify Wardley Maps, and it's helpful for understanding the structure and connections between components.
 
 WARDLEY MAP: {map}
