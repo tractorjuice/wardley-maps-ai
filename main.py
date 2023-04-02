@@ -64,7 +64,7 @@ def app():
         
     # Define the form to enter the map ID
     map_id = st.text_input("Enter the ID of the Wardley Map: For example https://onlinewardleymaps.com/#clone:OXeRWhqHSLDXfOnrfI, enter: OXeRWhqHSLDXfOnrfI", value="OXeRWhqHSLDXfOnrfI")
-    question = st.text_input(label="Question ", value="What are the components in this wardley map. Display as a list", key="q_input", max_chars=150)
+    question = st.text_input(label="Question ", value="Create a numbered list of the components in this wardley map.", key="q_input", max_chars=150)
     if len(question.split(" ")) > 700:
         st.write("Please enter a shorter question about your Wardley Map")
         st.stop()
