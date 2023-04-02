@@ -16,7 +16,7 @@ from langchain.schema import (
 )
 
 API_ENDPOINT = "https://api.onlinewardleymaps.com/v1/maps/fetch?id="
-OPENAI_API_KEY = 
+OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
 
 template = """
 Your goal is to provide assistance on wardley maps and always give a verbose answer. The following explains how the wardley map is formatted:
