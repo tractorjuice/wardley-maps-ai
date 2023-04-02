@@ -13,7 +13,6 @@ def show_messages(text):
     ]
     text.text_area("Messages", value=str("\n".join(messages_str)), height=300)
 
-
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 BASE_PROMPT = [{"role": "system", "content": "You are a helpful assistant."}]
 
@@ -23,9 +22,8 @@ documents = loader.load_data(ytlinks=['https://www.youtube.com/watch?v=L3wgzl2iU
 
 index = GPTSimpleVectorIndex.from_documents(documents)
 
-st.set_page_config(
-    layout="centered", page_title="Wardley Maps with AI"
-)
+st.set_page_config(page_title="Intro To Wardley Mapping with AI")
+st.title("Intro To Wardley Mapping with AI")
 
 st.sidebar.markdown("Developed by Mark Craddock](https://twitter.com/mcraddock)", unsafe_allow_html=True)
 st.sidebar.markdown("Current Version: 0.0.2")
