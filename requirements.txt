@@ -2,3 +2,5 @@ langchain
 openai
 streamlit
 tiktoken
+llama_index
+gpt_index
