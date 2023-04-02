@@ -56,6 +56,7 @@ def app():
     # Set the page title and layout
     st.set_page_config(page_title="Wardley Maps with AI")
     st.title("Wardley Maps with AI")
+    st.sidebar.markdown("Ask Questions about Your Map")
     
     #st.sidebar.image("images/shakespeare.png")
     st.sidebar.markdown("Developed by Mark Craddock](https://twitter.com/mcraddock)", unsafe_allow_html=True)
