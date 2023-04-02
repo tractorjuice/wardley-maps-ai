@@ -1,0 +1,110 @@
+import streamlit as st
+import requests
+from langchain.prompts import PromptTemplate
+from langchain.llms import OpenAI
+from langchain.chat_models import ChatOpenAI
+from langchain.prompts.chat import (
+    ChatPromptTemplate,
+    SystemMessagePromptTemplate,
+    AIMessagePromptTemplate,
+    HumanMessagePromptTemplate,
+)
+from langchain.schema import (
+    AIMessage,
+    HumanMessage,
+    SystemMessage
+)
+
+API_ENDPOINT = "https://api.onlinewardleymaps.com/v1/maps/fetch?id="
+
+template = """
+Your goal is to provide assistance on wardley maps and always give a verbose answer. The following explains how the wardley map is formatted:
+
+Thank you for providing the detailed explanation of the Wardley Map formatting. Here is a summary of the elements in the format:
+
+Title: Set the title with title.
+Components: Create a component with component Name [Visibility, Maturity].
+Market: Create a market with market Name [Visibility, Maturity].
+Inertia: Indicate resistance to change with inertia.
+Evolve: Evolve a component with evolve Name (X Axis).
+Links: Link components with Start Component->End Component.
+Flow: Indicate flow with various options such as Start Component+<>End Component.
+Pipeline: Set a component as a pipeline with pipeline Component Name [X Axis (start), X Axis (end)].
+Pioneers, Settlers, Townplanners area: Add areas to indicate the working approach with pioneers, settlers, and townplanners.
+Build, buy, outsource: Indicate the method of execution with build, buy, or outsource.
+Submap: Link a submap to a component with submap Component [visibility, maturity] url(urlName) and url urlName [URL].
+Stages of Evolution: Customize the stages of evolution labels with evolution.
+Y-Axis Labels: Customize the Y-axis labels with y-axis.
+Notes: Add notes to the map with note.
+Styles: Change the look and feel of the map with style.
+This formatting makes it easy to create and modify Wardley Maps, and it's helpful for understanding the structure and connections between components.
+
+WARDLEY MAP: {map}
+QUESTION: {question}
+    
+    YOUR RESPONSE:
+"""
+
+# Define the Streamlit app
+def app():
+
+    # Set the page title and layout
+    st.set_page_config(page_title="Wardley Maps with AI")
+    st.title("Wardley Maps with AI")
+    
+    #st.sidebar.image("images/shakespeare.png")
+    st.sidebar.markdown("Developed by Mark Craddock](https://twitter.com/mcraddock)", unsafe_allow_html=True)
+    st.sidebar.markdown("Current Version: 0.0.2")
+        
+    # Define the form to enter the map ID
+    map_id = st.text_input("Enter the ID of the Wardley Map: For example https://onlinewardleymaps.com/#clone:mUJtoSmOfqlfXhNMJP, enter: mUJtoSmOfqlfXhNMJP")
+    question = st.text_input(label="Question ", placeholder="How many components are in this map?", key="q_input", max_chars=150)
+    if len(question.split(" ")) > 700:
+        st.write("Please enter a shorter question about your Wardley Map")
+        st.stop()
+
+    # Load the map data when the user submits the form
+    if st.button("Ask Question to Wardley AI"):
+        # Fetch the map data from the API
+        url = f"https://api.onlinewardleymaps.com/v1/maps/fetch?id={map_id}"
+        response = requests.get(url)
+
+        # Check if the map was found
+        if response.status_code == 200:
+            map_data = response.json()
+
+            # Display the map
+            #st.write(map_data)
+            
+            prompt = PromptTemplate(
+                input_variables=["map", "question"],
+                template=template,
+            )
+            
+            #st.markdown("### Prompt:")
+            #st.write(prompt)
+            
+            def load_LLM(openai_api_key):
+                """Logic for loading the chain you want to use should go here."""
+                llm = OpenAI(temperature=0.1, openai_api_key=st.secrets["OPENAI_API_KEY"])
+                return llm
+            
+            llm = load_LLM(["OPENAI_API_KEY"])
+            
+            prompt_wardley_ai = prompt.format(question=question, map=map_data)
+            response = llm(prompt_wardley_ai)
+            
+            #st.markdown("### Input Prompt:")
+            #st.write(prompt_wardley_ai)
+            
+            #st.markdown("### Question:")
+            #st.write(question)
+            
+            st.markdown("### Response:")
+            st.write(response)
+                   
+        else:
+            st.error("Map not found. Please enter a valid ID.")
+                                                                                                                          
+if __name__ == "__main__":
+    app()
