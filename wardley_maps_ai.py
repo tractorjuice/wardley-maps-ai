@@ -51,6 +51,10 @@ def app():
     # Set the page title and layout
     st.set_page_config(page_title="Wardley Maps with AI")
     st.title("Wardley Maps with AI")
+    
+    #st.sidebar.image("images/shakespeare.png")
+    st.sidebar.markdown("Developed by Mark Craddock](https://twitter.com/mcraddock)", unsafe_allow_html=True)
+    st.sidebar.markdown("Current Version: 0.0.2")
         
     # Define the form to enter the map ID
     map_id = st.text_input("Enter the ID of the Wardley Map: For example https://onlinewardleymaps.com/#clone:mUJtoSmOfqlfXhNMJP, enter: mUJtoSmOfqlfXhNMJP")
