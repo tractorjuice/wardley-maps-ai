@@ -88,9 +88,7 @@ def app():
             
             #st.markdown("### Prompt:")
             #st.write(prompt)
-            
-            st_write(OPENAI_API_KEY)
-                        
+                                    
             llm = load_LLM(OPENAI_API_KEY)
             
             prompt_wardley_ai = prompt.format(question=question, map=map_data)
