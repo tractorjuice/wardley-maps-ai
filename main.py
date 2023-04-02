@@ -16,6 +16,7 @@ from langchain.schema import (
 )
 
 API_ENDPOINT = "https://api.onlinewardleymaps.com/v1/maps/fetch?id="
+OPENAI_API_KEY = 
 
 template = """
 Your goal is to provide assistance on wardley maps and always give a verbose answer. The following explains how the wardley map is formatted:
@@ -44,6 +45,10 @@ QUESTION: {question}
     
     YOUR RESPONSE:
 """
+def load_LLM(openai_api_key):
+    """Logic for loading the chain you want to use should go here."""
+    llm = OpenAI(temperature=0.7, openai_api_key=open_api_key, max_tokens=500)
+    return llm
 
 # Define the Streamlit app
 def app():
@@ -83,12 +88,7 @@ def app():
             
             #st.markdown("### Prompt:")
             #st.write(prompt)
-            
-            def load_LLM(openai_api_key):
-                """Logic for loading the chain you want to use should go here."""
-                llm = OpenAI(temperature=0.7, openai_api_key, max_tokens=500)
-                return llm
-            
+                        
             llm = load_LLM(["OPENAI_API_KEY"])
             
             prompt_wardley_ai = prompt.format(question=question, map=map_data)
