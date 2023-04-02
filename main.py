@@ -47,7 +47,7 @@ QUESTION: {question}
 """
 def load_LLM(openai_api_key):
     """Logic for loading the chain you want to use should go here."""
-    llm = OpenAI(temperature=0.7, openai_api_key=open_api_key, max_tokens=500)
+    llm = OpenAI(temperature=0.7, open_api_key, max_tokens=500)
     return llm
 
 # Define the Streamlit app
@@ -89,7 +89,7 @@ def app():
             #st.markdown("### Prompt:")
             #st.write(prompt)
                         
-            llm = load_LLM(["OPENAI_API_KEY"])
+            llm = load_LLM("OPENAI_API_KEY")
             
             prompt_wardley_ai = prompt.format(question=question, map=map_data)
             response = llm(prompt_wardley_ai)
