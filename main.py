@@ -47,7 +47,7 @@ QUESTION: {question}
 """
 def load_LLM(openai_api_key):
     """Logic for loading the chain you want to use should go here."""
-    llm = OpenAI(temperature=0.7, openai_api_key, max_tokens=500)
+    llm = OpenAI(temperature=0.7, openai_api_key)
     return llm
 
 # Define the Streamlit app
