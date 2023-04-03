@@ -134,7 +134,7 @@ prompt = PromptTemplate(
 
 llm = load_LLM(OPENAI_API_KEY)
 
-st.write (st.session_state.map_data)
+#st.write (st.session_state.map_data)
 
 #prompt_wardley_ai = prompt.format(question=question, map=st.session_state.map_data)
 
