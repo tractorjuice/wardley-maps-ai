@@ -115,13 +115,12 @@ prompt = PromptTemplate(
 )
 
 llm = load_LLM(OPENAI_API_KEY)
-prompt_wardley_ai = prompt.format(question=question, map=new_map)
+#prompt_wardley_ai = prompt.format(question=question, map=new_map)
 
 if st.button("Send"):
 	with st.spinner("Generating response..."):
 
-		response = llm(prompt_wardley_ai)
-		
+		response = llm(prompt_wardley_ai)		
 		text.text_area("Messages", response, height=300)
 
 if st.button("Clear"):
