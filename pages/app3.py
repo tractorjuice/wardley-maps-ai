@@ -102,6 +102,7 @@ if st.button("Load Map"):
 		
 		for line in map_data:
 			x_y = re.findall("\[(.*?)\]", line)
+			st.write (x_y)
 			if x_y:
 				match = x_y[0]
 				match = match.split(sep = ",")
