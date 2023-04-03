@@ -87,7 +87,7 @@ if st.button("Send"):
         #st.session_state["messages"] += [
         #    {"role": "system", "content": message_response}
         #]
-        show_messages(text)
+        #show_messages(text)
         text.text_area("Messages", response, height=250)
 
 if st.button("Clear"):
