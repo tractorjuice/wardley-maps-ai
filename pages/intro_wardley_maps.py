@@ -68,6 +68,7 @@ st.video('https://youtu.be/L3wgzl2iUR4')
 
 text = st.empty()
 show_messages(text)
+st.write (st.session_state["messages"][1:])
 
 prompt = st.text_input("Prompt", value="What is this video about?")
 
