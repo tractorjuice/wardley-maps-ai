@@ -95,6 +95,7 @@ if st.button("Load Map"):
 	# Check if the map was found
 	if response.status_code == 200:
 		map_data = response.json()
+		st.session_state.map_data=map_data
 		
 		st.write ("#Wardley Map")
 		st.write (map_data)
@@ -133,7 +134,7 @@ prompt = PromptTemplate(
 )
 
 llm = load_LLM(OPENAI_API_KEY)
-prompt_wardley_ai = prompt.format(question=question, map=map_data)
+prompt_wardley_ai = prompt.format(question=question, map=st.session_state.map_data)
 
 if st.button("Send"):
 	with st.spinner("Generating response..."):
