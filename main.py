@@ -14,6 +14,5 @@ st.markdown(
     of what Streamlit can do!
     ### Want to learn more?
     - Check out [Twitter thread](https://twitter.com/mcraddock/status/1641537955507347476)
-    ![alt text](prompt-engineering-wardley.png "Tweet")
 """
 )
