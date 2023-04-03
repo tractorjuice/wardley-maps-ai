@@ -12,11 +12,11 @@ BASE_PROMPT = [{"role": "system", "content": "You are a helpful assistant."}]
 #if "messages" not in st.session_state:
 #    st.session_state["messages"] = BASE_PROMPT
     
-#def show_messages(text):
-#    messages_str = [
-#        f"{_['role']}: {_['content']}" for _ in st.session_state["messages"][1:]
-#   ]
-#    text.text_area("Messages", value=str("\n".join(messages_str)), height=250)
+def show_messages(text):
+    messages_str = [
+        f"{_['role']}: {_['content']}" for _ in st.session_state["messages"][1:]
+    ]
+    text.text_area("Messages", value=str("\n".join(messages_str)), height=250)
 
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 
@@ -83,12 +83,12 @@ if st.button("Send"):
         #response = index.query(messages=st.session_state["messages"])
         #st.write (response)
         
-        #message_response = response["choices"][0]["message"]["content"]
-        #st.session_state["messages"] += [
-        #    {"role": "system", "content": message_response}
-        #]
-        #show_messages(text)
-        #text.text_area("Messages", response, height=250)
+        message_response = response["choices"][0]["message"]["content"]
+        st.session_state["messages"] += [
+            {"role": "system", "content": message_response}
+        ]
+        show_messages(text)
+        text.text_area("Messages", response, height=250)
 
 if st.button("Clear"):
     st.session_state["messages"] = BASE_PROMPT
