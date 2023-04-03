@@ -86,12 +86,12 @@ if st.button("Send"):
         #response = index.query(prompt)
         #response = index.query(messages=st.session_state["messages"])
         
-        ##message_response = response["choices"][0]["message"]["content"]
-        #st.session_state["messages"] += [
-        #    {"role": "system", "content": message_response}
-        #]
-        #show_messages(text)
-        #text.text_area("Messages", response, height=250)
+        #message_response = response["choices"][0]["message"]["content"]
+        st.session_state["messages"] += [
+            {"role": "system", "content": message_response}
+        ]
+        show_messages(text)
+        text.text_area("Messages", response, height=250)
 
 if st.button("Clear"):
     st.session_state["messages"] = BASE_PROMPT
