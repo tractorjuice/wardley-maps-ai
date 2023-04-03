@@ -11,7 +11,7 @@ def show_messages(text):
     messages_str = [
         f"{_['role']}: {_['content']}" for _ in st.session_state["messages"][1:]
     ]
-    text.text_area("Messages", value=str("\n".join(messages_str)), height=300)
+    text.text_area("Messages", value=str("\n".join(messages_str)), height=250)
 
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 BASE_PROMPT = [{"role": "system", "content": "You are a helpful assistant."}]
@@ -72,20 +72,20 @@ prompt = st.text_input("Prompt", value="What is this video about?")
 
 if st.button("Send"):
     with st.spinner("Generating response..."):
-
-        # st.session_state["messages"] += [{"role": "user", "content": prompt}]
-        # response = openai.ChatCompletion.create(
-        #    model="gpt-3.5-turbo", messages=st.session_state["messages"]
-        #)
+        
+        st.session_state["messages"] += [{"role": "user", "content": prompt}]
+        response = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo", messages=st.session_state["messages"]
+        )
         
         response = index.query(prompt)
         
-        # message_response = response["choices"][0]["message"]["content"]
-        # st.session_state["messages"] += [
-        #    {"role": "system", "content": message_response}
-        #]
-        # show_messages(text)
-        text.text_area("Messages", response, height=300)
+        message_response = response["choices"][0]["message"]["content"]
+        st.session_state["messages"] += [
+            {"role": "system", "content": message_response}
+        ]
+        show_messages(text)
+        text.text_area("Messages", response, height=250)
 
 if st.button("Clear"):
     st.session_state["messages"] = BASE_PROMPT
