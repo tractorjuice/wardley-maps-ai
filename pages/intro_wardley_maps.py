@@ -8,12 +8,12 @@ from pathlib import Path
 from gpt_index import download_loader
 
 BASE_PROMPT = [{"role": "system", "content": "You are a helpful assistant."}]
-st.write (BASE_PROMPT)
+#st.write (BASE_PROMPT)
 
 if "messages" not in st.session_state:
     st.session_state["messages"] = BASE_PROMPT
     
-st.write (st.session_state["messages"])
+#st.write (st.session_state["messages"])
     
 def show_messages(text):
     messages_str = [
