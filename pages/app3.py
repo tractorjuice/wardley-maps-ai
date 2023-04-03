@@ -71,6 +71,11 @@ QUESTION: {question}
     YOUR RESPONSE:
 """
 
+BASE_PROMPT = [{"role": "system", "content": "You are a helpful assistant."}]
+
+if "messages" not in st.session_state:
+	st.session_state["messages"] = BASE_PROMPT
+
 def load_LLM(openai_api_key):
 	"""Logic for loading the chain you want to use should go here."""
 	llm = OpenAI(temperature=0.7, openai_api_key=OPENAI_API_KEY, max_tokens=500)
@@ -82,8 +87,6 @@ def show_messages(text):
 	]
 	st.write (messages_str)
 	text.text_area("Messages", value=str("\n".join(messages_str)), height=300)
-
-BASE_PROMPT = [{"role": "system", "content": "You are a helpful assistant."}]
 
 # Define the form to enter the map ID
 map_id = st.text_input("Enter the ID of the Wardley Map: For example https://onlinewardleymaps.com/#clone:OXeRWhqHSLDXfOnrfI, enter: OXeRWhqHSLDXfOnrfI", value="OXeRWhqHSLDXfOnrfI")
@@ -123,9 +126,6 @@ if st.button("Load Map"):
 				#st.write ("#New Wardley Map")
 			else:
 				st.error("Map not found. Please enter a valid ID.")
-
-if "messages" not in st.session_state:
-	st.session_state["messages"] = BASE_PROMPT
 
 text = st.empty()
 show_messages(text)
