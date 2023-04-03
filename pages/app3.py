@@ -86,7 +86,7 @@ BASE_PROMPT = [{"role": "system", "content": "You are a helpful assistant."}]
 map_id = st.text_input("Enter the ID of the Wardley Map: For example https://onlinewardleymaps.com/#clone:OXeRWhqHSLDXfOnrfI, enter: OXeRWhqHSLDXfOnrfI", value="OXeRWhqHSLDXfOnrfI")
 
 # Load the map data when the user submits the form
-if st.button("Ask Question to Wardley AI"):
+if st.button("Load Map"):
 	# Fetch the map data from the API
 	url = f"https://api.onlinewardleymaps.com/v1/maps/fetch?id={map_id}"
 	response = requests.get(url)
