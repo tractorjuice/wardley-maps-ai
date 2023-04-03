@@ -53,6 +53,8 @@ component Google Search [0.54, 0.83]
 component Storage [0.50, 0.74]
 component Use Cases [0.95, 0.43]
 component Question Answer Private Data [0.93, 0.37] label [-83, 0]
+component Gaurdrails [0.71, 0.50]
+component Ethics [0.69, 0.72]
 
 //pipeline Use Cases [0.3, 0.8]
 pipeline Prompt Techniques [0.3, 0.6]
@@ -73,8 +75,12 @@ Use Cases -> Question Answer Private Data
 Question Answer -> Chains
 Question Answer -> Fine Tuning
 
+//Ethics
+Ethics -> Gaurdrails
+
 Prompt Templates -> LLMs
 Prompt Templates -> Vector
+Prompt Techniques -> Gaurdrails
 
 Chat Question Answer -> Convertation History
 Convertation History -> Memory
@@ -146,12 +152,13 @@ evolve Agents 0.75 label [-25, 25]
 style wardley
 
 // Notes about the Wardley Map
-note Demand for private data use will increase [0.51, 0.20]
+note Demand for private data use will increase [0.52, 0.21]
 note Select based on use case [0.28, 0.49]
 note Prompt Templates bundles $$$ starting to emerge [0.64, 0.70]
 note Many agents available today [0.68, 0.45]
 note Select based on use case [0.45, 0.52]
 note Select based on use case [0.34, 0.60]
+note Guardrails are critical as they support compliance with ethics policies [0.70, 0.50]
 
 annotations [0.08, 0.01]
 annotation 1,[0.08,0.79] Components not in final positions
@@ -161,3 +168,5 @@ annotation 4,[0.08,0.79] Memory is the capacity of remembering previous interact
 annotation 5,[0.08,0.79] Critical in getting external data not in current LLMs (E.g Google Search)
 annotation 6,[0.08,0.79] Lite LLMs can run locally, or trained for $600 and fine tuned
 annotation 7,[0.08,0.49] Multiple Techniques available, select best fit for use case
+
+
