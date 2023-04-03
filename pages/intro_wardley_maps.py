@@ -67,7 +67,7 @@ st.sidebar.markdown("Current Version: 0.0.2")
 st.video('https://youtu.be/L3wgzl2iUR4') 
 
 text = st.empty()
-show_messages(text)
+#show_messages(text)
 
 prompt = st.text_input("Prompt", value="What is this video about?")
 
