@@ -101,6 +101,8 @@ if st.button("Load Map"):
 		#st.write (st.session_state.map_data)
 		
 		for line in map_data:
+			st.write(line)
+			
 			x_y = re.findall("\[(.*?)\]", line)
 			st.write (x_y)
 			if x_y:
@@ -116,7 +118,7 @@ if st.button("Load Map"):
 				st.write (line)
 		
 		#Debug
-		st.write ("#New Wardley Map")
+		#st.write ("#New Wardley Map")
 	else:
 		st.error("Map not found. Please enter a valid ID.")
 
