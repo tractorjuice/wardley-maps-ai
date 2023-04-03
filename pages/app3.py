@@ -4,10 +4,10 @@ from langchain.prompts import PromptTemplate
 from langchain.llms import OpenAI
 from langchain.chat_models import ChatOpenAI
 from langchain.prompts.chat import (
-    ChatPromptTemplate,
-    SystemMessagePromptTemplate,
-    AIMessagePromptTemplate,
-    HumanMessagePromptTemplate,
+	ChatPromptTemplate,
+	SystemMessagePromptTemplate,
+	AIMessagePromptTemplate,
+	HumanMessagePromptTemplate,
 )
 import llama_index
 from llama_index import LLMPredictor, GPTSimpleVectorIndex, PromptHelper
@@ -15,9 +15,9 @@ import os
 from pathlib import Path
 from gpt_index import download_loader
 from langchain.schema import (
-    AIMessage,
-    HumanMessage,
-    SystemMessage
+	AIMessage,
+	HumanMessage,
+	SystemMessage
 )
 
 API_ENDPOINT = "https://api.onlinewardleymaps.com/v1/maps/fetch?id="
@@ -70,15 +70,15 @@ QUESTION: {question}
     YOUR RESPONSE:
 """
 def load_LLM(openai_api_key):
-    """Logic for loading the chain you want to use should go here."""
-    llm = OpenAI(temperature=0.7, openai_api_key=OPENAI_API_KEY, max_tokens=500)
-    return llm
+	"""Logic for loading the chain you want to use should go here."""
+	llm = OpenAI(temperature=0.7, openai_api_key=OPENAI_API_KEY, max_tokens=500)
+	return llm
 
 def show_messages(text):
-    messages_str = [
-        f"{_['role']}: {_['content']}" for _ in st.session_state["messages"][1:]
-    ]
-    text.text_area("Messages", value=str("\n".join(messages_str)), height=300)
+	messages_str = [
+		f"{_['role']}: {_['content']}" for _ in st.session_state["messages"][1:]
+	]
+	text.text_area("Messages", value=str("\n".join(messages_str)), height=300)
 
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 BASE_PROMPT = [{"role": "system", "content": "You are a helpful assistant."}]
@@ -93,17 +93,17 @@ if len(question.split(" ")) > 700:
 # Load the map data when the user submits the form
 if st.button("Ask Question to Wardley AI"):
 	# Fetch the map data from the API
-    url = f"https://api.onlinewardleymaps.com/v1/maps/fetch?id={map_id}"
-    response = requests.get(url)
+	url = f"https://api.onlinewardleymaps.com/v1/maps/fetch?id={map_id}"
+	response = requests.get(url)
 
 	# Check if the map was found
 	if response.status_code == 200:
 		map_data = response.json()
 
-        # Display the map
-        #st.write(map_data)
+		# Display the map
+		#st.write(map_data)
             
-        prompt = PromptTemplate(
+		prompt = PromptTemplate(
 			input_variables=["map", "question"],
 			template=template,
 		)
