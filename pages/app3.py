@@ -116,7 +116,7 @@ if st.button("Load Map"):
 		
 		#Debug
 		st.write ("#New Wardley Map")
-		#st.write (new_line)
+		st.write (st.session_state.map_data)
 	else:
 		st.error("Map not found. Please enter a valid ID.")
 
