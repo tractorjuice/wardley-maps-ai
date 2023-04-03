@@ -78,21 +78,21 @@ prompt = st.text_input("Prompt", value="What is this video about?")
 if st.button("Send"):
     with st.spinner("Generating response..."):
         
-        st.session_state["messages"] += [{"role": "user", "content": prompt}]
+        #st.session_state["messages"] += [{"role": "user", "content": prompt}]
         #response = openai.ChatCompletion.create(
         #    model="gpt-3.5-turbo", messages=st.session_state["messages"]
         #)
         
-        #response = index.query(prompt)
-        response = index.query(messages=st.session_state["messages"])
-        st.write (response)
+        response = index.query(prompt)
+        #response = index.query(messages=st.session_state["messages"])
+        #st.write (response)
         
         #message_response = response["choices"][0]["message"]["content"]
-        st.session_state["messages"] += [
-            {"role": "system", "content": message_response}
-        ]
-        show_messages(text)
-        text.text_area("Messages", response, height=250)
+        #st.session_state["messages"] += [
+        #    {"role": "system", "content": message_response}
+        #]
+        #show_messages(text)
+        #text.text_area("Messages", response, height=250)
 
 if st.button("Clear"):
     st.session_state["messages"] = BASE_PROMPT
