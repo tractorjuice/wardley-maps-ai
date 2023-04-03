@@ -83,10 +83,10 @@ if st.button("Send"):
         #response = index.query(messages=st.session_state["messages"])
         #st.write (response)
         
-        message_response = response["choices"][0]["message"]["content"]
-        st.session_state["messages"] += [
-            {"role": "system", "content": message_response}
-        ]
+        #message_response = response["choices"][0]["message"]["content"]
+        #st.session_state["messages"] += [
+        #    {"role": "system", "content": message_response}
+        #]
         show_messages(text)
         text.text_area("Messages", response, height=250)
 
