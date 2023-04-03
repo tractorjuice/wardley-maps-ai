@@ -10,8 +10,7 @@ st.sidebar.success("Select a demo above.")
 
 st.markdown(
     """
-    **Select a demo from the sidebar** to see some examples
-    of what Streamlit can do!
+    **Select a demo from the sidebar** to see how you can use AI with Wardley Maps.
     ### Want to learn more?
     - Check out [Twitter thread](https://twitter.com/mcraddock/status/1641537955507347476)
 """
