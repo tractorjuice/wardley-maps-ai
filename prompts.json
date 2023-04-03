@@ -1,5 +1,5 @@
 {
     "_type": "prompt",
-    "input_variables": ["adjective", "content"],
-    "template": "Tell me a {adjective} joke about {content}."
+    "input_variables": ["wardleymap"],
+    "template": "This is a Wardley Map. {wardleymap}"
 }
