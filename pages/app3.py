@@ -80,7 +80,6 @@ def show_messages(text):
 	]
 	text.text_area("Messages", value=str("\n".join(messages_str)), height=300)
 
-openai.api_key = st.secrets["OPENAI_API_KEY"]
 BASE_PROMPT = [{"role": "system", "content": "You are a helpful assistant."}]
 
 # Define the form to enter the map ID
