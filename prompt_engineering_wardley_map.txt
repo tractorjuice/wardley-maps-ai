@@ -1,7 +1,7 @@
 title Prompt Engineering
 anchor Prompt Engineer [0.97, 0.19]
 
-component Prompt Techniques [0.75, 0.54] label [-17, -38]
+component Techniques [0.75, 0.54] label [-38, -16]
 component Chunks [0.39, 0.62] label [-17, 23]
 component Text Splitter [0.34, 0.67]
 component Embedding [0.45, 0.59]
@@ -57,7 +57,7 @@ component Gaurdrails [0.71, 0.50]
 component Ethics [0.69, 0.72]
 
 //pipeline Use Cases [0.3, 0.8]
-pipeline Prompt Techniques [0.3, 0.6]
+pipeline Techniques [0.1, 0.6]
 pipeline Vector DB [0.40, 0.7]
 pipeline Text Splitter [0.50, 0.8]
 pipeline Embedding [0.30, 0.8]
@@ -80,13 +80,13 @@ Ethics -> Gaurdrails
 
 Prompt Templates -> LLMs
 Prompt Templates -> Vector
-Prompt Techniques -> Gaurdrails
+Techniques -> Gaurdrails
 
 Chat Question Answer -> Convertation History
 Convertation History -> Memory
 
 // TO DO: Add Self reflection capabilities to the Wardley Map
-//component Self Reflection [0.71, 0.07] label [-29, 15]
+component Self Reflection [0.74, 0.13] label [-29, 15]
 //Self Reflection -> Dynamic Memory
 //component Dynamic Memory [0.62, 0.16] label [-56, -14]
 //evolve Dynamic Memory 0.25 label [-25, 25]
