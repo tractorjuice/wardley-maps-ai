@@ -134,7 +134,7 @@ prompt = PromptTemplate(
 )
 
 llm = load_LLM(OPENAI_API_KEY)
-prompt_wardley_ai = prompt.format(question=question, map=st.session_state.map_data)
+#prompt_wardley_ai = prompt.format(question=question, map=st.session_state.map_data)
 
 if st.button("Send"):
 	with st.spinner("Generating response..."):
