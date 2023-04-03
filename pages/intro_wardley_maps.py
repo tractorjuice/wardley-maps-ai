@@ -86,7 +86,7 @@ if st.button("Send"):
         #    {"role": "system", "content": message_response}
         #]
         #show_messages(text)
-        text.text_area("Messages", response, height=250)
+        #text.text_area("Messages", response, height=250)
 
 if st.button("Clear"):
     st.session_state["messages"] = BASE_PROMPT
