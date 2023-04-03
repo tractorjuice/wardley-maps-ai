@@ -7,6 +7,8 @@ import os
 from pathlib import Path
 from gpt_index import download_loader
 
+BASE_PROMPT = [{"role": "system", "content": "You are a helpful assistant."}]
+
 if "messages" not in st.session_state:
     st.session_state["messages"] = BASE_PROMPT
     
@@ -17,7 +19,6 @@ def show_messages(text):
     text.text_area("Messages", value=str("\n".join(messages_str)), height=250)
 
 openai.api_key = st.secrets["OPENAI_API_KEY"]
-BASE_PROMPT = [{"role": "system", "content": "You are a helpful assistant."}]
 
 YoutubeTranscriptReader = download_loader("YoutubeTranscriptReader")
 loader = YoutubeTranscriptReader()
