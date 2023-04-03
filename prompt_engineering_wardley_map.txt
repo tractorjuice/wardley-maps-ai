@@ -187,7 +187,7 @@ annotation 1,[0.08,0.79] Components not in final positions
 annotation 2,[0.08,0.79] Components not in final positions
 annotation 3,[0.08,0.79] Components not in final positions
 annotation 4,[0.08,0.79] Memory is the capacity of remembering previous interactions with the user. Critical for ChatBots
-annotation 5,[0.08,0.79] Critical in getting external data not in current LLMs (E.g Google Search)
+annotation 5,[0.08,0.79] Focus here. Critical in getting external data not in current LLMs (E.g Google Search)
 annotation 6,[0.08,0.79] Lite LLMs can run locally, or trained for $600 and fine tuned
 annotation 7,[0.08,0.49] Multiple Techniques available, select best fit for use case
 //annotation 8,[0.08,0.49] [Link text Here](https://link-url-here.org)
