@@ -24,8 +24,8 @@ component Alpaca [0.12, 0.66] label [-60, 5]
 component Laptop [0.04, 0.66] label [-26, 20]
 component Vector [0.48, 0.58] label [13, 3]
 component Private Data [0.53, 0.27] label [-53, -12]
-component Metadata [0.58, 0.32] label [13, -3]
-component Fine Tuning [0.74, 0.37] label [-22, 22]
+component Metadata [0.56, 0.35] label [13, -3]
+component Fine Tuning [0.74, 0.37] label [-34, 21]
 component Prompt Templates [0.63, 0.69] label [-29, 11]
 component Chroma [0.25, 0.57] label [-25, 25]
 component Propriety [0.20, 0.23] label [-31, -27]
@@ -94,6 +94,7 @@ Chains -> Agents
 Agents -> Tools
 Agents -> Custom Agents
 Agents -> Memory
+Agents -> Private Data
 Custom Agents -> Private Data
 
 Memory -> Storage
@@ -151,16 +152,16 @@ evolve Agents 0.75 label [-25, 25]
 style wardley
 
 // Notes about the Wardley Map
-note Demand for private data use will increase [0.52, 0.21]
+note Demand for private data will increase [0.52, 0.21]
 note Select based on use case [0.28, 0.49]
 note Prompt Templates bundles $$$ starting to emerge [0.64, 0.70]
 note Many agents available today [0.68, 0.40]
 note Select based on use case [0.45, 0.52]
 note Select based on use case [0.34, 0.60]
-note Guardrails are critical as they support compliance with ethics policies [0.70, 0.50]
+note Support compliance with ethics policies [0.70, 0.47]
 note (Codify Chain of Thought) [0.72, 0.42]
 // [DERA] (https://arxiv.org/pdf/2303.17071v1.pdf)
-note See DERA Dialog-Enabled Resolving Agents [0.70, 0.08]
+note See DERA Dialog-Enabled Resolving Agents [0.71, 0.08]
 // HuggingGPT: Solving AI Tasks with ChatGPT and its Friends in HuggingFace https://arxiv.org/pdf/2303.17580.pdf
 
 annotations [0.08, 0.01]
