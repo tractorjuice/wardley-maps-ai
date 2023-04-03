@@ -7,6 +7,9 @@ import os
 from pathlib import Path
 from gpt_index import download_loader
 
+if "messages" not in st.session_state:
+    st.session_state["messages"] = BASE_PROMPT
+    
 def show_messages(text):
     messages_str = [
         f"{_['role']}: {_['content']}" for _ in st.session_state["messages"][1:]
@@ -61,9 +64,6 @@ st.sidebar.markdown("Current Version: 0.0.2")
 #print(response)
 
 st.video('https://youtu.be/L3wgzl2iUR4') 
-
-if "messages" not in st.session_state:
-    st.session_state["messages"] = BASE_PROMPT
 
 text = st.empty()
 show_messages(text)
