@@ -116,7 +116,7 @@ if st.button("Send"):
 		prompt_wardley_ai = prompt.format(question=question, map=map_data)
 		response = llm(prompt_wardley_ai)
         
-        text.text_area("Messages", response, height=300)
+        	text.text_area("Messages", response, height=300)
 
 if st.button("Clear"):
     st.session_state["messages"] = BASE_PROMPT
