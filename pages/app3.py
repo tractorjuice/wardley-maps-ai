@@ -70,6 +70,7 @@ QUESTION: {question}
     
     YOUR RESPONSE:
 """
+
 def load_LLM(openai_api_key):
 	"""Logic for loading the chain you want to use should go here."""
 	llm = OpenAI(temperature=0.7, openai_api_key=OPENAI_API_KEY, max_tokens=500)
@@ -96,9 +97,8 @@ if st.button("Load Map"):
 	if response.status_code == 200:
 		map_data = response.json()
 		st.session_state.map_data=map_data
-		
 		st.write ("#Wardley Map")
-		st.write (map_data)
+		#st.write (st.session_state.map_data)
 		
 		for line in map_data:
 			x_y = re.findall("\[(.*?)\]", line)
@@ -116,7 +116,6 @@ if st.button("Load Map"):
 		
 		#Debug
 		st.write ("#New Wardley Map")
-		st.write (st.session_state.map_data)
 	else:
 		st.error("Map not found. Please enter a valid ID.")
 
