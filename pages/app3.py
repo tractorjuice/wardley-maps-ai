@@ -106,15 +106,15 @@ show_messages(text)
 question = st.text_input("Prompt", value="What is this Wardley Map about?")
 
 if st.button("Send"):
-    with st.spinner("Generating response..."):
-	prompt = PromptTemplate(
-		input_variables=["map", "question"],
-		template=template,
-	)
+	with st.spinner("Generating response..."):
+		prompt = PromptTemplate(
+			input_variables=["map", "question"],
+			template=template,
+		)
 	
-	llm = load_LLM(OPENAI_API_KEY)
-	prompt_wardley_ai = prompt.format(question=question, map=map_data)
-	response = llm(prompt_wardley_ai)
+		llm = load_LLM(OPENAI_API_KEY)
+		prompt_wardley_ai = prompt.format(question=question, map=map_data)
+		response = llm(prompt_wardley_ai)
         
         text.text_area("Messages", response, height=300)
 
