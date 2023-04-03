@@ -94,8 +94,12 @@ if st.button("Load Map"):
 	# Check if the map was found
 	if response.status_code == 200:
 		map_data = response.json()
+		
+		#Debug
+		st.write ("#Wardley Map")
+		st.write (map_Data)
 	else:
-        	st.error("Map not found. Please enter a valid ID.")
+		st.error("Map not found. Please enter a valid ID.")
 
 if "messages" not in st.session_state:
 	st.session_state["messages"] = BASE_PROMPT
