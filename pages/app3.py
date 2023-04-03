@@ -97,26 +97,26 @@ if st.button("Load Map"):
 	if response.status_code == 200:
 		map_data = response.json()
 		st.session_state.map_data=map_data
-		st.write ("#Wardley Map")
+		#st.write ("#Wardley Map")
 		#st.write (st.session_state.map_data)
 		
-		for line in map_data:
-			st.write(line)
-			
-			x_y = re.findall("\[(.*?)\]", line)
-			st.write (x_y)
-			if x_y:
-				match = x_y[0]
-				match = match.split(sep = ",")
-				match = match[::-1]
-				
-				new_xy = ('[' + match[0].strip() + ',' + match[1] + ']')
-				new_line = re.sub("\[(.*?)\]", new_xy, line, count = 1)
-				
-				st.write (line, new_line)
-			else:
-				st.write (line)
-		
+		#for line in map_data:
+		#	st.write(line)
+		#	
+		#	x_y = re.findall("\[(.*?)\]", line)
+		#	st.write (x_y)
+		#	if x_y:
+		#		match = x_y[0]
+		#		match = match.split(sep = ",")
+		#		match = match[::-1]
+		#		
+		#		new_xy = ('[' + match[0].strip() + ',' + match[1] + ']')
+		#		new_line = re.sub("\[(.*?)\]", new_xy, line, count = 1)
+		#		
+		#		st.write (line, new_line)
+		#	else:
+		#		st.write (line)
+		#
 		#Debug
 		#st.write ("#New Wardley Map")
 	else:
@@ -139,7 +139,7 @@ llm = load_LLM(OPENAI_API_KEY)
 
 #st.write (st.session_state.map_data)
 
-#prompt_wardley_ai = prompt.format(question=question, map=st.session_state.map_data)
+prompt_wardley_ai = prompt.format(question=question, map=st.session_state.map_data)
 
 if st.button("Send"):
 	with st.spinner("Generating response..."):
