@@ -124,7 +124,7 @@ if st.button("Ask Question to Wardley AI"):
 		st.markdown("### Response:")
 		st.write(response)
 	else:
-        st.error("Map not found. Please enter a valid ID.")
+        	st.error("Map not found. Please enter a valid ID.")
 
 if "messages" not in st.session_state:
 	st.session_state["messages"] = BASE_PROMPT
