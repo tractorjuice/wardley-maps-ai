@@ -97,7 +97,7 @@ if st.button("Load Map"):
 		
 		#Debug
 		st.write ("#Wardley Map")
-		st.write (map_Data)
+		st.write (map_data)
 	else:
 		st.error("Map not found. Please enter a valid ID.")
 
