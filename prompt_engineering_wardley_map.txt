@@ -56,6 +56,13 @@ component Question Answer Private Data [0.93, 0.37] label [-83, 0]
 component Gaurdrails [0.71, 0.50]
 component Ethics [0.69, 0.72]
 
+// Privacy Preserving Components
+// Concrete ML: Open-Source FHE-Based Toolkit That Helps in Preserving Privacy And Enables Secure Machine Learning
+//  https://research.facebook.com/blog/2022/10/mpc-based-machine-learning-achieving-end-to-end-privacy-preserving-machine-learning/
+component ConcreteML [0.31, 0.11]
+component PETs [0.49, 0.36]
+PETs -> Private Data
+
 pipeline Techniques [0.1, 0.6]
 pipeline Vector DB [0.40, 0.8]
 pipeline Text Splitter [0.50, 0.8]
