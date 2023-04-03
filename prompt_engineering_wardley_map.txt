@@ -135,6 +135,7 @@ note Demand for including private data will increase [0.51, 0.20]
 note Select based on use case [0.28, 0.49]
 note Prompt Templates bundles $$$ starting to emerge [0.64, 0.70]
 note Many agents available today [0.68, 0.45]
+note Select based on use case [0.45, 0.52]
 
 annotations [0.06, 0.01]
 annotation 1,[0.08,0.79] Components not in final positions
@@ -142,4 +143,6 @@ annotation 2,[0.08,0.79] Components not in final positions
 annotation 3,[0.08,0.79] Components not in final positions
 annotation 4,[0.08,0.79] Memory is the capacity of remembering previous interactions with the user. Critical for ChatBots
 annotation 5,[0.08,0.79] Critical in getting external data not in current LLMs (E.g Google Search)
+annotation 6,[0.08,0.79] Lite LLMs can run locally, or trained for $600 and fine tuned
+
 
