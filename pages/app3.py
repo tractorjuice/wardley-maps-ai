@@ -95,9 +95,26 @@ if st.button("Load Map"):
 	if response.status_code == 200:
 		map_data = response.json()
 		
-		#Debug
 		st.write ("#Wardley Map")
 		st.write (map_data)
+		
+		for line in map_data:
+			x_y = re.findall("\[(.*?)\]", line)
+			if x_y:
+				match = x_y[0]
+				match = match.split(sep = ",")
+				match = match[::-1]
+				
+				new_xy = ('[' + match[0].strip() + ',' + match[1] + ']')
+				new_line = re.sub("\[(.*?)\]", new_xy, line, count = 1)
+				
+				print(line, new_map)
+			else:
+				print(line, new_map)
+		
+		#Debug
+		st.write ("#Wardley Map")
+		st.write (new_map)
 	else:
 		st.error("Map not found. Please enter a valid ID.")
 
