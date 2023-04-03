@@ -111,7 +111,7 @@ if st.button("Load Map"):
 				
 				st.write (new_line)
 			else:
-				st_write (line)
+				st.write (line)
 		
 		#Debug
 		st.write ("#Wardley Map")
