@@ -80,6 +80,7 @@ def show_messages(text):
 	messages_str = [
 		f"{_['role']}: {_['content']}" for _ in st.session_state["messages"][1:]
 	]
+	st.write (message_str)
 	text.text_area("Messages", value=str("\n".join(messages_str)), height=300)
 
 BASE_PROMPT = [{"role": "system", "content": "You are a helpful assistant."}]
