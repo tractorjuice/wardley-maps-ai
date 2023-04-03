@@ -28,7 +28,7 @@ component Metadata [0.56, 0.35] label [13, -3]
 component Fine Tuning [0.74, 0.37] label [-34, 21]
 component Prompt Templates [0.63, 0.69] label [-29, 11]
 component Chroma [0.25, 0.57] label [-25, 25]
-component Propriety [0.20, 0.23] label [-36, 25]
+component Propriety Algos [0.20, 0.23] label [-36, 25]
 component Supabase [0.25, 0.48] label [-33, 25]
 component OpenAI [0.15, 0.81] label [5, -10]
 component API [0.13, 0.86]
@@ -55,6 +55,7 @@ component Use Cases [0.95, 0.43]
 component Question Answer Private Data [0.93, 0.37] label [-83, 0]
 component Gaurdrails [0.71, 0.50]
 component Ethics [0.69, 0.72]
+component Cost Management (MLOps/FinOps) [0.60, 0.48]
 
 // Privacy Preserving Components
 // Concrete ML: Open-Source FHE-Based Toolkit That Helps in Preserving Privacy And Enables Secure Machine Learning
@@ -85,7 +86,6 @@ Use Cases -> Question Answer with sources
 Use Cases -> Chat Question Answer
 Use Cases -> Question Answer Private Data
 
-
 //Question Answer -> Prompt Templates
 Question Answer -> Chains
 Question Answer -> Fine Tuning
@@ -97,6 +97,7 @@ Prompt Templates -> LLMs
 Prompt Templates -> Vector
 Techniques -> Gaurdrails
 Techniques -> Prompt Templates
+Techniques -> Cost Management (MLOps/FinOps)
 
 Chat Question Answer -> Convertation History
 Convertation History -> Memory
