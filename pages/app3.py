@@ -76,12 +76,6 @@ def load_LLM(openai_api_key):
 	llm = OpenAI(temperature=0.7, openai_api_key=OPENAI_API_KEY, max_tokens=500)
 	return llm
 
-def show_messages(text):
-	messages_str = [
-		f"{_['role']}: {_['content']}" for _ in st.session_state["messages"][1:]
-	]
-	text.text_area("Messages", value=str("\n".join(messages_str)), height=300)
-
 BASE_PROMPT = [{"role": "system", "content": "You are a helpful assistant."}]
 
 # Define the form to enter the map ID
@@ -89,38 +83,39 @@ map_id = st.text_input("Enter the ID of the Wardley Map: For example https://onl
 
 # Load the map data when the user submits the form
 if st.button("Load Map"):
-	# Fetch the map data from the API
-	url = f"https://api.onlinewardleymaps.com/v1/maps/fetch?id={map_id}"
-	response = requests.get(url)
-
-	# Check if the map was found
-	if response.status_code == 200:
-		map_data = response.json()
-		st.session_state.map_data=map_data
-		#st.write ("#Wardley Map")
-		#st.write (st.session_state.map_data)
-		
-		#for line in map_data:
-		#	st.write(line)
-		#	
-		#	x_y = re.findall("\[(.*?)\]", line)
-		#	st.write (x_y)
-		#	if x_y:
-		#		match = x_y[0]
-		#		match = match.split(sep = ",")
-		#		match = match[::-1]
-		#		
-		#		new_xy = ('[' + match[0].strip() + ',' + match[1] + ']')
-		#		new_line = re.sub("\[(.*?)\]", new_xy, line, count = 1)
-		#		
-		#		st.write (line, new_line)
-		#	else:
-		#		st.write (line)
-		#
-		#Debug
-		#st.write ("#New Wardley Map")
-	else:
-		st.error("Map not found. Please enter a valid ID.")
+		with st.spinner("Generating response..."):
+			# Fetch the map data from the API
+			url = f"https://api.onlinewardleymaps.com/v1/maps/fetch?id={map_id}"
+			response = requests.get(url)
+			
+			# Check if the map was found
+			if response.status_code == 200:
+				map_data = response.json()
+				st.session_state.map_data=map_data
+				#st.write ("#Wardley Map")
+				#st.write (st.session_state.map_data)
+				
+				#for line in map_data:
+				#	st.write(line)
+				#	
+				#	x_y = re.findall("\[(.*?)\]", line)
+				#	st.write (x_y)
+				#	if x_y:
+				#		match = x_y[0]
+				#		match = match.split(sep = ",")
+				#		match = match[::-1]
+				#		
+				#		new_xy = ('[' + match[0].strip() + ',' + match[1] + ']')
+				#		new_line = re.sub("\[(.*?)\]", new_xy, line, count = 1)
+				#		
+				#		st.write (line, new_line)
+				#	else:
+				#		st.write (line)
+				#
+				#Debug
+				#st.write ("#New Wardley Map")
+			else:
+				st.error("Map not found. Please enter a valid ID.")
 
 if "messages" not in st.session_state:
 	st.session_state["messages"] = BASE_PROMPT
