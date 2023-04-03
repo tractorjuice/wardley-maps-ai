@@ -76,6 +76,12 @@ def load_LLM(openai_api_key):
 	llm = OpenAI(temperature=0.7, openai_api_key=OPENAI_API_KEY, max_tokens=500)
 	return llm
 
+def show_messages(text):
+	messages_str = [
+		f"{_['role']}: {_['content']}" for _ in st.session_state["messages"][1:]
+	]
+	text.text_area("Messages", value=str("\n".join(messages_str)), height=300)
+
 BASE_PROMPT = [{"role": "system", "content": "You are a helpful assistant."}]
 
 # Define the form to enter the map ID
