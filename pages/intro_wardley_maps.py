@@ -9,14 +9,14 @@ from gpt_index import download_loader
 
 BASE_PROMPT = [{"role": "system", "content": "You are a helpful assistant."}]
 
-if "messages" not in st.session_state:
-    st.session_state["messages"] = BASE_PROMPT
+#if "messages" not in st.session_state:
+#    st.session_state["messages"] = BASE_PROMPT
     
-def show_messages(text):
-    messages_str = [
-        f"{_['role']}: {_['content']}" for _ in st.session_state["messages"][1:]
-    ]
-    text.text_area("Messages", value=str("\n".join(messages_str)), height=250)
+#def show_messages(text):
+#    messages_str = [
+#        f"{_['role']}: {_['content']}" for _ in st.session_state["messages"][1:]
+#    ]
+#    text.text_area("Messages", value=str("\n".join(messages_str)), height=250)
 
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 
@@ -67,7 +67,7 @@ st.sidebar.markdown("Current Version: 0.0.2")
 st.video('https://youtu.be/L3wgzl2iUR4') 
 
 text = st.empty()
-show_messages(text)
+#show_messages(text)
 
 prompt = st.text_input("Prompt", value="What is this video about?")
 
