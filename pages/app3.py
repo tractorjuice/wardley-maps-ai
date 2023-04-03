@@ -94,30 +94,6 @@ if st.button("Load Map"):
 	# Check if the map was found
 	if response.status_code == 200:
 		map_data = response.json()
-
-		# Display the map
-		#st.write(map_data)
-            
-		prompt = PromptTemplate(
-			input_variables=["map", "question"],
-			template=template,
-		)
-		
-		#st.markdown("### Prompt:")
-		#st.write(prompt)
-		
-		llm = load_LLM(OPENAI_API_KEY)
-		prompt_wardley_ai = prompt.format(question=question, map=map_data)
-		response = llm(prompt_wardley_ai)
-		
-		#st.markdown("### Input Prompt:")
-		#st.write(prompt_wardley_ai)
-		
-		#st.markdown("### Question:")
-		#st.write(question)
-		
-		st.markdown("### Response:")
-		st.write(response)
 	else:
         	st.error("Map not found. Please enter a valid ID.")
 
@@ -127,23 +103,19 @@ if "messages" not in st.session_state:
 text = st.empty()
 show_messages(text)
 
-prompt = st.text_input("Prompt", value="What is this Wardley Map about?")
+question = st.text_input("Prompt", value="What is this Wardley Map about?")
 
 if st.button("Send"):
     with st.spinner("Generating response..."):
-
-        # st.session_state["messages"] += [{"role": "user", "content": prompt}]
-        # response = openai.ChatCompletion.create(
-        #    model="gpt-3.5-turbo", messages=st.session_state["messages"]
-        #)
+	prompt = PromptTemplate(
+		input_variables=["map", "question"],
+		template=template,
+	)
+	
+	llm = load_LLM(OPENAI_API_KEY)
+	prompt_wardley_ai = prompt.format(question=question, map=map_data)
+	response = llm(prompt_wardley_ai)
         
-        response = index.query(prompt)
-        
-        # message_response = response["choices"][0]["message"]["content"]
-        # st.session_state["messages"] += [
-        #    {"role": "system", "content": message_response}
-        #]
-        # show_messages(text)
         text.text_area("Messages", response, height=300)
 
 if st.button("Clear"):
