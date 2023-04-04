@@ -43,8 +43,8 @@ component Vector Search Algos [0.21, 0.55] label [-61, -45]
 component Public Data [0.10, 0.88]
 component Compute [0.05, 0.75]
 component University Research [0.20, 0.13] label [-24, 12]
-component PDF [0.33, 0.72] label [2, 20]
-component Text [0.33, 0.77] label [-11, -23]
+component PDF [0.33, 0.74] label [-21, 24]
+component Text [0.33, 0.77] label [-18, 23]
 component Weaviate [0.25, 0.62] label [-23, 24]
 component Dolly [0.15, 0.64]
 component HuggingFace [0.14, 0.76] label [-34, 25]
@@ -55,7 +55,9 @@ component Use Cases [0.95, 0.43]
 component Question Answer Private Data [0.93, 0.37] label [-83, 0]
 component Gaurdrails [0.71, 0.50]
 component Ethics [0.69, 0.72]
-component Cost Management (MLOps/FinOps) [0.60, 0.48]
+component FinOps [0.60, 0.48]
+component MLOps [0.59, 0.44] label [-44, 16]
+component DataOps [0.47, 0.49] label [-48, 21]
 
 // Privacy Preserving Components
 // Concrete ML: Open-Source FHE-Based Toolkit That Helps in Preserving Privacy And Enables Secure Machine Learning
@@ -113,6 +115,9 @@ Agents -> Tools
 Agents -> Custom Agents
 Agents -> Memory
 Agents -> Private Data
+Agents -> MLOps
+Agents -> FinOps
+Agents -> DataOps
 Custom Agents -> Private Data
 
 Memory -> Storage
@@ -138,6 +143,7 @@ Vector DB -> Vector Search Algos
 Source Metadata -> Text Splitter
 Private Data -> Vector
 Private Data -> Metadata
+Private Data -> DataOps
 Metadata -> Vector
 
 VectorQA with sources -> Metadata
@@ -178,16 +184,18 @@ note Select based on use case [0.45, 0.52]
 note Select based on use case [0.34, 0.60]
 note Support compliance with ethics policies [0.70, 0.47]
 note (Codify Chain of Thought) [0.72, 0.42]
+note Token Cost Management [0.59, 0.47]
+note Repeatable Analytical Pipelines [0.57, 0.39]
 // [DERA] (https://arxiv.org/pdf/2303.17071v1.pdf)
 note See DERA Dialog-Enabled Resolving Agents [0.71, 0.08]
 // HuggingGPT: Solving AI Tasks with ChatGPT and its Friends in HuggingFace https://arxiv.org/pdf/2303.17580.pdf
 
 annotations [0.08, 0.01]
-annotation 1,[0.08,0.79] Components not in final positions
-annotation 2,[0.08,0.79] Components not in final positions
-annotation 3,[0.08,0.79] Components not in final positions
-annotation 4,[0.08,0.79] Memory is the capacity of remembering previous interactions with the user. Critical for ChatBots
-annotation 5,[0.08,0.79] Focus here. Critical in getting external data not in current LLMs (E.g Google Search)
-annotation 6,[0.08,0.79] Lite LLMs can run locally, or trained for $600 and fine tuned
-annotation 7,[0.08,0.49] Multiple Techniques available, select best fit for use case
+annotation 1,[0.74,0.08] Components not in final positions
+annotation 2,[0.444,0.28] Components not in final positions
+annotation 3,[0.2, 0.08] Components not in final positions
+annotation 4,[0.59,0.56] Memory is the capacity of remembering previous interactions with the user. Critical for ChatBots
+annotation 5,[0.64,0.45] Focus here. Critical in getting external data not in current LLMs (E.g Google Search)
+annotation 6,[0.1,0.68] Lite LLMs can run locally, or trained for $600 and fine tuned
+annotation 7,[0.78,0.56] Multiple Techniques available, select best fit for use case
 //annotation 8,[0.08,0.49] [Link text Here](https://link-url-here.org)
