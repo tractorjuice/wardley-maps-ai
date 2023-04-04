@@ -55,9 +55,14 @@ component Use Cases [0.95, 0.43]
 component Question Answer Private Data [0.93, 0.37] label [-83, 0]
 component Gaurdrails [0.71, 0.50]
 component Ethics [0.69, 0.72]
-component FinOps [0.60, 0.48]
+component FinOps [0.59, 0.51] label [16, 4]
 component MLOps [0.59, 0.44] label [-44, 16]
 component DataOps [0.47, 0.49] label [-48, 21]
+
+//pioneers, Settlers, Town Planners
+//pioneers [0.80, 0.37, 0.60, 0.59]
+
+//component Human-in-the-loop (HITL) [0.13, 0.04]
 
 // Privacy Preserving Components
 // Concrete ML: Open-Source FHE-Based Toolkit That Helps in Preserving Privacy And Enables Secure Machine Learning
@@ -69,11 +74,12 @@ component DataOps [0.47, 0.49] label [-48, 21]
 //component Zero-Knowledge Proofs
 //component Private Information Retrieval
 //component Private Set Intersection (PSI)
-component ConcreteML [0.38, 0.35]
+component ConcreteML [0.38, 0.35] label [-43, 19]
 component PETs [0.49, 0.36]
-component PETs Embedding [0.44, 0.32] label [-50, 29]
+component Embedding PETs [0.44, 0.32] label [-50, 29]
 PETs -> Private Data
 PETs -> ConcreteML
+PETs -> Embedding PETs
 
 pipeline Techniques [0.1, 0.6]
 pipeline Vector DB [0.40, 0.8]
@@ -171,6 +177,7 @@ API -> HuggingFace
 
 evolve Prompt Templates 0.84 label [-23, 14]
 evolve Agents 0.75 label [-25, 25]
+evolve Convertation History 0.66 label [-23, 10]
 //evolve Memory 0.75 label [-25, 25]
 
 style wardley
@@ -184,11 +191,12 @@ note Select based on use case [0.45, 0.52]
 note Select based on use case [0.34, 0.60]
 note Support compliance with ethics policies [0.70, 0.47]
 note (Codify Chain of Thought) [0.72, 0.42]
-note Token Cost Management [0.59, 0.47]
+note Token Cost Management [0.58, 0.49]
 note Repeatable Analytical Pipelines [0.57, 0.39]
 // [DERA] (https://arxiv.org/pdf/2303.17071v1.pdf)
 note See DERA Dialog-Enabled Resolving Agents [0.71, 0.08]
 // HuggingGPT: Solving AI Tasks with ChatGPT and its Friends in HuggingFace https://arxiv.org/pdf/2303.17580.pdf
+//note Pioneers [0.91, 0.84]
 
 annotations [0.08, 0.01]
 annotation 1,[0.74,0.08] Components not in final positions
@@ -199,3 +207,5 @@ annotation 5,[0.64,0.45] Focus here. Critical in getting external data not in cu
 annotation 6,[0.1,0.68] Lite LLMs can run locally, or trained for $600 and fine tuned
 annotation 7,[0.78,0.56] Multiple Techniques available, select best fit for use case
 //annotation 8,[0.08,0.49] [Link text Here](https://link-url-here.org)
+
+market llamahub.io [0.44, 0.66] label [-39, 34]
