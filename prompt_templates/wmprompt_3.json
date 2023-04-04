@@ -1,0 +1,5 @@
+{
+    "_type": "prompt",
+    "input_variables": ["component"],
+    "template": "What does this component do this Wardley Map {component}"
+}

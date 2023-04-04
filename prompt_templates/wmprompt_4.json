@@ -1,0 +1,5 @@
+{
+    "_type": "prompt",
+    "input_variables": ["wardleymap"],
+    "template": "How many components are in this Wardley Map? {wardleymap}"
+}

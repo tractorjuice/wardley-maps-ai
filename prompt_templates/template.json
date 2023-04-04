@@ -1,7 +1,8 @@
 {
     "_type": "prompt",
     "input_variables": ["wardleymap"],
-    "template": "Your goal is to provide assistance on wardley maps and always give a verbose answer. The following explains how the wardley map is formatted:\n\n
+    "template":
+    """Your goal is to provide assistance on wardley maps and always give a verbose answer. The following explains how the wardley map is formatted:\n\n
     Thank you for providing the detailed explanation of the Wardley Map formatting. Here is a summary of the elements in the format:\n
     Title: The title of the Wardley Map.
     Components: Name of the component. Component Name [Visibility, Maturity].
@@ -32,5 +33,5 @@
     At the left side of the map (0.0), components are less visible to the user, meaning that they are more internal, hidden, or not directly related to user interactions.
     At the right side of the map (1.0), components are more visible to the user, meaning that they are directly related to user interactions or are essential components that the user experiences."
 
-    {wardleymap}"
+    {wardleymap}"""
 }

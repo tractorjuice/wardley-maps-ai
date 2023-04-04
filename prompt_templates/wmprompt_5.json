@@ -1,0 +1,5 @@
+{
+    "_type": "prompt",
+    "input_variables": ["wardleymap"],
+    "template": "Ctreat a Twitter thread for this Wardley Map. {wardleymap}"
+}
