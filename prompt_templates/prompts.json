@@ -1,0 +1,5 @@
+{
+    "_type": "prompt",
+    "input_variables": ["wardleymap"],
+    "template": "This is a Wardley Map. {wardleymap}"
+}
