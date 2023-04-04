@@ -118,12 +118,12 @@ if st.button("Load Map"):
 						new_xy = ('[' + match[0].strip() + ',' + match[1] + ']')
 						new_line = re.sub("\[(.*?)\]", new_xy, line, count = 1)
 						
-						st.write (new_xy, line, new_line)
+						#st.write (new_xy, line, new_line)
 					else:
-						st.write (line)
+						#st.write (line)
 				
 				#Debug
-				st.write ("#New Wardley Map")
+				#st.write ("#New Wardley Map")
 			else:
 				st.error("Map not found. Please enter a valid ID.")
 
