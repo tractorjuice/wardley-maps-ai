@@ -118,7 +118,7 @@ if st.button("Load Map"):
 						new_xy = ('[' + match[0].strip() + ',' + match[1] + ']')
 						new_line = re.sub("\[(.*?)\]", new_xy, line, count = 1)
 						
-						st.write (new_x_y, line, new_line)
+						st.write (new_xy, line, new_line)
 					else:
 						st.write (line)
 				
