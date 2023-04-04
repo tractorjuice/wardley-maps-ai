@@ -105,25 +105,25 @@ if st.button("Load Map"):
 				#st.write ("#Wardley Map")
 				#st.write (st.session_state.map_data)
 				
-				#for line in map_data:
-				#	st.write(line)
-				#	
-				#	x_y = re.findall("\[(.*?)\]", line)
-				#	st.write (x_y)
-				#	if x_y:
-				#		match = x_y[0]
-				#		match = match.split(sep = ",")
-				#		match = match[::-1]
-				#		
-				#		new_xy = ('[' + match[0].strip() + ',' + match[1] + ']')
-				#		new_line = re.sub("\[(.*?)\]", new_xy, line, count = 1)
-				#		
-				#		st.write (line, new_line)
-				#	else:
-				#		st.write (line)
-				#
+				map_data_str = map_data.split("/n")
+				
+				for line in map_data_str:
+					x_y = re.findall("\[(.*?)\]", line)
+					st.write (x_y)
+					if x_y:
+						match = x_y[0]
+						match = match.split(sep = ",")
+						match = match[::-1]
+						
+						new_xy = ('[' + match[0].strip() + ',' + match[1] + ']')
+						new_line = re.sub("\[(.*?)\]", new_xy, line, count = 1)
+						
+						st.write (line, new_line)
+					else:
+						st.write (line)
+				
 				#Debug
-				#st.write ("#New Wardley Map")
+				st.write ("#New Wardley Map")
 			else:
 				st.error("Map not found. Please enter a valid ID.")
 
