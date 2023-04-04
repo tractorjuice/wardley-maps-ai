@@ -101,16 +101,16 @@ if st.button("Load Map"):
 			# Check if the map was found
 			if response.status_code == 200:
 				map_data = response.json()
-				st.session_state.map_data=map_data
 				#st.write ("#Wardley Map")
-				#st.write (st.session_state.map_data)
+				st.write (st.session_state.map_data)
 				
 				map_data_str = map_data.split("/n")
+				st.session_state.map_data=map_data_str
 				
 				for line in map_data_str:
 					x_y = re.findall("\[(.*?)\]", line)
-					st.write (x_y)
 					if x_y:
+						st.write (x_y)
 						match = x_y[0]
 						match = match.split(sep = ",")
 						match = match[::-1]
