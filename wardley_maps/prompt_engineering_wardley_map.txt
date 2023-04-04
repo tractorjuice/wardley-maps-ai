@@ -54,6 +54,7 @@ component Storage [0.50, 0.74]
 component Use Cases [0.95, 0.43]
 component Question Answer Private Data [0.93, 0.37] label [-83, 0]
 component Gaurdrails [0.71, 0.50]
+component HuggingFaceGPT [0.15, 0.73] label [-111, -18]
 component Ethics [0.69, 0.72]
 component FinOps [0.59, 0.51] label [16, 4]
 component MLOps [0.59, 0.44] label [-44, 16]
@@ -136,6 +137,7 @@ Question Answer with sources -> Question Answer
 Embedding -> Chunks
 
 LLMs -> Public Data
+LLMs -> HuggingFaceGPT
 
 Semantic Search -> Vector
 
@@ -166,6 +168,8 @@ Vector-> Embedding
 LLMs -> Compute
 LLMs -> HuggingFace
 HuggingFace -> Cloud
+HuggingFaceGPT -> Compute
+HuggingFaceGPT -> HuggingFace
 
 VectorDB -> Cloud
 OpenAI-> Cloud
