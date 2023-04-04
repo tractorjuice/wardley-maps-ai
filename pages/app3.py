@@ -104,7 +104,7 @@ if st.button("Load Map"):
 				#st.write ("#Wardley Map")
 				st.write (st.session_state.map_data)
 				
-				set(map_data_str = map_data.split("/n"))
+				map_data_str = set(map_data.split("/n"))
 				st.session_state.map_data=map_data_str
 				
 				for line in map_data_str:
