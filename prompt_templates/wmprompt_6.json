@@ -1,5 +1,5 @@
 {
     "_type": "prompt",
-    "input_variables": ["component"],
+    "input_variables": ["maptitle","component"],
     "template": "Create a sentence about this component in this Wardley Map on {maptitle}. {component}"
 }
