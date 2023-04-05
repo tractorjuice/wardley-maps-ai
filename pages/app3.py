@@ -66,7 +66,8 @@ def show_messages(text):
 		f"{_['role']}: {_['content']}" for _ in st.session_state["messages"][1:]
 	]
 	#st.write (messages_str)
-	#text.text_area("Messages", value=str("\n".join(messages_str)), height=250)
+	text.text_area("Messages", value=str("\n".join(messages_str)), height=250,label_visibility=st.session_state.visibility,
+        disabled=st.session_state.disabled)
 
 # Define the form to enter the map ID
 map_id = st.text_input("Enter the ID of the Wardley Map: For example https://onlinewardleymaps.com/#clone:OXeRWhqHSLDXfOnrfI, enter: OXeRWhqHSLDXfOnrfI", value="OXeRWhqHSLDXfOnrfI", label_visibility=st.session_state.visibility,
