@@ -78,7 +78,7 @@ text = st.empty()
 show_messages(text)
 
 # Load the map data when the user submits the form
-if 'map_id':
+if not 'map_id':
 	if st.button("Load Map"):
 			with st.spinner("Fetching Wardley Map..."):
 				# Fetch the map data from the API
