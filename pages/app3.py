@@ -54,7 +54,7 @@ if "messages" not in st.session_state:
 
 if "visibility" not in st.session_state:
     st.session_state.visibility = "visible"
-    st.session_state.disabled = False
+    st.session_state.disabled = True
 
 def load_LLM(openai_api_key):
 	"""Logic for loading the chain you want to use should go here."""
