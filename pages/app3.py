@@ -80,7 +80,6 @@ prompt = PromptTemplate(
 )
 
 text = st.empty()
-show_messages(text)
 
 # Load the map data when the user submits the form
 if 'map_id':
@@ -129,6 +128,8 @@ if 'map_id':
 					st.error("Map not found. Please enter a valid ID.")
 
 question = st.text_input("Prompt", value="What is this Wardley Map about?")
+
+show_messages(text)
 
 if st.button("Send"):
 	with st.spinner("Generating response..."):
