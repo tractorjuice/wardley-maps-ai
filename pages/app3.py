@@ -66,7 +66,6 @@ def show_messages(text):
 
 # Define the form to enter the map ID
 map_id = st.text_input("Enter the ID of the Wardley Map: For example https://onlinewardleymaps.com/#clone:OXeRWhqHSLDXfOnrfI, enter: OXeRWhqHSLDXfOnrfI", value="OXeRWhqHSLDXfOnrfI")
-question = st.text_input("Prompt", value="What is this Wardley Map about?")
 
 llm = load_LLM(OPENAI_API_KEY)
 
@@ -123,7 +122,7 @@ if st.button("Load Map"):
 			else:
 				st.error("Map not found. Please enter a valid ID.")
 
-#st.write (st.session_state.map_data)
+question = st.text_input("Prompt", value="What is this Wardley Map about?")
 
 if st.button("Send"):
 	with st.spinner("Generating response..."):
