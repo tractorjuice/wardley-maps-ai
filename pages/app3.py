@@ -67,6 +67,8 @@ def show_messages(text):
 # Define the form to enter the map ID
 map_id = st.text_input("Enter the ID of the Wardley Map: For example https://onlinewardleymaps.com/#clone:OXeRWhqHSLDXfOnrfI, enter: OXeRWhqHSLDXfOnrfI", value="OXeRWhqHSLDXfOnrfI")
 
+llm = load_LLM(OPENAI_API_KEY)
+
 prompt = PromptTemplate(
 	input_variables=["title", "question","map"],
 	template=template,
@@ -121,8 +123,6 @@ text = st.empty()
 show_messages(text)
 
 question = st.text_input("Prompt", value="What is this Wardley Map about?")
-
-llm = load_LLM(OPENAI_API_KEY)
 
 #st.write (st.session_state.map_data)
 
