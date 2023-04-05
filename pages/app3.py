@@ -61,7 +61,7 @@ def show_messages(text):
 	messages_str = [
 		f"{_['role']}: {_['content']}" for _ in st.session_state["messages"][1:]
 	]
-	st.write (messages_str)
+	#st.write (messages_str)
 	text.text_area("Messages", value=str("\n".join(messages_str)), height=250)
 
 # Define the form to enter the map ID
