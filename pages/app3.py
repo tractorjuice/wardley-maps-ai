@@ -52,6 +52,10 @@ BASE_PROMPT = [{"role": "system", "content": "You are a helpful assistant."}]
 if "messages" not in st.session_state:
 	st.session_state["messages"] = BASE_PROMPT
 
+if "visibility" not in st.session_state:
+    st.session_state.visibility = "visible"
+    st.session_state.disabled = False
+
 def load_LLM(openai_api_key):
 	"""Logic for loading the chain you want to use should go here."""
 	llm = OpenAI(temperature=0.7, openai_api_key=OPENAI_API_KEY, max_tokens=500)
@@ -65,7 +69,8 @@ def show_messages(text):
 	text.text_area("Messages", value=str("\n".join(messages_str)), height=250)
 
 # Define the form to enter the map ID
-map_id = st.text_input("Enter the ID of the Wardley Map: For example https://onlinewardleymaps.com/#clone:OXeRWhqHSLDXfOnrfI, enter: OXeRWhqHSLDXfOnrfI", value="OXeRWhqHSLDXfOnrfI")
+map_id = st.text_input("Enter the ID of the Wardley Map: For example https://onlinewardleymaps.com/#clone:OXeRWhqHSLDXfOnrfI, enter: OXeRWhqHSLDXfOnrfI", value="OXeRWhqHSLDXfOnrfI", label_visibility=st.session_state.visibility,
+        disabled=st.session_state.disabled)
 
 llm = load_LLM(OPENAI_API_KEY)
 
