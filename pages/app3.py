@@ -25,11 +25,11 @@ API_ENDPOINT = "https://api.onlinewardleymaps.com/v1/maps/fetch?id="
 OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
 
 # Set the page title and layout
-st.set_page_config(page_title="Chat with your map")
-st.title("Chat with your map")
+st.set_page_config(page_title="Chat with your map v2")
+st.title("Chat with your map v2")
 st.sidebar.markdown("# Ask Questions about Your Map")
 st.sidebar.markdown("Developed by Mark Craddock](https://twitter.com/mcraddock)", unsafe_allow_html=True)
-st.sidebar.markdown("Current Version: 0.0.2")
+st.sidebar.markdown("Current Version: 0.0.1")
 
 template = """
  Write a review of the Wardley Map on {title} below, focusing on its accuracy in representing the needs and goals of the user, assessing its usefulness for decision-making, and analyzing its limitations and potential for improvement.
