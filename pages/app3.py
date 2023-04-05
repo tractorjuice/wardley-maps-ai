@@ -32,38 +32,14 @@ st.sidebar.markdown("Developed by Mark Craddock](https://twitter.com/mcraddock)"
 st.sidebar.markdown("Current Version: 0.0.2")
 
 template = """
-Your goal is to provide assistance on wardley maps and always give a verbose answer. The following explains how the wardley map is formatted:
+ Write a review of the Wardley Map on {title} below, focusing on its accuracy in representing the needs and goals of the user, assessing its usefulness for decision-making, and analyzing its limitations and potential for improvement.
 
-Thank you for providing the detailed explanation of the Wardley Map formatting. Here is a summary of the elements in the format:
+Suggestions:
 
-Title: The title of the Wardley Map.
-Components: Name of the component. Component Name [Visibility, Maturity].
-Market: Create a market with market Name [Visibility, Maturity].
-Inertia: Indicate resistance to change with inertia.
-Evolve: Evolution of a component. volve Name (X Axis).
-Links: Link components with Start Component->End Component.
-Flow: Indicate flow. Component->>Component.
-Pipeline: Set a component as a pipeline with pipeline Component Name [X Axis (start), X Axis (end)].
-Pioneers, Settlers, Townplanners area: Add areas to indicate the working approach with pioneers, settlers, and townplanners.
-Build, buy, outsource: Indicate the method of execution with build, buy, or outsource.
-Submap: Link a submap to a component with submap Component [visibility, maturity] url(urlName) and url urlName [URL].
-Stages of Evolution: Customize the stages of evolution labels with evolution.
-Y-Axis Labels: The visibility of the component
-Notes: Notes about this Wardley Map.
-Styles: The style of the Wardley Map.
-This formatting makes it easy to create and modify Wardley Maps, and it's helpful for understanding the structure and connections between components.
-
-X-axis: Evolution (from left to right)
-
-Genesis (0.0 to 0.2): Novel, unique, and unproven components
-Custom Built (0.21 to 0.4): Developed specifically for a particular use case or organization, less mature, and standardized
-Product (0.41 to 0.7): More widely available, standardized, and mature components with multiple implementations or versions in the market
-Commodity (0.71 to 1.0): Highly standardized, widely available, often provided as a utility or service, very mature, and little differentiation between offerings
-
-Y-axis: Visibility (from bottom to top)
-
-At the left side of the map (0.0), components are less visible to the user, meaning that they are more internal, hidden, or not directly related to user interactions.
-At the right side of the map (1.0), components are more visible to the user, meaning that they are directly related to user interactions or are essential components that the user experiences.
+Provide a brief overview of the Wardley Map for {title}, including the components and relationships it represents.
+Describe how the map captures the needs and goals of the user, and assess its accuracy in representing these aspects.
+Discuss the usefulness of the map for decision-making related to {title}, with a focus on how it informs decisions about user needs and goals.
+Analyze the limitations of the map, such as any missing or incomplete components, and suggest potential improvements to enhance its accuracy and usefulness for user-focused decision-making.
 
 WARDLEY MAP: {map}
 QUESTION: {question}
@@ -105,7 +81,7 @@ if st.button("Load Map"):
 				st.write (st.session_state.map_data)
 				
 				map_data_str = map_data['text'].split("/n")
-				st.session_state.map_data=map_data_str
+				st.session_state.map_data_str=map_data_str
 				
 				for line in map_data_str:
 					x_y = re.findall("\[(.*?)\]", line)
@@ -148,7 +124,7 @@ llm = load_LLM(OPENAI_API_KEY)
 if st.button("Send"):
 	with st.spinner("Generating response..."):
 		
-		prompt_wardley_ai = prompt.format(question=question, map=st.session_state.map_data)
+		prompt_wardley_ai = prompt.format(question=question, map=st.session_state.map_data_str)
 		response = llm(prompt_wardley_ai)		
 		text.text_area("Messages", response, height=250)
 
