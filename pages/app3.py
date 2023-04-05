@@ -75,6 +75,9 @@ prompt = PromptTemplate(
 	template=template,
 )
 
+text = st.empty()
+show_messages(text)
+
 # Load the map data when the user submits the form
 if st.button("Load Map"):
 		with st.spinner("Fetching Wardley Map..."):
@@ -119,9 +122,6 @@ if st.button("Load Map"):
 				
 			else:
 				st.error("Map not found. Please enter a valid ID.")
-
-text = st.empty()
-show_messages(text)
 
 #st.write (st.session_state.map_data)
 
