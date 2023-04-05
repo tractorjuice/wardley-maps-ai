@@ -68,7 +68,7 @@ def show_messages(text):
 	text.text_area("Messages", value=str("\n".join(messages_str)), height=250)
 
 def do_query(title, question, map):
-	prompt_wardley_ai = (title=title,question=question, map=map)
+	prompt_wardley_ai = prompt.format(title=title,question=question, map=map)
 	response = llm(prompt_wardley_ai)
 
 # Define the form to enter the map ID
