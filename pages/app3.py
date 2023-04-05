@@ -83,7 +83,7 @@ text = st.empty()
 
 # Load the map data when the user submits the form
 if 'map_id':
-	if st.button("Load Map"):
+	if st.button("Send"):
 			with st.spinner("Fetching Wardley Map..."):
 				# Fetch the map data from the API
 				url = f"https://api.onlinewardleymaps.com/v1/maps/fetch?id={map_id}"
@@ -131,7 +131,7 @@ show_messages(text)
 
 question = st.text_input("Prompt", value="What is this Wardley Map about?")
 
-if st.button("Send"):
+if st.button("Load Map"):
 	with st.spinner("Generating response..."):
 		
 		prompt_wardley_ai = prompt.format(title="Prompt Engineering",question=question, map=st.session_state.map_data_str)
