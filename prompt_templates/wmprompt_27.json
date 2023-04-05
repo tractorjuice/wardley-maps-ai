@@ -1,0 +1,12 @@
+Write a review of the Wardley Map on {title} below, focusing on its accuracy in representing the needs and goals of the user, assessing its usefulness for decision-making, and analyzing its limitations and potential for improvement.
+
+Suggestions:
+
+Provide a brief overview of the Wardley Map for Prompt Engineering, including the components and relationships it represents.
+Describe how the map captures the needs and goals of the user, and assess its accuracy in representing these aspects.
+Discuss the usefulness of the map for decision-making related to Prompt Engineering, with a focus on how it informs decisions about user needs and goals.
+Analyze the limitations of the map, such as any missing or incomplete components, and suggest potential improvements to enhance its accuracy and usefulness for user-focused decision-making.
+
+Wardley Map on {title}
+
+{wardleymap}
