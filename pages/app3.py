@@ -69,7 +69,7 @@ map_id = st.text_input("Enter the ID of the Wardley Map: For example https://onl
 
 # Load the map data when the user submits the form
 if st.button("Load Map"):
-		with st.spinner("Generating response..."):
+		with st.spinner("Fetching Wardley Map..."):
 			# Fetch the map data from the API
 			url = f"https://api.onlinewardleymaps.com/v1/maps/fetch?id={map_id}"
 			response = requests.get(url)
