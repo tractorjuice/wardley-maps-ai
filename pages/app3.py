@@ -105,6 +105,10 @@ if st.button("Load Map"):
 				#st.write ("#New Wardley Map")
 				#st.write (new_map_data)
 				
+				prompt_wardley_ai = prompt.format(title="Prompt Engineering",question=question, map=st.session_state.map_data_str)
+				response = llm(prompt_wardley_ai)		
+				text.text_area("Messages", response, height=250)
+				
 			else:
 				st.error("Map not found. Please enter a valid ID.")
 
