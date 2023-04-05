@@ -145,4 +145,4 @@ if st.button("Send", disabled=st.session_state.disabled):
 if st.button("Clear"):
     st.session_state["messages"] = BASE_PROMPT
     st.session_state.visibility = "visible"
-    st.session_state.disabled = True
+    st.session_state.disabled = False
