@@ -79,6 +79,7 @@ show_messages(text)
 
 # Load the map data when the user submits the form
 if st.session_state.map_data:
+	st.write ("starting loop")
 	if st.button("Load Map"):
 			with st.spinner("Fetching Wardley Map..."):
 				# Fetch the map data from the API
