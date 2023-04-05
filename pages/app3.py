@@ -42,8 +42,9 @@ Discuss the usefulness of the map for decision-making related to {title}, with a
 Analyze the limitations of the map, such as any missing or incomplete components, and suggest potential improvements to enhance its accuracy and usefulness for user-focused decision-making.
 
 QUESTION: {question}
-    
-    YOUR RESPONSE:
+WARDLEY MAP: {map}
+
+YOUR RESPONSE:
 """
 
 BASE_PROMPT = [{"role": "system", "content": "You are a helpful assistant."}]
@@ -113,7 +114,7 @@ show_messages(text)
 question = st.text_input("Prompt", value="What is this Wardley Map about?")
 
 prompt = PromptTemplate(
-	input_variables=["map", "question"],
+	input_variables=["title", "question","map"],
 	template=template,
 )
 
