@@ -41,7 +41,6 @@ Describe how the map captures the needs and goals of the user, and assess its ac
 Discuss the usefulness of the map for decision-making related to {title}, with a focus on how it informs decisions about user needs and goals.
 Analyze the limitations of the map, such as any missing or incomplete components, and suggest potential improvements to enhance its accuracy and usefulness for user-focused decision-making.
 
-WARDLEY MAP: {map}
 QUESTION: {question}
     
     YOUR RESPONSE:
