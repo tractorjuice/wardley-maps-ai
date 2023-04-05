@@ -78,49 +78,50 @@ text = st.empty()
 show_messages(text)
 
 # Load the map data when the user submits the form
-if st.button("Load Map"):
-		with st.spinner("Fetching Wardley Map..."):
-			# Fetch the map data from the API
-			url = f"https://api.onlinewardleymaps.com/v1/maps/fetch?id={map_id}"
-			response = requests.get(url)
+if st.session_state.map_data:
+	if st.button("Load Map"):
+			with st.spinner("Fetching Wardley Map..."):
+				# Fetch the map data from the API
+				url = f"https://api.onlinewardleymaps.com/v1/maps/fetch?id={map_id}"
+				response = requests.get(url)
 			
-			# Check if the map was found
-			if response.status_code == 200:
-				map_data = response.json()
-				st.session_state.map_data=map_data
-				#st.write ("#Wardley Map")
-				#st.write (st.session_state.map_data)
+				# Check if the map was found
+				if response.status_code == 200:
+					map_data = response.json()
+					st.session_state.map_data=map_data
+					#st.write ("#Wardley Map")
+					#st.write (st.session_state.map_data)
 				
-				map_data_str = map_data['text'].split("/n")
-				st.session_state.map_data_str=map_data_str
+					map_data_str = map_data['text'].split("/n")
+					st.session_state.map_data_str=map_data_str
 				
-				for line in map_data_str:
-					x_y = re.findall("\[(.*?)\]", line)
-					if x_y:
-						#st.write (x_y)
-						match = x_y[0]
-						match = match.split(sep = ",")
-						match = match[::-1]
+					for line in map_data_str:
+						x_y = re.findall("\[(.*?)\]", line)
+						if x_y:
+							#st.write (x_y)
+							match = x_y[0]
+							match = match.split(sep = ",")
+							match = match[::-1]
 						
-						new_xy = ('[' + match[0].strip() + ',' + match[1] + ']')
-						new_line = re.sub("\[(.*?)\]", new_xy, line, count = 1)
+							new_xy = ('[' + match[0].strip() + ',' + match[1] + ']')
+							new_line = re.sub("\[(.*?)\]", new_xy, line, count = 1)
 						
-						#st.write (new_line)
-						#new_map_data'text'].append(newline)
-					#else:
-						#new_map_data['text'].append(line)
-						#st.write (line)
+							#st.write (new_line)
+							#new_map_data'text'].append(newline)
+						#else:
+							#new_map_data['text'].append(line)
+							#st.write (line)
 				
-				#Debug
-				#st.write ("#New Wardley Map")
-				#st.write (new_map_data)
+					#Debug
+					#st.write ("#New Wardley Map")
+					#st.write (new_map_data)
 
-				prompt_wardley_ai = prompt.format(title="Prompt Engineering",question="What is this Wardley Map about?", map=st.session_state.map_data_str)
-				response = llm(prompt_wardley_ai)		
-				text.text_area("Messages", response, height=250)
+					prompt_wardley_ai = prompt.format(title="Prompt Engineering",question="What is this Wardley Map about?", map=st.session_state.map_data_str)
+					response = llm(prompt_wardley_ai)		
+					text.text_area("Messages", response, height=250)
 				
-			else:
-				st.error("Map not found. Please enter a valid ID.")
+				else:
+					st.error("Map not found. Please enter a valid ID.")
 
 question = st.text_input("Prompt", value="What is this Wardley Map about?")
 
