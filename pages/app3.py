@@ -125,7 +125,7 @@ llm = load_LLM(OPENAI_API_KEY)
 if st.button("Send"):
 	with st.spinner("Generating response..."):
 		
-		prompt_wardley_ai = prompt.format(question=question, map=st.session_state.map_data_str)
+		prompt_wardley_ai = prompt.format(title="Prompt Engineering",question=question, map=st.session_state.map_data_str)
 		response = llm(prompt_wardley_ai)		
 		text.text_area("Messages", response, height=250)
 
