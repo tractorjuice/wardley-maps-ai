@@ -79,7 +79,7 @@ if st.button("Load Map"):
 				map_data = response.json()
 				st.session_state.map_data=map_data
 				#st.write ("#Wardley Map")
-				st.write (st.session_state.map_data)
+				#st.write (st.session_state.map_data)
 				
 				map_data_str = map_data['text'].split("/n")
 				st.session_state.map_data_str=map_data_str
@@ -95,11 +95,11 @@ if st.button("Load Map"):
 						new_xy = ('[' + match[0].strip() + ',' + match[1] + ']')
 						new_line = re.sub("\[(.*?)\]", new_xy, line, count = 1)
 						
-						st.write (new_line)
+						#st.write (new_line)
 						#new_map_data'text'].append(newline)
 					else:
 						#new_map_data['text'].append(line)
-						st.write (line)
+						#st.write (line)
 				
 				#Debug
 				#st.write ("#New Wardley Map")
