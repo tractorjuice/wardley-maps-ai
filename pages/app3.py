@@ -66,7 +66,7 @@ def show_messages(text):
 		f"{_['role']}: {_['content']}" for _ in st.session_state["messages"][1:]
 	]
 	#st.write (messages_str)
-	text.text_area("Messages", value=str("\n".join(messages_str)), height=250)
+	#text.text_area("Messages", value=str("\n".join(messages_str)), height=250)
 
 # Define the form to enter the map ID
 map_id = st.text_input("Enter the ID of the Wardley Map: For example https://onlinewardleymaps.com/#clone:OXeRWhqHSLDXfOnrfI, enter: OXeRWhqHSLDXfOnrfI", value="OXeRWhqHSLDXfOnrfI", label_visibility=st.session_state.visibility,
@@ -83,7 +83,7 @@ text = st.empty()
 
 # Load the map data when the user submits the form
 if 'map_id':
-	if st.button("Send"):
+	if st.button("Load Map"):
 			with st.spinner("Fetching Wardley Map..."):
 				# Fetch the map data from the API
 				url = f"https://api.onlinewardleymaps.com/v1/maps/fetch?id={map_id}"
@@ -131,7 +131,7 @@ show_messages(text)
 
 question = st.text_input("Prompt", value="What is this Wardley Map about?")
 
-if st.button("Load Map"):
+if st.button("Send"):
 	with st.spinner("Generating response..."):
 		
 		prompt_wardley_ai = prompt.format(title="Prompt Engineering",question=question, map=st.session_state.map_data_str)
