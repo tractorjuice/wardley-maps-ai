@@ -123,7 +123,7 @@ if st.button("Query Map"):
 				#st.write (new_map_data)
 
 				response = do_query(title="Prompt Engineering",question="What is this Wardley Map about?", map=st.session_state.map_data_str)
-				
+
 				show_messages(text)		
 				#text.text_area("Messages", response, height=250)
 				
@@ -132,7 +132,8 @@ if st.button("Query Map"):
 
 #show_messages(text)
 
-question = st.text_input("Prompt", value="What is this Wardley Map about?")
+question = st.text_input("What would you like to ask about this map?", value="What is this Wardley Map about?",label_visibility=st.session_state.visibility,
+        disabled=st.session_state.disabled)
 
 if st.button("Send"):
 	with st.spinner("Generating response..."):
