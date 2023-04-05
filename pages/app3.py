@@ -68,8 +68,8 @@ def show_messages(text):
 	text.text_area("Messages", value=str("\n".join(messages_str)), height=250)
 
 def do_query(title, question, map):
-		prompt_wardley_ai = (title=title,question=question, map=map)
-		response = llm(prompt_wardley_ai)
+	prompt_wardley_ai = (title=title,question=question, map=map)
+	response = llm(prompt_wardley_ai)
 
 # Define the form to enter the map ID
 map_id = st.text_input("Enter the ID of the Wardley Map: For example https://onlinewardleymaps.com/#clone:OXeRWhqHSLDXfOnrfI, enter: OXeRWhqHSLDXfOnrfI", value="OXeRWhqHSLDXfOnrfI", label_visibility=st.session_state.visibility,
