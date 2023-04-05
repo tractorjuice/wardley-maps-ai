@@ -78,7 +78,7 @@ text = st.empty()
 show_messages(text)
 
 # Load the map data when the user submits the form
-if st.session_state.map_data:
+if 'map_data' not in st.session_state:
 	st.write ("starting loop")
 	if st.button("Load Map"):
 			with st.spinner("Fetching Wardley Map..."):
