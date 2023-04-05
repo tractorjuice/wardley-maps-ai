@@ -135,7 +135,8 @@ if st.button("Query Map"):
 question = st.text_input("What would you like to ask about this map?", value="What is this Wardley Map about?",label_visibility=st.session_state.visibility,
         disabled=st.session_state.disabled)
 
-if st.button("Send"):
+if st.button("Send",label_visibility=st.session_state.visibility,
+        disabled=st.session_state.disabled):
 	with st.spinner("Generating response..."):
 		
 		prompt_wardley_ai = prompt.format(title="Prompt Engineering",question=question, map=st.session_state.map_data_str)
