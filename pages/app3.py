@@ -127,7 +127,7 @@ if 'map_id':
 				else:
 					st.error("Map not found. Please enter a valid ID.")
 
-show_messages(text)
+#show_messages(text)
 
 question = st.text_input("Prompt", value="What is this Wardley Map about?")
 
