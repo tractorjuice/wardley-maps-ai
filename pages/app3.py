@@ -97,7 +97,7 @@ if st.button("Load Map"):
 						
 						#st.write (new_line)
 						#new_map_data'text'].append(newline)
-					else:
+					#else:
 						#new_map_data['text'].append(line)
 						#st.write (line)
 				
