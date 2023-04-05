@@ -65,9 +65,7 @@ def show_messages(text):
 	messages_str = [
 		f"{_['role']}: {_['content']}" for _ in st.session_state["messages"][1:]
 	]
-	#st.write (messages_str)
-	text.text_area("Messages", value=str("\n".join(messages_str)), height=250,label_visibility=st.session_state.visibility,
-        disabled=st.session_state.disabled)
+	text.text_area("Messages", value=str("\n".join(messages_str)), height=250)
 
 # Define the form to enter the map ID
 map_id = st.text_input("Enter the ID of the Wardley Map: For example https://onlinewardleymaps.com/#clone:OXeRWhqHSLDXfOnrfI, enter: OXeRWhqHSLDXfOnrfI", value="OXeRWhqHSLDXfOnrfI", label_visibility=st.session_state.visibility,
@@ -122,8 +120,9 @@ if 'map_id':
 					#st.write (new_map_data)
 
 					prompt_wardley_ai = prompt.format(title="Prompt Engineering",question="What is this Wardley Map about?", map=st.session_state.map_data_str)
-					response = llm(prompt_wardley_ai)		
-					text.text_area("Messages", response, height=250)
+					response = llm(prompt_wardley_ai)
+					show_messages(text)		
+					#text.text_area("Messages", response, height=250)
 				
 				else:
 					st.error("Map not found. Please enter a valid ID.")
