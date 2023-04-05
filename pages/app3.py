@@ -127,9 +127,9 @@ if 'map_id':
 				else:
 					st.error("Map not found. Please enter a valid ID.")
 
-question = st.text_input("Prompt", value="What is this Wardley Map about?")
-
 show_messages(text)
+
+question = st.text_input("Prompt", value="What is this Wardley Map about?")
 
 if st.button("Send"):
 	with st.spinner("Generating response..."):
