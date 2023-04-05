@@ -77,6 +77,7 @@ if st.button("Load Map"):
 			# Check if the map was found
 			if response.status_code == 200:
 				map_data = response.json()
+				st.session_state.map_data=map_data
 				#st.write ("#Wardley Map")
 				st.write (st.session_state.map_data)
 				
