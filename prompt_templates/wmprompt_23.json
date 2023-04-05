@@ -1,1 +1,8 @@
-what are the benefits of wardley maps, using words that rhythm
+{
+    "_type": "prompt",
+    "input_variables": [""],
+    "template": """
+    
+    what are the benefits of wardley maps, using words that rhythm
+    """
+}

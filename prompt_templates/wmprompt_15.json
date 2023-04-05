@@ -1,14 +1,22 @@
-Write a persuasive essay explaining the importance of implementing DataOps in modern organizations.
-
-Suggestions:
-
-Start with a definition of what DataOps is and its main principles.
-Provide examples of how DataOps can improve data quality, data integration, and data management.
-Discuss the benefits of adopting DataOps, such as increased efficiency, faster time to market, and better decision-making.
-Address common challenges that organizations may face when implementing DataOps and provide strategies to overcome them.
-Highlight the role of automation and collaboration in the DataOps process.
-Questions:
-
-Who is the target audience for this essay?
-What are the main industries or sectors that could benefit from implementing DataOps?
-Is there any specific aspect or challenge of DataOps that you would like to emphasize in the essay?
+{
+    "_type": "prompt",
+    "input_variables": [""],
+    "template": """
+    
+    Write a persuasive essay explaining the importance of implementing DataOps in modern organizations.
+    
+    Suggestions:
+    
+    Start with a definition of what DataOps is and its main principles.
+    Provide examples of how DataOps can improve data quality, data integration, and data management.
+    Discuss the benefits of adopting DataOps, such as increased efficiency, faster time to market, and better decision-making.
+    Address common challenges that organizations may face when implementing DataOps and provide strategies to overcome them.
+    Highlight the role of automation and collaboration in the DataOps process.
+    
+    Questions:
+    
+    Who is the target audience for this essay?
+    What are the main industries or sectors that could benefit from implementing DataOps?
+    Is there any specific aspect or challenge of DataOps that you would like to emphasize in the essay?
+    """"
+}

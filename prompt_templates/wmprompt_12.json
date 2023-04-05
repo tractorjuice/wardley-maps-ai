@@ -1,10 +1,17 @@
-Create a comprehensive guide for Government Strategy Managers on how to reduce technical debt using Wardley Mapping, with a focus on increasing knowledge and awareness of the technique. The guide should cover the definition of technical debt and its impact on government organizations, an introduction to Wardley Mapping, its history and evolution, benefits and use cases, best practices for creating and using maps, and how it can help Government Strategy Managers reduce technical debt.
-
-Suggestions:
-
-Start by defining technical debt and why it is a concern for government organizations. Technical debt is the cost of maintaining outdated or inefficient technology systems that can lead to increased operational costs, security risks, and decreased performance. Explain how Wardley Mapping can help identify areas of technical debt and create a plan to reduce it.
-
-Provide clear and concise explanations of how Wardley Mapping can help Strategy Managers reduce technical debt, including how to use maps to prioritize technical debt reduction efforts and make data-driven decisions about which areas to focus on. Explain how mapping can be used to identify the components of technology systems, their relationships, and their value to the organization.
-Share best practices for creating and using maps, including tips on how to identify key components and how to use maps to make informed decisions about where to invest resources. Provide examples of how to use mapping to identify potential areas of technical debt and to prioritize technology investments.
-Emphasize the benefits of using Wardley Mapping, such as increased transparency, improved collaboration, and better alignment between business objectives and technical needs. Explain how mapping can help Strategy Managers visualize the technology landscape and communicate with technical teams, business leaders, and other stakeholders.
-Consider including case studies or examples of government organizations that have successfully used Wardley Mapping to reduce technical debt. These examples can illustrate the benefits of using mapping to reduce technical debt and improve the overall technology landscape.
+{
+    "_type": "prompt",
+    "input_variables": [""],
+    "template": """
+    
+    Create a comprehensive guide for Government Strategy Managers on how to reduce technical debt using Wardley Mapping, with a focus on increasing knowledge and awareness of the technique. The guide should cover the definition of technical debt and its impact on government organizations, an introduction to Wardley Mapping, its history and evolution, benefits and use cases, best practices for creating and using maps, and how it can help Government Strategy Managers reduce technical debt.
+    
+    Suggestions:
+    
+    Start by defining technical debt and why it is a concern for government organizations. Technical debt is the cost of maintaining outdated or inefficient technology systems that can lead to increased operational costs, security risks, and decreased performance. Explain how Wardley Mapping can help identify areas of technical debt and create a plan to reduce it.
+    
+    Provide clear and concise explanations of how Wardley Mapping can help Strategy Managers reduce technical debt, including how to use maps to prioritize technical debt reduction efforts and make data-driven decisions about which areas to focus on. Explain how mapping can be used to identify the components of technology systems, their relationships, and their value to the organization.
+    Share best practices for creating and using maps, including tips on how to identify key components and how to use maps to make informed decisions about where to invest resources. Provide examples of how to use mapping to identify potential areas of technical debt and to prioritize technology investments.
+    Emphasize the benefits of using Wardley Mapping, such as increased transparency, improved collaboration, and better alignment between business objectives and technical needs. Explain how mapping can help Strategy Managers visualize the technology landscape and communicate with technical teams, business leaders, and other stakeholders.
+    Consider including case studies or examples of government organizations that have successfully used Wardley Mapping to reduce technical debt. These examples can illustrate the benefits of using mapping to reduce technical debt and improve the overall technology landscape.
+    """
+}

@@ -1,16 +1,24 @@
-Create a 15-minute presentation on the strategy management technique of Wardley Mapping. Your goal is to inspire your audience to incorporate this technique into their own strategic planning processes. Your presentation should include clear diagrams and other visual aids to enhance understanding. Consider using storytelling techniques to engage your audience and emphasize the benefits of Wardley Mapping.
-
-Suggestions:
-
-Define and explain the key concepts of Wardley Mapping.
-Demonstrate how Wardley Mapping can be applied to real-world scenarios.
-Use clear and visually appealing diagrams to illustrate the technique.
-Emphasize the benefits and advantages of using Wardley Mapping in strategic planning.
-Use storytelling techniques to engage your audience and make the content more relatable.
-Consider incorporating interactive elements, such as a Q&A session, to encourage audience participation.
-Questions:
-
-Who is your target audience? Are they familiar with Wardley Mapping or is this a new concept for them?
-What level of detail should you provide in your explanation of Wardley Mapping? Are there any specific aspects of the technique that you should focus on?
-Can you provide any real-world examples or case studies that demonstrate the effectiveness of Wardley Mapping in strategic planning?
-How can you best incorporate diagrams and other visual aids to enhance understanding and engagement? Do you have any specific design or formatting preferences for your diagrams?
+{
+    "_type": "prompt",
+    "input_variables": [""],
+    "template": """
+    
+    Create a 15-minute presentation on the strategy management technique of Wardley Mapping. Your goal is to inspire your audience to incorporate this technique into their own strategic planning processes. Your presentation should include clear diagrams and other visual aids to enhance understanding. Consider using storytelling techniques to engage your audience and emphasize the benefits of Wardley Mapping.
+    
+    Suggestions:
+    
+    Define and explain the key concepts of Wardley Mapping.
+    Demonstrate how Wardley Mapping can be applied to real-world scenarios.
+    Use clear and visually appealing diagrams to illustrate the technique.
+    Emphasize the benefits and advantages of using Wardley Mapping in strategic planning.
+    Use storytelling techniques to engage your audience and make the content more relatable.
+    Consider incorporating interactive elements, such as a Q&A session, to encourage audience participation.
+    
+    Questions:
+    
+    Who is your target audience? Are they familiar with Wardley Mapping or is this a new concept for them?
+    What level of detail should you provide in your explanation of Wardley Mapping? Are there any specific aspects of the technique that you should focus on?
+    Can you provide any real-world examples or case studies that demonstrate the effectiveness of Wardley Mapping in strategic planning?
+    How can you best incorporate diagrams and other visual aids to enhance understanding and engagement? Do you have any specific design or formatting preferences for your diagrams?
+    """
+}

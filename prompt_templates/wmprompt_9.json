@@ -1,14 +1,20 @@
-create a Wardley Mapping Exam
-
-The Wardley Mapping Exam is designed for business professionals who want to demonstrate their understanding of the Wardley Mapping framework and its practical applications. The exam will test your knowledge of the core concepts, principles, and techniques of Wardley Mapping, including value chain analysis, evolution patterns, strategy development, and organizational transformation.
-The exam will consist of multiple-choice and open-ended questions that will evaluate your understanding of how to apply Wardley Mapping to real-world business scenarios. You will need to demonstrate your ability to analyze complex business situations and develop effective strategies based on Wardley Mapping principles.
-The exam will be timed and will take approximately 2 hours to complete. It will be administered online and will be proctored to ensure the integrity of the exam.
-The exam questions will be in multiple-choice and open-ended formats. Examples of the types of questions that will be asked include:
-
-Which evolution pattern would you use to map the market for a new product?
-How would you use Wardley Mapping to develop a strategy for entering a new market?
-In what ways can Wardley Mapping help organizations improve their agility and adaptability?
-To prepare for the exam, it is recommended that you read Simon Wardley's book, "Wardley Mapping: How to Create and Visualize Your Strategy". This book provides a comprehensive overview of the Wardley Mapping framework and its applications in various business contexts.
-
-To pass the exam, you must achieve a score of at least 70%. Your exam score will be based on a combination of the number of correct answers and the quality of your open-ended responses.
-The exam fee is $200, and there are no prerequisites or eligibility requirements. The exam is only available in English.
+{
+    "_type": "prompt",
+    "input_variables": [""],
+    "template": """
+    
+    create a Wardley Mapping Exam
+    
+    The Wardley Mapping Exam is designed for business professionals who want to demonstrate their understanding of the Wardley Mapping framework and its practical applications. The exam will test your knowledge of the core concepts, principles, and techniques of Wardley Mapping, including value chain analysis, evolution patterns, strategy development, and organizational transformation.
+    The exam will consist of multiple-choice and open-ended questions that will evaluate your understanding of how to apply Wardley Mapping to real-world business scenarios. You will need to demonstrate your ability to analyze complex business situations and develop effective strategies based on Wardley Mapping principles.
+    It will be administered online and will be proctored to ensure the integrity of the exam.
+    The exam questions will be in multiple-choice and open-ended formats. Examples of the types of questions that will be asked include:
+    
+    Which evolution pattern would you use to map the market for a new product?
+    How would you use Wardley Mapping to develop a strategy for entering a new market?
+    In what ways can Wardley Mapping help organizations improve their agility and adaptability?
+    To prepare for the exam, it is recommended that you read Simon Wardley's book, https://www.amazon.co.uk/Wardley-Mapping-Knowledge-Topographical-intelligence/dp/1913805182. This book provides a comprehensive overview of the Wardley Mapping framework and its applications in various business contexts.
+    
+    The exam is only available in English.
+    """
+}

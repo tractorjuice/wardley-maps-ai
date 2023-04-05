@@ -1,1 +1,8 @@
-Create a step-by-step guide on how to create a basic Wardley Map for a tea shop, including how to identify the components of the map, the importance of situational awareness, and how to use the map to make strategic decisions. The guide should be geared towards a beginner with limited experience in Wardley Mapping, but also provide useful tips and insights for experts in the tea shop industry. The specific strategic decision to be made using the map is to remove technical debt from the tea shop's online presence. The guide should include instructions on how to create the map using onlinewardleymaps.com tool
+{
+    "_type": "prompt",
+    "input_variables": [""],
+    "template": """
+    
+    Create a step-by-step guide on how to create a basic Wardley Map for a tea shop, including how to identify the components of the map, the importance of situational awareness, and how to use the map to make strategic decisions. The guide should be geared towards a beginner with limited experience in Wardley Mapping, but also provide useful tips and insights for experts in the tea shop industry. The specific strategic decision to be made using the map is to remove technical debt from the tea shop's online presence. The guide should include instructions on how to create the map using onlinewardleymaps.com tool
+    """
+}
