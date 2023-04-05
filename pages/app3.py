@@ -122,8 +122,8 @@ if st.button("Query Map"):
 				#st.write ("#New Wardley Map")
 				#st.write (new_map_data)
 
-				prompt_wardley_ai = prompt.format(title="Prompt Engineering",question="What is this Wardley Map about?", map=st.session_state.map_data_str)
-				response = llm(prompt_wardley_ai)
+				response = do_query(title="Prompt Engineering",question="What is this Wardley Map about?", map=st.session_state.map_data_str)
+				
 				show_messages(text)		
 				#text.text_area("Messages", response, height=250)
 				
