@@ -69,7 +69,6 @@ def app():
     st.set_page_config(page_title="Chat with your map")
     st.title("Chat with your map")
     st.sidebar.markdown("# Ask Questions about Your Map")
-    
     st.sidebar.markdown("Developed by Mark Craddock](https://twitter.com/mcraddock)", unsafe_allow_html=True)
     st.sidebar.markdown("Current Version: 0.0.2")
         
@@ -89,28 +88,16 @@ def app():
         # Check if the map was found
         if response.status_code == 200:
             map_data = response.json()
-
-            # Display the map
-            #st.write(map_data)
             
             prompt = PromptTemplate(
                 input_variables=["map", "question"],
                 template=template,
             )
-            
-            #st.markdown("### Prompt:")
-            #st.write(prompt)
                                     
             llm = load_LLM(OPENAI_API_KEY)
             
             prompt_wardley_ai = prompt.format(question=question, map=map_data)
             response = llm(prompt_wardley_ai)
-            
-            #st.markdown("### Input Prompt:")
-            #st.write(prompt_wardley_ai)
-            
-            #st.markdown("### Question:")
-            #st.write(question)
             
             st.markdown("### Response:")
             st.write(response)
