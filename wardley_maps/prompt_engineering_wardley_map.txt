@@ -59,7 +59,6 @@ component Ethics [0.69, 0.72]
 component FinOps [0.59, 0.51] label [16, 4]
 component MLOps [0.59, 0.44] label [-44, 16]
 component DataOps [0.47, 0.49] label [-48, 21]
-//component LangChainHub
 
 //pioneers, Settlers, Town Planners
 //pioneers [0.80, 0.37, 0.60, 0.59]
@@ -127,9 +126,9 @@ Agents -> MLOps
 Agents -> FinOps
 Agents -> DataOps
 
-llamahub.io -> Agents
-llamahub.io -> Embedding
-llamahub.io -> Text Splitter
+llamahub.ai -> Agents
+llamahub.ai -> Embedding
+llamahub.ai -> Text Splitter
 LangChainHub -> Agents
 LangChainHub -> Embedding
 LangChainHub -> Text Splitter
