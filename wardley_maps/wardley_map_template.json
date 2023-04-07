@@ -1,0 +1,90 @@
+{
+  "title": "Prompt Engineering",
+  "nodes": [
+    {
+      "id": "Prompt Engineer",
+      "type": "anchor",
+      "position": {
+        "x": 0.97,
+        "y": 0.19
+      }
+    },
+    {
+      "id": "Techniques",
+      "type": "component",
+      "position": {
+        "x": 0.75,
+        "y": 0.54
+      },
+      "label": {
+        "x": -38,
+        "y": -16
+      }
+    },
+    /* Other nodes data here */
+  ],
+  "links": [
+    {
+      "source": "Prompt Engineer",
+      "target": "Use Cases"
+    },
+    /* Other links data here */
+  ],
+  "evolve": [
+    {
+      "id": "Prompt Templates",
+      "value": 0.84,
+      "label": {
+        "x": -23,
+        "y": 14
+      }
+    },
+    /* Other evolve data here */
+  ],
+  "pipelines": [
+    {
+      "id": "Techniques",
+      "value": 0.1,
+      "position": {
+        "x": 0.6,
+        "y": 0.59
+      }
+    },
+    /* Other pipelines data here */
+  ],
+  "notes": [
+    {
+      "id": "Demand for using private data will increase",
+      "position": {
+        "x": 0.52,
+        "y": 0.22
+      }
+    },
+    /* Other notes data here */
+  ],
+  "market": [
+    {
+      "id": "llamahub.ai",
+      "position": {
+        "x": 0.72,
+        "y": 0.66
+      },
+      "label": {
+        "x": -39,
+        "y": 34
+      }
+    },
+    /* Other market data here */
+  ],
+  "annotations": [
+    {
+      "id": "1",
+      "text": "Components not in final positions",
+      "position": {
+        "x": 0.74,
+        "y": 0.08
+      }
+    },
+    /* Other annotations data here */
+  ]
+}
