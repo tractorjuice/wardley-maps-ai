@@ -164,5 +164,59 @@
   ]
 }
 
+{
+  "evolve": [
+    /* JSON evolve data here */
+  ],
+  "pipelines": [
+    /* JSON pipelines data here */
+  ],
+  "notes": [
+    {
+      "id": "Demand for using private data will increase",
+      "position": {
+        "x": 0.52,
+        "y": 0.22
+      }
+    },
+    /* Other notes data here */
+  ],
+  "market": [
+    {
+      "id": "llamahub.ai",
+      "position": {
+        "x": 0.72,
+        "y": 0.66
+      },
+      "label": {
+        "x": -39,
+        "y": 34
+      }
+    },
+    {
+      "id": "LangChainHub",
+      "position": {
+        "x": 0.69,
+        "y": 0.27
+      },
+      "label": {
+        "x": -52,
+        "y": -27
+      }
+    }
+  ],
+  "annotations": [
+    {
+      "id": "1",
+      "text": "Components not in final positions",
+      "position": {
+        "x": 0.74,
+        "y": 0.08
+      }
+    },
+    /* Other annotations data here */
+  ]
+}
+
 
 
