@@ -48,7 +48,7 @@ component Text [0.33, 0.77] label [-18, 23]
 component Weaviate [0.25, 0.62] label [-23, 24]
 component Dolly [0.15, 0.64]
 component HuggingFace [0.14, 0.76] label [-34, 25]
-component Convertation History [0.79, 0.33] label [-69, -26]
+component Conversation History [0.79, 0.33] label [-69, -26]
 component Google Search [0.54, 0.83]
 component Storage [0.50, 0.74]
 component Use Cases [0.95, 0.43]
@@ -108,8 +108,8 @@ Techniques -> Gaurdrails
 Techniques -> Prompt Templates
 Techniques -> Cost Management (MLOps/FinOps)
 
-Chat Question Answer -> Convertation History
-Convertation History -> Memory
+Chat Question Answer -> Conversation History
+Conversation History -> Memory
 
 // TO DO: Add Self reflection capabilities to the Wardley Map
 component Self Reflection [0.74, 0.13] label [-29, 15]
@@ -188,7 +188,7 @@ API -> HuggingFace
 
 evolve Prompt Templates 0.84 label [-23, 14]
 evolve Agents 0.75 label [-25, 25]
-evolve Convertation History 0.66 label [-23, 10]
+evolve Conversation History 0.66 label [-23, 10]
 //evolve Memory 0.75 label [-25, 25]
 
 style wardley
