@@ -1,0 +1,168 @@
+{
+  "title": "Prompt Engineering",
+  "components": [
+    { "id": "Prompt Engineer", "x": 0.97, "y": 0.19 },
+    { "id": "Techniques", "x": 0.75, "y": 0.54 },
+    { "id": "Chunks", "x": 0.39, "y": 0.62 },
+    { "id": "Text Splitter", "x": 0.34, "y": 0.67 },
+    { "id": "Embedding", "x": 0.45, "y": 0.59 },
+    { "id": "Tools", "x": 0.59, "y": 0.73 },
+    { "id": "Agents", "x": 0.67, "y": 0.44 },
+    { "id": "LLMs", "x": 0.18, "y": 0.71 },
+    { "id": "LLaMA", "x": 0.09, "y": 0.67 },
+    { "id": "Cloud", "x": 0.04, "y": 0.87 },
+    { "id": "Vector DB", "x": 0.26, "y": 0.52 },
+    { "id": "Question Answer", "x": 0.88, "y": 0.61 },
+    { "id": "Question Answer with sources", "x": 0.93, "y": 0.46 },
+    { "id": "Chat Question Answer", "x": 0.93, "y": 0.53 },
+    { "id": "Zapier", "x": 0.48, "y": 0.84 },
+    { "id": "Pinecone", "x": 0.25, "y": 0.73 },
+    { "id": "Memory", "x": 0.62, "y": 0.56 },
+    { "id": "Chains", "x": 0.74, "y": 0.45 },
+    { "id": "OpenAIEmbeddings", "x": 0.44, "y": 0.71 },
+    { "id": "CohereEmbeddings", "x": 0.44, "y": 0.47 },
+    { "id": "Alpaca", "x": 0.12, "y": 0.66 },
+    { "id": "Laptop", "x": 0.04, "y": 0.66 },
+    { "id": "Vector", "x": 0.48, "y": 0.58 },
+    { "id": "Private Data", "x": 0.53, "y": 0.27 },
+    { "id": "Metadata", "x": 0.56, "y": 0.35 },
+    { "id": "Fine Tuning", "x": 0.74, "y": 0.37 },
+    { "id": "Prompt Templates", "x": 0.63, "y": 0.69 },
+    { "id": "Chroma", "x": 0.25, "y": 0.57 },
+    { "id": "Propriety Algos", "x": 0.20, "y": 0.23 },
+    { "id": "Propriety Data", "x": 0.32, "y": 0.18 },
+    { "id": "Partnerships", "x": 0.84, "y": 0.15 },
+    { "id": "Customers", "x": 0.95, "y": 0.08 },
+    { "id": "Developers", "x": 0.87, "y": 0.23 },
+    { "id": "Research", "x": 0.07, "y": 0.32 },
+    { "id": "APIs", "x": 0.51, "y": 0.18 },
+    { "id": "Infrastructure", "x": 0.15, "y": 0.88 },
+    { "id": "Regulations", "x": 0.81, "y": 0.08 },
+    { "id": "Competitors", "x": 0.72, "y": 0.14 },
+    { "id": "Market Trends", "x": 0.65, "y": 0.04 },
+    { "id": "Open Source", "x": 0.44, "y": 0.25 },
+    { "id": "Feedback Loops", "x": 0.92, "y": 0.39 }
+  ],
+  "links": [
+    { "source": "Prompt Engineer", "target": "Techniques" },
+    { "source": "Techniques", "target": "Chunks" },
+    { "source": "Chunks", "target": "Text Splitter" },
+    { "source": "Text Splitter", "target": "Embedding" },
+    { "source": "Embedding", "target": "Tools" },
+    { "source": "Tools", "target": "Agents" },
+    { "source": "Agents", "target": "LLMs" },
+    { "source": "LLMs", "target": "LLaMA" },
+    { "source": "LLaMA", "target": "Cloud" },
+    { "source": "Cloud", "target": "Vector DB" },
+    { "source": "Vector DB", "target": "Question Answer" },
+    { "source": "Question Answer", "target": "Question Answer with sources" },
+    { "source": "Question Answer with sources", "target": "Chat Question Answer" },
+    { "source": "Chat Question Answer", "target": "Zapier" },
+    { "source": "Zapier", "target": "Pinecone" },
+    { "source": "Pinecone", "target": "Memory" },
+    { "source": "Memory", "target": "Chains" },
+    { "source": "Chains", "target": "OpenAIEmbeddings" },
+    { "source": "OpenAIEmbeddings", "target": "CohereEmbeddings" },
+    { "source": "CohereEmbeddings", "target": "Alpaca" },
+    { "source": "Alpaca", "target": "Laptop" },
+    { "source": "Laptop", "target": "Vector" },
+    { "source": "Vector", "target": "Private Data" },
+    { "source": "Private Data", "target": "Metadata" },
+    { "source": "Metadata", "target": "Fine Tuning" },
+    { "source": "Fine Tuning", "target": "Prompt Templates" },
+    { "source": "Prompt Templates", "target": "Propriety Data" },
+    { "source": "Propriety Data", "target": "Partnerships" },
+    { "source": "Partnerships", "target": "Customers" },
+    { "source": "Customers", "target": "Developers" },
+    { "source": "Developers", "target": "Research" },
+    { "source": "Research", "target": "APIs" },
+    { "source": "APIs", "target": "Infrastructure" },
+    { "source": "Infrastructure", "target": "Regulations" },
+    { "source": "Regulations", "target": "Competitors" },
+    { "source": "Competitors", "target": "Market Trends" },
+    { "source": "Market Trends", "target": "Open Source" },
+    { "source": "Open Source", "target": "Feedback Loops" }
+  ]
+}
+
+{
+  "nodes": [
+    /* JSON nodes data here */
+  ],
+  "links": [
+    /* JSON links data here */
+  ],
+  "evolve": [
+    {
+      "id": "Prompt Templates",
+      "value": 0.84,
+      "label": {
+        "x": -23,
+        "y": 14
+      }
+    },
+    {
+      "id": "Agents",
+      "value": 0.75,
+      "label": {
+        "x": -25,
+        "y": 25
+      }
+    },
+    {
+      "id": "Convertation History",
+      "value": 0.66,
+      "label": {
+        "x": -23,
+        "y": 10
+      }
+    }
+  ],
+  "pipelines": [
+    {
+      "id": "Techniques",
+      "value": {
+        "x": 0.1,
+        "y": 0.6
+      }
+    },
+    {
+      "id": "Vector DB",
+      "value": {
+        "x": 0.4,
+        "y": 0.8
+      }
+    },
+    {
+      "id": "Text Splitter",
+      "value": {
+        "x": 0.5,
+        "y": 0.8
+      }
+    },
+    {
+      "id": "Embedding",
+      "value": {
+        "x": 0.3,
+        "y": 0.8
+      }
+    },
+    {
+      "id": "Compute",
+      "value": {
+        "x": 0.6,
+        "y": 0.9
+      }
+    },
+    {
+      "id": "Vector Search Algos",
+      "value": {
+        "x": 0.1,
+        "y": 0.8
+      }
+    }
+  ]
+}
+
+
+
