@@ -1,0 +1,9 @@
+First prompt:
+Please do the following 5 stage process:
+Stage 1: As a creative idea generator, generate 20 diverse ideas for an  app for a new type of GPT-4 that increases productivity for writing  tasks. make the ideas very creative and aim at narrow, specific markets  and professions
+Stage 2: Pick the best idea based on assumptions about the market and  its feasibility. justify it
+Stage 3: As a product designer, describe the steps required to make the  product
+Stage 4: As a marketer, develop a product name and pitch
+Stage 5: Give me a vivid visual description of UX for the product
+
+Second prompt: can you create a prototype python program that will send legal drafting instructions to ChatGPT and create a first draft in Word
