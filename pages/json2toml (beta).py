@@ -103,17 +103,17 @@ elif selected == "WM to TOML":
         )
         
     
-elif selected == "JSON to TOML":
-    st.title("JSON to TOML")
+elif selected == "WM to JSON":
+    st.title("WM to JSON")
     st.image("./pages/logo.gif", width=200)
-    st.title("JSON to TOML File Converter")
+    st.title("WM to JSON File Converter")
     st.write(
         """  
             """
     )
     st.write(
         """  
-    Let's convert your Wardley Map in JSON to TOML
+    Let's convert your Wardley Map in WM to JSON
             """
     )
     
@@ -121,10 +121,10 @@ elif selected == "JSON to TOML":
         """  
             """
     )
-    json_file = st.file_uploader("UPLOAD JSON FILE")
+    json_file = st.file_uploader("UPLOAD WM FILE")
     st.info(
         f"""
-                👆 Upload your json file.
+                👆 Upload your wm file.
                 
                 """
     )
@@ -136,7 +136,7 @@ elif selected == "JSON to TOML":
         st.code(json.loads(json_text))
 
         toml_content = toml.dumps(json.loads(json_text))
-        st.write("TOML FILE CONTENT")
+        st.write("JSON FILE CONTENT")
         st.code(toml_content)
         toml_file_name = json_file.name.replace(".json", ".toml")
         st.download_button(
