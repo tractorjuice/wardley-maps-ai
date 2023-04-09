@@ -278,7 +278,27 @@ elif selected == "WM to JSON":
         """  
             """
     )
-    json_file = st.file_uploader("UPLOAD WM FILE")
+    
+    # Map ID from onlinewardleymapping
+    map_id=''
+    st.text_input(map_id, value="", max_chars=50)
+   
+    # Fetch map using onlinewardleymapping api
+    url = f"https://api.onlinewardleymaps.com/v1/maps/fetch?id={map_id}"
+    response = requests.get(url)
+    
+    # Check if the map was found
+    if response.status_code == 200:
+        map_data = response.json()
+        wardley_map_text = map_data['text']
+
+# Parse the Wardley map text
+        parsed_map = parse_wardley_map(wardley_map_text)
+
+
+# Print the JSON
+        #print(wardley_map_json)
+    
     st.info(
         f"""
                 👆 Upload your wm file.
@@ -286,16 +306,16 @@ elif selected == "WM to JSON":
                 """
     )
 
-    if json_file is not None:
-        json_text = json_file.read()
-
-        st.write("JSON CONTENT")
-        st.code(json.loads(json_text))
-
-        toml_content = toml.dumps(json.loads(json_text))
+        #st.write("JSON CONTENT")
+        #st.code(json.loads(json_text))
+        
+        # Convert the parsed map to JSON
+        wardley_map_json = json.dumps(parsed_map, indent=2)
+        toml_content = toml.dumps(wardley_map_json)
+        
         st.write("JSON FILE CONTENT")
-        st.code(toml_content)
-        toml_file_name = json_file.name.replace(".json", ".toml")
-        st.download_button(
-            "DOWNLOAD TOML FILE", data=toml_content, file_name=toml_file_name
-        )
+        st.code(wardley_map_json)
+        #toml_file_name = json_file.name.replace(".json", ".toml")
+        #st.download_button(
+        #    "DOWNLOAD TOML FILE", data=wardley_map_jso, file_name=json_file_name
+        #)
