@@ -297,7 +297,7 @@ elif selected == "WM to JSON":
 
 
 # Print the JSON
-        #print(wardley_map_json)
+        print(parsed_map)
     
     st.info(
         f"""
