@@ -223,7 +223,7 @@ if selected == "JSON to TOML":
         
 elif selected == "WM to TOML":
     st.image("./pages/logo.gif", width=200)
-    st.title("WM to TOML File Converter")
+    st.title("WM to TOML Converter")
     st.write(
         """  
             """
@@ -238,29 +238,40 @@ elif selected == "WM to TOML":
         """  
             """
     )
-    json_file = st.file_uploader("UPLOAD WM FILE")
-    st.info(
-        f"""
-                👆 Upload your wm file.
-                
-                """
-    )
-
-    if json_file is not None:
-        json_text = json_file.read()
-
-        st.write("JSON CONTENT")
-        st.code(json.loads(json_text))
-
-        toml_content = toml.dumps(json.loads(json_text))
-        st.write("TOML FILE CONTENT")
-        st.code(toml_content)
-        toml_file_name = json_file.name.replace(".json", ".toml")
-        st.download_button(
-            "DOWNLOAD TOML FILE", data=toml_content, file_name=toml_file_name
-        )
-        
     
+    # Map ID from onlinewardleymapping
+    map_id=''
+    map_id = st.text_input("Enter the ID of the Wardley Map: For example https://onlinewardleymaps.com/#clone:OXeRWhqHSLDXfOnrfI, enter: OXeRWhqHSLDXfOnrfI", value="OXeRWhqHSLDXfOnrfI")
+    
+    # Fetch map using onlinewardleymapping api
+    url = f"https://api.onlinewardleymaps.com/v1/maps/fetch?id={map_id}"
+    response = requests.get(url)
+    
+    # Check if the map was found
+    if response.status_code == 200:
+        map_data = response.json()
+        wardley_map_text = map_data['text']
+
+# Parse the Wardley map text
+        parsed_map = parse_wardley_map(wardley_map_text)
+
+# Print the JSON
+        st.write("JSON CONTENT")
+        st.code(parsed_map)
+
+        #toml_content = toml.dumps(parsed_map)
+
+        wardley_map_toml = toml.dumps(parsed_map, indent=2)
+        st.write("TOML FILE CONTENT")
+        st.code(wardley_map_toml)  
+        
+        toml_file_name = map_id + '.toml'
+        st.download_button(
+            "DOWNLOAD TOML FILE",
+            data=wardley_map_json,
+            file_name=toml_file_name
+        )  
+
 elif selected == "WM to JSON":
     st.image("./pages/logo.gif", width=200)
     st.title("WM to JSON File Converter")
