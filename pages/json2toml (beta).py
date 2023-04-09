@@ -43,7 +43,7 @@ if selected == "JSON to TOML":
     json_file = st.file_uploader("UPLOAD JSON FILE")
     st.info(
         f"""
-                👆 Upload your json file. Or try a [sample](https://github.com/CharlyWargnier/CSVs/blob/master/more_samples/firestore-key-sample.json?raw=true).
+                👆 Upload your json file.
                 
                 """
     )
@@ -83,7 +83,7 @@ elif selected == "WM to TOML":
     json_file = st.file_uploader("UPLOAD WM FILE")
     st.info(
         f"""
-                👆 Upload your wm file. Or try a [sample](https://github.com/CharlyWargnier/CSVs/blob/master/more_samples/firestore-key-sample.json?raw=true).
+                👆 Upload your wm file.
                 
                 """
     )
