@@ -268,7 +268,7 @@ elif selected == "WM to TOML":
         toml_file_name = map_id + '.toml'
         st.download_button(
             "DOWNLOAD TOML FILE",
-            data=wardley_map_json,
+            data=wardley_map_toml,
             file_name=toml_file_name
         )  
 
