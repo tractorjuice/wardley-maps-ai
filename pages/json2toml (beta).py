@@ -104,7 +104,6 @@ elif selected == "WM to TOML":
         
     
 elif selected == "WM to JSON":
-    st.title("WM to JSON")
     st.image("./pages/logo.gif", width=200)
     st.title("WM to JSON File Converter")
     st.write(
