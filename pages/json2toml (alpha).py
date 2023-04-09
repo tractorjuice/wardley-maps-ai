@@ -21,7 +21,7 @@ with st.sidebar:
 
 if selected == "JSON to TOML":
 
-    st.image("logo.gif", width=200)
+    st.image("./pages/logo.gif", width=200)
 
     st.title("JSON to TOML file converter")
 
