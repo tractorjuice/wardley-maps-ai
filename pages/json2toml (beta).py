@@ -311,11 +311,11 @@ elif selected == "WM to JSON":
         
         # Convert the parsed map to JSON
         wardley_map_json = json.dumps(parsed_map, indent=2)
-        #toml_content = toml.dumps(wardley_map_json)
-        
+
         st.write("JSON FILE CONTENT")
         st.code(wardley_map_json)
-        #toml_file_name = json_file.name.replace(".json", ".toml")
-       #st.download_button(
-        #    "DOWNLOAD TOML FILE", data=wardley_map_jso, file_name=json_file_name
-        #)
+        
+        json_file_name = (map_id + '.json'
+            st.download_button(
+            "DOWNLOAD TOML FILE", data=wardley_map_json, file_name=json_file_name
+        )
