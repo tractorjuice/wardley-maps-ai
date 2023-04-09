@@ -1,0 +1,968 @@
+title = [ "Prompt Engineering",]
+anchors = [ "Prompt Engineer",]
+evolution = [ "evolution genesis / concept  -> custom / emerging  -> product / converging  -> commodity / accepted",]
+pioneers = []
+blueline = []
+style = [ "style wardley",]
+comments = [ "//pioneers, Settlers, Town Planners", "//pioneers [0.80, 0.37, 0.60, 0.59]", "//component Human-in-the-loop (HITL) [0.13, 0.04]", "// Privacy Preserving Components", "// Concrete ML: Open-Source FHE-Based Toolkit That Helps in Preserving Privacy And Enables Secure Machine Learning", "//  https://research.facebook.com/blog/2022/10/mpc-based-machine-learning-achieving-end-to-end-privacy-preserving-machine-learning/", "//component Homomorphic Encryption", "//component Secure Multi-Party Computation (SMPC)", "//component Differential Privacy", "//component Federated Learning", "//component Zero-Knowledge Proofs", "//component Private Information Retrieval", "//component Private Set Intersection (PSI)", "//Question Answer -> Prompt Templates", "//Ethics", "// TO DO: Add Self reflection capabilities to the Wardley Map", "//Self Reflection -> Dynamic Memory", "//component Dynamic Memory [0.62, 0.16] label [-56, -14]", "//evolve Dynamic Memory 0.25 label [-25, 25]", "// Tools that can be used by agents", "//evolve Memory 0.75 label [-25, 25]", "// Notes about the Wardley Map", "// [DERA] (https://arxiv.org/pdf/2303.17071v1.pdf)", "// HuggingGPT: Solving AI Tasks with ChatGPT and its Friends in HuggingFace https://arxiv.org/pdf/2303.17580.pdf", "//note Pioneers [0.91, 0.84]", "//annotation 8,[0.08,0.49] [Link text Here](https://link-url-here.org)",]
+[[components]]
+name = "Techniques"
+description = ""
+evolution = "product"
+visibility = "high"
+positionxy = "[0.54,0.75]"
+labelxy = "[-16,-38]"
+
+[[components]]
+name = "Chunks"
+description = ""
+evolution = "product"
+visibility = "medium"
+positionxy = "[0.62,0.39]"
+labelxy = "[23,-17]"
+
+[[components]]
+name = "Text Splitter"
+description = ""
+evolution = "product"
+visibility = "medium"
+positionxy = "[0.67,0.34]"
+labelxy = ""
+
+[[components]]
+name = "Embedding"
+description = ""
+evolution = "product"
+visibility = "medium"
+positionxy = "[0.59,0.45]"
+labelxy = ""
+
+[[components]]
+name = "Tools"
+description = ""
+evolution = "commodity"
+visibility = "medium"
+positionxy = "[0.73,0.59]"
+labelxy = "[24,-19]"
+
+[[components]]
+name = "Agents"
+description = ""
+evolution = "product"
+visibility = "medium"
+positionxy = "[0.44,0.67]"
+labelxy = "[20,-22]"
+
+[[components]]
+name = "LLMs"
+description = ""
+evolution = "commodity"
+visibility = "low"
+positionxy = "[0.71,0.18]"
+labelxy = ""
+
+[[components]]
+name = "LLaMA"
+description = ""
+evolution = "product"
+visibility = "low"
+positionxy = "[0.67,0.09]"
+labelxy = "[7,-52]"
+
+[[components]]
+name = "Cloud"
+description = ""
+evolution = "commodity"
+visibility = "low"
+positionxy = "[0.87,0.04]"
+labelxy = "[21,-16]"
+
+[[components]]
+name = "Vector DB"
+description = ""
+evolution = "product"
+visibility = "medium"
+positionxy = "[0.52,0.26]"
+labelxy = "[-16,-31]"
+
+[[components]]
+name = "Question Answer"
+description = ""
+evolution = "product"
+visibility = "high"
+positionxy = "[0.61,0.88]"
+labelxy = "[21,-8]"
+
+[[components]]
+name = "Question Answer with sources"
+description = ""
+evolution = "product"
+visibility = "high"
+positionxy = "[0.46,0.93]"
+labelxy = "[14,-26]"
+
+[[components]]
+name = "Chat Question Answer"
+description = ""
+evolution = "product"
+visibility = "high"
+positionxy = "[0.53,0.93]"
+labelxy = "[-36,16]"
+
+[[components]]
+name = "Zapier"
+description = ""
+evolution = "commodity"
+visibility = "medium"
+positionxy = "[0.84,0.48]"
+labelxy = ""
+
+[[components]]
+name = "Pinecone"
+description = ""
+evolution = "commodity"
+visibility = "medium"
+positionxy = "[0.73,0.25]"
+labelxy = "[26,-36]"
+
+[[components]]
+name = "Memory"
+description = ""
+evolution = "product"
+visibility = "medium"
+positionxy = "[0.56,0.62]"
+labelxy = "[20,-22]"
+
+[[components]]
+name = "Chains"
+description = ""
+evolution = "product"
+visibility = "high"
+positionxy = "[0.45,0.74]"
+labelxy = "[22,-21]"
+
+[[components]]
+name = "OpenAIEmbeddings"
+description = ""
+evolution = "commodity"
+visibility = "medium"
+positionxy = "[0.71,0.44]"
+labelxy = "[16,-19]"
+
+[[components]]
+name = "CohereEmbeddings"
+description = ""
+evolution = "product"
+visibility = "medium"
+positionxy = "[0.47,0.44]"
+labelxy = "[15,-28]"
+
+[[components]]
+name = "Alpaca"
+description = ""
+evolution = "product"
+visibility = "low"
+positionxy = "[0.66,0.12]"
+labelxy = "[5,-60]"
+
+[[components]]
+name = "Laptop"
+description = ""
+evolution = "product"
+visibility = "low"
+positionxy = "[0.66,0.04]"
+labelxy = "[20,-26]"
+
+[[components]]
+name = "Vector"
+description = ""
+evolution = "product"
+visibility = "medium"
+positionxy = "[0.58,0.48]"
+labelxy = "[3,13]"
+
+[[components]]
+name = "Private Data"
+description = ""
+evolution = "custom"
+visibility = "medium"
+positionxy = "[0.27,0.53]"
+labelxy = "[-12,-53]"
+
+[[components]]
+name = "Metadata"
+description = ""
+evolution = "custom"
+visibility = "medium"
+positionxy = "[0.35,0.56]"
+labelxy = "[-3,13]"
+
+[[components]]
+name = "Fine Tuning"
+description = ""
+evolution = "custom"
+visibility = "high"
+positionxy = "[0.37,0.74]"
+labelxy = "[21,-34]"
+
+[[components]]
+name = "Prompt Templates"
+description = ""
+evolution = "product"
+visibility = "medium"
+positionxy = "[0.69,0.63]"
+labelxy = "[11,-29]"
+
+[[components]]
+name = "Chroma"
+description = ""
+evolution = "product"
+visibility = "medium"
+positionxy = "[0.57,0.25]"
+labelxy = "[25,-25]"
+
+[[components]]
+name = "Propriety Algos"
+description = ""
+evolution = "custom"
+visibility = "low"
+positionxy = "[0.23,0.20]"
+labelxy = "[25,-36]"
+
+[[components]]
+name = "Supabase"
+description = ""
+evolution = "product"
+visibility = "medium"
+positionxy = "[0.48,0.25]"
+labelxy = "[25,-33]"
+
+[[components]]
+name = "OpenAI"
+description = ""
+evolution = "commodity"
+visibility = "low"
+positionxy = "[0.81,0.15]"
+labelxy = "[-10,5]"
+
+[[components]]
+name = "API"
+description = ""
+evolution = "commodity"
+visibility = "low"
+positionxy = "[0.86,0.13]"
+labelxy = ""
+
+[[components]]
+name = "FastTextEmbeddings"
+description = ""
+evolution = "product"
+visibility = "medium"
+positionxy = "[0.57,0.44]"
+labelxy = "[16,-19]"
+
+[[components]]
+name = "ANN"
+description = ""
+evolution = "product"
+visibility = "low"
+positionxy = "[0.68,0.20]"
+labelxy = "[22,-13]"
+
+[[components]]
+name = "kNN"
+description = ""
+evolution = "product"
+visibility = "low"
+positionxy = "[0.64,0.20]"
+labelxy = "[24,-15]"
+
+[[components]]
+name = "SPTAG"
+description = ""
+evolution = "product"
+visibility = "low"
+positionxy = "[0.49,0.20]"
+labelxy = "[25,-27]"
+
+[[components]]
+name = "Faiss"
+description = ""
+evolution = "commodity"
+visibility = "low"
+positionxy = "[0.75,0.20]"
+labelxy = "[21,-19]"
+
+[[components]]
+name = "HNSW"
+description = ""
+evolution = "product"
+visibility = "low"
+positionxy = "[0.60,0.20]"
+labelxy = "[23,-17]"
+
+[[components]]
+name = "Custom Agents"
+description = ""
+evolution = "custom"
+visibility = "medium"
+positionxy = "[0.24,0.58]"
+labelxy = "[5,20]"
+
+[[components]]
+name = "Vector Search Algos"
+description = ""
+evolution = "product"
+visibility = "medium"
+positionxy = "[0.55,0.21]"
+labelxy = "[-45,-61]"
+
+[[components]]
+name = "Public Data"
+description = ""
+evolution = "commodity"
+visibility = "low"
+positionxy = "[0.88,0.10]"
+labelxy = ""
+
+[[components]]
+name = "Compute"
+description = ""
+evolution = "commodity"
+visibility = "low"
+positionxy = "[0.75,0.05]"
+labelxy = ""
+
+[[components]]
+name = "University Research"
+description = ""
+evolution = "genesis"
+visibility = "low"
+positionxy = "[0.13,0.20]"
+labelxy = "[12,-24]"
+
+[[components]]
+name = "PDF"
+description = ""
+evolution = "commodity"
+visibility = "medium"
+positionxy = "[0.74,0.33]"
+labelxy = "[24,-21]"
+
+[[components]]
+name = "Text"
+description = ""
+evolution = "commodity"
+visibility = "medium"
+positionxy = "[0.77,0.33]"
+labelxy = "[23,-18]"
+
+[[components]]
+name = "Weaviate"
+description = ""
+evolution = "product"
+visibility = "medium"
+positionxy = "[0.62,0.25]"
+labelxy = "[24,-23]"
+
+[[components]]
+name = "Dolly"
+description = ""
+evolution = "product"
+visibility = "low"
+positionxy = "[0.64,0.15]"
+labelxy = ""
+
+[[components]]
+name = "HuggingFace"
+description = ""
+evolution = "commodity"
+visibility = "low"
+positionxy = "[0.76,0.14]"
+labelxy = "[25,-34]"
+
+[[components]]
+name = "Conversation History"
+description = ""
+evolution = "custom"
+visibility = "high"
+positionxy = "[0.33,0.79]"
+labelxy = "[-26,-69]"
+
+[[components]]
+name = "Google Search"
+description = ""
+evolution = "commodity"
+visibility = "medium"
+positionxy = "[0.83,0.54]"
+labelxy = ""
+
+[[components]]
+name = "Storage"
+description = ""
+evolution = "commodity"
+visibility = "medium"
+positionxy = "[0.74,0.50]"
+labelxy = ""
+
+[[components]]
+name = "Use Cases"
+description = ""
+evolution = "product"
+visibility = "high"
+positionxy = "[0.43,0.95]"
+labelxy = ""
+
+[[components]]
+name = "Question Answer Private Data"
+description = ""
+evolution = "custom"
+visibility = "high"
+positionxy = "[0.37,0.93]"
+labelxy = "[0,-83]"
+
+[[components]]
+name = "Gaurdrails"
+description = ""
+evolution = "product"
+visibility = "high"
+positionxy = "[0.50,0.71]"
+labelxy = ""
+
+[[components]]
+name = "HuggingFaceGPT"
+description = ""
+evolution = "commodity"
+visibility = "low"
+positionxy = "[0.73,0.15]"
+labelxy = "[-18,-111]"
+
+[[components]]
+name = "Ethics"
+description = ""
+evolution = "commodity"
+visibility = "medium"
+positionxy = "[0.72,0.69]"
+labelxy = ""
+
+[[components]]
+name = "FinOps"
+description = ""
+evolution = "product"
+visibility = "medium"
+positionxy = "[0.51,0.59]"
+labelxy = "[4,16]"
+
+[[components]]
+name = "MLOps"
+description = ""
+evolution = "product"
+visibility = "medium"
+positionxy = "[0.44,0.59]"
+labelxy = "[16,-44]"
+
+[[components]]
+name = "DataOps"
+description = ""
+evolution = "product"
+visibility = "medium"
+positionxy = "[0.49,0.47]"
+labelxy = "[21,-48]"
+
+[[components]]
+name = "ConcreteML"
+description = ""
+evolution = "custom"
+visibility = "medium"
+positionxy = "[0.35,0.38]"
+labelxy = "[19,-43]"
+
+[[components]]
+name = "PETs"
+description = ""
+evolution = "custom"
+visibility = "medium"
+positionxy = "[0.36,0.49]"
+labelxy = ""
+
+[[components]]
+name = "Embedding PETs"
+description = ""
+evolution = "custom"
+visibility = "medium"
+positionxy = "[0.32,0.44]"
+labelxy = "[29,-50]"
+
+[[components]]
+name = "Self Reflection"
+description = ""
+evolution = "genesis"
+visibility = "high"
+positionxy = "[0.13,0.74]"
+labelxy = "[15,-29]"
+
+[[links]]
+source = "PETs"
+target = "Private Data"
+
+[[links]]
+source = "PETs"
+target = "ConcreteML"
+
+[[links]]
+source = "PETs"
+target = "Embedding PETs"
+
+[[links]]
+source = "Prompt Engineer"
+target = "Use Cases"
+
+[[links]]
+source = "Use Cases"
+target = "Question Answer with sources"
+
+[[links]]
+source = "Use Cases"
+target = "Chat Question Answer"
+
+[[links]]
+source = "Use Cases"
+target = "Question Answer Private Data"
+
+[[links]]
+source = "Question Answer"
+target = "Chains"
+
+[[links]]
+source = "Question Answer"
+target = "Fine Tuning"
+
+[[links]]
+source = "Ethics"
+target = "Gaurdrails"
+
+[[links]]
+source = "Prompt Templates"
+target = "LLMs"
+
+[[links]]
+source = "Prompt Templates"
+target = "Vector"
+
+[[links]]
+source = "Techniques"
+target = "Gaurdrails"
+
+[[links]]
+source = "Techniques"
+target = "Prompt Templates"
+
+[[links]]
+source = "Techniques"
+target = "Cost Management (MLOps/FinOps)"
+
+[[links]]
+source = "Chat Question Answer"
+target = "Conversation History"
+
+[[links]]
+source = "Conversation History"
+target = "Memory"
+
+[[links]]
+source = "Chains"
+target = "Agents"
+
+[[links]]
+source = "Agents"
+target = "Tools"
+
+[[links]]
+source = "Agents"
+target = "Custom Agents"
+
+[[links]]
+source = "Agents"
+target = "Memory"
+
+[[links]]
+source = "Agents"
+target = "Private Data"
+
+[[links]]
+source = "Agents"
+target = "MLOps"
+
+[[links]]
+source = "Agents"
+target = "FinOps"
+
+[[links]]
+source = "Agents"
+target = "DataOps"
+
+[[links]]
+source = "llamahub.ai"
+target = "Agents"
+
+[[links]]
+source = "llamahub.ai"
+target = "Embedding"
+
+[[links]]
+source = "llamahub.ai"
+target = "Text Splitter"
+
+[[links]]
+source = "LangChainHub"
+target = "Agents"
+
+[[links]]
+source = "LangChainHub"
+target = "Embedding"
+
+[[links]]
+source = "LangChainHub"
+target = "Text Splitter"
+
+[[links]]
+source = "Custom Agents"
+target = "Private Data"
+
+[[links]]
+source = "Memory"
+target = "Storage"
+
+[[links]]
+source = "Vector"
+target = "Question Answer"
+
+[[links]]
+source = "Chat Question Answer"
+target = "Question Answer"
+
+[[links]]
+source = "Chat Question Answer"
+target = "Memory"
+
+[[links]]
+source = "Question Answer with sources"
+target = "Question Answer"
+
+[[links]]
+source = "Embedding"
+target = "Chunks"
+
+[[links]]
+source = "LLMs"
+target = "Public Data"
+
+[[links]]
+source = "LLMs"
+target = "HuggingFaceGPT"
+
+[[links]]
+source = "Semantic Search"
+target = "Vector"
+
+[[links]]
+source = "Alpaca"
+target = "LLMs"
+
+[[links]]
+source = "Alpaca"
+target = "LLaMA"
+
+[[links]]
+source = "LLaMA"
+target = "Laptop"
+
+[[links]]
+source = "LLaMA"
+target = "Compute"
+
+[[links]]
+source = "Dolly"
+target = "Alpaca"
+
+[[links]]
+source = "Vector DB"
+target = "Vector Search Algos"
+
+[[links]]
+source = "Source Metadata"
+target = "Text Splitter"
+
+[[links]]
+source = "Private Data"
+target = "Vector"
+
+[[links]]
+source = "Private Data"
+target = "Metadata"
+
+[[links]]
+source = "Private Data"
+target = "DataOps"
+
+[[links]]
+source = "Metadata"
+target = "Vector"
+
+[[links]]
+source = "VectorQA with sources"
+target = "Metadata"
+
+[[links]]
+source = "Metadata"
+target = "Question Answer with sources"
+
+[[links]]
+source = "Tools"
+target = "Zapier"
+
+[[links]]
+source = "Tools"
+target = "Google Search"
+
+[[links]]
+source = "Chunks"
+target = "Text Splitter"
+
+[[links]]
+source = "Embedding"
+target = "Vector DB"
+
+[[links]]
+source = "Vector"
+target = "Embedding"
+
+[[links]]
+source = "LLMs"
+target = "Compute"
+
+[[links]]
+source = "LLMs"
+target = "HuggingFace"
+
+[[links]]
+source = "HuggingFace"
+target = "Cloud"
+
+[[links]]
+source = "HuggingFaceGPT"
+target = "Compute"
+
+[[links]]
+source = "HuggingFaceGPT"
+target = "HuggingFace"
+
+[[links]]
+source = "VectorDB"
+target = "Cloud"
+
+[[links]]
+source = "OpenAI"
+target = "Cloud"
+
+[[links]]
+source = "LLMs"
+target = "OpenAI"
+
+[[links]]
+source = "API"
+target = "OpenAI"
+
+[[links]]
+source = "API"
+target = "Zapier"
+
+[[links]]
+source = "API"
+target = "HuggingFace"
+
+[[evolve]]
+name = "Prompt Templates"
+description = ""
+positionxy = "[14,-23]"
+labelxy = "[14,-23]"
+
+[[evolve]]
+name = "Agents"
+description = ""
+positionxy = "[25,-25]"
+labelxy = "[25,-25]"
+
+[[evolve]]
+name = "Conversation History"
+description = ""
+positionxy = "[10,-23]"
+labelxy = "[10,-23]"
+
+[[markets]]
+name = "llamahub.ai"
+description = ""
+positionxy = "[0.66,0.72]"
+labelxy = "[34,-39]"
+
+[[markets]]
+name = "LangChainHub"
+description = ""
+positionxy = "[0.27,0.69]"
+labelxy = "[-27,-52]"
+
+[[pipelines]]
+name = "Techniques"
+description = ""
+positionxy = "[0.6,0.1]"
+labelxy = ""
+
+[[pipelines]]
+name = "Vector DB"
+description = ""
+positionxy = "[0.8,0.40]"
+labelxy = ""
+
+[[pipelines]]
+name = "Text Splitter"
+description = ""
+positionxy = "[0.8,0.50]"
+labelxy = ""
+
+[[pipelines]]
+name = "Embedding"
+description = ""
+positionxy = "[0.8,0.30]"
+labelxy = ""
+
+[[pipelines]]
+name = "Compute"
+description = ""
+positionxy = "[0.90,0.6]"
+labelxy = ""
+
+[[pipelines]]
+name = "Vector Search Algos"
+description = ""
+positionxy = "[0.8,0.1]"
+labelxy = ""
+
+[[notes]]
+name = "Demand for using private data will increase"
+description = ""
+positionxy = "[0.22,0.52]"
+labelxy = ""
+
+[[notes]]
+name = "Select based on use case"
+description = ""
+positionxy = "[0.49,0.28]"
+labelxy = ""
+
+[[notes]]
+name = "Prompt Templates bundles $$$ starting to emerge"
+description = ""
+positionxy = "[0.70,0.64]"
+labelxy = ""
+
+[[notes]]
+name = "Many agents available today"
+description = ""
+positionxy = "[0.40,0.68]"
+labelxy = ""
+
+[[notes]]
+name = "Select based on use case"
+description = ""
+positionxy = "[0.52,0.45]"
+labelxy = ""
+
+[[notes]]
+name = "Select based on use case"
+description = ""
+positionxy = "[0.60,0.34]"
+labelxy = ""
+
+[[notes]]
+name = "Support compliance with ethics policies"
+description = ""
+positionxy = "[0.47,0.70]"
+labelxy = ""
+
+[[notes]]
+name = "(Codify Chain of Thought)"
+description = ""
+positionxy = "[0.42,0.72]"
+labelxy = ""
+
+[[notes]]
+name = "Token Cost Management"
+description = ""
+positionxy = "[0.49,0.58]"
+labelxy = ""
+
+[[notes]]
+name = "Repeatable Analytical Pipelines"
+description = ""
+positionxy = "[0.39,0.57]"
+labelxy = ""
+
+[[notes]]
+name = "Chunking key to performant outputs"
+description = ""
+positionxy = "[0.63,0.39]"
+labelxy = ""
+
+[[notes]]
+name = "See DERA Dialog-Enabled Resolving Agents"
+description = ""
+positionxy = "[0.08,0.71]"
+labelxy = ""
+
+[[annotations]]
+name = "annotations [0.08, 0.01]"
+description = ""
+positionxy = "[0.01,0.08]"
+
+[[annotations]]
+number = "1"
+name = "Components not in final positions"
+description = ""
+positionxy = "[0.08,0.74]"
+
+[[annotations]]
+number = "2"
+name = "Components not in final positions"
+description = ""
+positionxy = "[0.28,0.444]"
+
+[[annotations]]
+number = "3"
+name = "Components not in final positions"
+description = ""
+positionxy = "[0.08,0.2]"
+
+[[annotations]]
+number = "4"
+name = "Memory is the capacity of remembering previous interactions with the user. Critical for ChatBots"
+description = ""
+positionxy = "[0.56,0.59]"
+
+[[annotations]]
+number = "5"
+name = "Focus here. Critical in getting external data not in current LLMs (E.g Google Search)"
+description = ""
+positionxy = "[0.45,0.64]"
+
+[[annotations]]
+number = "6"
+name = "Lite LLMs can run locally, or trained for $600 and fine tuned"
+description = ""
+positionxy = "[0.68,0.1]"
+
+[[annotations]]
+number = "7"
+name = "Multiple Techniques available, select best fit for use case"
+description = ""
+positionxy = "[0.515,0.76]"
+
