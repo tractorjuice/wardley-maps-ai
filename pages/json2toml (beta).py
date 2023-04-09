@@ -261,7 +261,7 @@ elif selected == "WM to TOML":
 
         #toml_content = toml.dumps(parsed_map)
 
-        wardley_map_toml = toml.dumps(parsed_map, indent=2)
+        wardley_map_toml = toml.dumps(parsed_map)
         st.write("TOML FILE CONTENT")
         st.code(wardley_map_toml)  
         
