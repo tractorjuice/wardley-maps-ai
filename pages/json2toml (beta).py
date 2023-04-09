@@ -215,7 +215,7 @@ if selected == "JSON to TOML":
 
         toml_content = toml.dumps(json.loads(json_text))
         st.write("TOML FILE CONTENT")
-        st.code(toml_content)
+        st.code(toml_content, language="toml")
         toml_file_name = json_file.name.replace(".json", ".toml")
         st.download_button(
             "DOWNLOAD TOML FILE", data=toml_content, file_name=toml_file_name
@@ -254,16 +254,9 @@ elif selected == "WM to TOML":
 
 # Parse the Wardley map text
         parsed_map = parse_wardley_map(wardley_map_text)
-
-# Print the JSON
-        st.write("JSON CONTENT")
-        st.code(parsed_map)
-
-        #toml_content = toml.dumps(parsed_map)
-
         wardley_map_toml = toml.dumps(parsed_map)
         st.write("TOML FILE CONTENT")
-        st.code(wardley_map_toml)  
+        st.code(wardley_map_toml, language="toml")  
         
         toml_file_name = map_id + '.toml'
         st.download_button(
