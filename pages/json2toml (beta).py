@@ -299,12 +299,12 @@ elif selected == "WM to JSON":
 # Print the JSON
         print(parsed_map)
     
-    st.info(
-        f"""
+        st.info(
+            f"""
                 👆 Upload your wm file.
                 
-                """
-    )
+            """
+        )
 
         #st.write("JSON CONTENT")
         #st.code(json.loads(json_text))
@@ -316,6 +316,6 @@ elif selected == "WM to JSON":
         st.write("JSON FILE CONTENT")
         st.code(wardley_map_json)
         #toml_file_name = json_file.name.replace(".json", ".toml")
-        #st.download_button(
+       #st.download_button(
         #    "DOWNLOAD TOML FILE", data=wardley_map_jso, file_name=json_file_name
         #)
