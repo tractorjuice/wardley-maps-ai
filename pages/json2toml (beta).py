@@ -12,7 +12,7 @@ st.set_page_config(
 with st.sidebar:
     selected = option_menu(
         "Choose conversion",
-        ["JSON to TOML", "Converter #02 (TBC)", "Converter #03 (TBC)"],
+        ["WM to JSON", "JSON to TOML", "WM to TOML"],
         icons=["gear"],
         # menu_icon="bookmark-fill",
         menu_icon="robot",
