@@ -12,7 +12,7 @@ st.set_page_config(
 with st.sidebar:
     selected = option_menu(
         "Choose conversion",
-        ["WM to JSON", "JSON to TOML", "WM to TOML"],
+        ["WM to JSON", "WM to TOML", "JSON to TOML"],
         icons=["gear"],
         # menu_icon="bookmark-fill",
         menu_icon="robot",
@@ -22,9 +22,7 @@ with st.sidebar:
 if selected == "JSON to TOML":
 
     st.image("./pages/logo.gif", width=200)
-
     st.title("JSON to TOML file converter")
-
     st.write(
         """  
 
@@ -44,7 +42,6 @@ if selected == "JSON to TOML":
             """
     )
     json_file = st.file_uploader("UPLOAD JSON FILE")
-
     st.info(
         f"""
                 👆 Upload your json file. Or try a [sample](https://github.com/CharlyWargnier/CSVs/blob/master/more_samples/firestore-key-sample.json?raw=true).
