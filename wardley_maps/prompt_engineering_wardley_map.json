@@ -1,222 +1,1019 @@
 {
-  "title": "Prompt Engineering",
+  "title": [
+    "Prompt Engineering"
+  ],
+  "anchors": [
+    "Prompt Engineer"
+  ],
+  "evolution": [
+    "evolution genesis / concept  -> custom / emerging  -> product / converging  -> commodity / accepted"
+  ],
   "components": [
-    { "id": "Prompt Engineer", "x": 0.97, "y": 0.19 },
-    { "id": "Techniques", "x": 0.75, "y": 0.54 },
-    { "id": "Chunks", "x": 0.39, "y": 0.62 },
-    { "id": "Text Splitter", "x": 0.34, "y": 0.67 },
-    { "id": "Embedding", "x": 0.45, "y": 0.59 },
-    { "id": "Tools", "x": 0.59, "y": 0.73 },
-    { "id": "Agents", "x": 0.67, "y": 0.44 },
-    { "id": "LLMs", "x": 0.18, "y": 0.71 },
-    { "id": "LLaMA", "x": 0.09, "y": 0.67 },
-    { "id": "Cloud", "x": 0.04, "y": 0.87 },
-    { "id": "Vector DB", "x": 0.26, "y": 0.52 },
-    { "id": "Question Answer", "x": 0.88, "y": 0.61 },
-    { "id": "Question Answer with sources", "x": 0.93, "y": 0.46 },
-    { "id": "Chat Question Answer", "x": 0.93, "y": 0.53 },
-    { "id": "Zapier", "x": 0.48, "y": 0.84 },
-    { "id": "Pinecone", "x": 0.25, "y": 0.73 },
-    { "id": "Memory", "x": 0.62, "y": 0.56 },
-    { "id": "Chains", "x": 0.74, "y": 0.45 },
-    { "id": "OpenAIEmbeddings", "x": 0.44, "y": 0.71 },
-    { "id": "CohereEmbeddings", "x": 0.44, "y": 0.47 },
-    { "id": "Alpaca", "x": 0.12, "y": 0.66 },
-    { "id": "Laptop", "x": 0.04, "y": 0.66 },
-    { "id": "Vector", "x": 0.48, "y": 0.58 },
-    { "id": "Private Data", "x": 0.53, "y": 0.27 },
-    { "id": "Metadata", "x": 0.56, "y": 0.35 },
-    { "id": "Fine Tuning", "x": 0.74, "y": 0.37 },
-    { "id": "Prompt Templates", "x": 0.63, "y": 0.69 },
-    { "id": "Chroma", "x": 0.25, "y": 0.57 },
-    { "id": "Propriety Algos", "x": 0.20, "y": 0.23 },
-    { "id": "Propriety Data", "x": 0.32, "y": 0.18 },
-    { "id": "Partnerships", "x": 0.84, "y": 0.15 },
-    { "id": "Customers", "x": 0.95, "y": 0.08 },
-    { "id": "Developers", "x": 0.87, "y": 0.23 },
-    { "id": "Research", "x": 0.07, "y": 0.32 },
-    { "id": "APIs", "x": 0.51, "y": 0.18 },
-    { "id": "Infrastructure", "x": 0.15, "y": 0.88 },
-    { "id": "Regulations", "x": 0.81, "y": 0.08 },
-    { "id": "Competitors", "x": 0.72, "y": 0.14 },
-    { "id": "Market Trends", "x": 0.65, "y": 0.04 },
-    { "id": "Open Source", "x": 0.44, "y": 0.25 },
-    { "id": "Feedback Loops", "x": 0.92, "y": 0.39 }
+    {
+      "name": "Techniques",
+      "description": "",
+      "evolution": "product",
+      "visibility": "high",
+      "positionxy": "[0.54,0.75]",
+      "labelxy": "[-16,-38]"
+    },
+    {
+      "name": "Chunks",
+      "description": "",
+      "evolution": "product",
+      "visibility": "medium",
+      "positionxy": "[0.62,0.39]",
+      "labelxy": "[23,-17]"
+    },
+    {
+      "name": "Text Splitter",
+      "description": "",
+      "evolution": "product",
+      "visibility": "medium",
+      "positionxy": "[0.67,0.34]",
+      "labelxy": ""
+    },
+    {
+      "name": "Embedding",
+      "description": "",
+      "evolution": "product",
+      "visibility": "medium",
+      "positionxy": "[0.59,0.45]",
+      "labelxy": ""
+    },
+    {
+      "name": "Tools",
+      "description": "",
+      "evolution": "commodity",
+      "visibility": "medium",
+      "positionxy": "[0.73,0.59]",
+      "labelxy": "[24,-19]"
+    },
+    {
+      "name": "Agents",
+      "description": "",
+      "evolution": "product",
+      "visibility": "medium",
+      "positionxy": "[0.44,0.67]",
+      "labelxy": "[20,-22]"
+    },
+    {
+      "name": "LLMs",
+      "description": "",
+      "evolution": "commodity",
+      "visibility": "low",
+      "positionxy": "[0.71,0.18]",
+      "labelxy": ""
+    },
+    {
+      "name": "LLaMA",
+      "description": "",
+      "evolution": "product",
+      "visibility": "low",
+      "positionxy": "[0.67,0.09]",
+      "labelxy": "[7,-52]"
+    },
+    {
+      "name": "Cloud",
+      "description": "",
+      "evolution": "commodity",
+      "visibility": "low",
+      "positionxy": "[0.87,0.04]",
+      "labelxy": "[21,-16]"
+    },
+    {
+      "name": "Vector DB",
+      "description": "",
+      "evolution": "product",
+      "visibility": "medium",
+      "positionxy": "[0.52,0.26]",
+      "labelxy": "[-16,-31]"
+    },
+    {
+      "name": "Question Answer",
+      "description": "",
+      "evolution": "product",
+      "visibility": "high",
+      "positionxy": "[0.61,0.88]",
+      "labelxy": "[21,-8]"
+    },
+    {
+      "name": "Question Answer with sources",
+      "description": "",
+      "evolution": "product",
+      "visibility": "high",
+      "positionxy": "[0.46,0.93]",
+      "labelxy": "[14,-26]"
+    },
+    {
+      "name": "Chat Question Answer",
+      "description": "",
+      "evolution": "product",
+      "visibility": "high",
+      "positionxy": "[0.53,0.93]",
+      "labelxy": "[-36,16]"
+    },
+    {
+      "name": "Zapier",
+      "description": "",
+      "evolution": "commodity",
+      "visibility": "medium",
+      "positionxy": "[0.84,0.48]",
+      "labelxy": ""
+    },
+    {
+      "name": "Pinecone",
+      "description": "",
+      "evolution": "commodity",
+      "visibility": "medium",
+      "positionxy": "[0.73,0.25]",
+      "labelxy": "[26,-36]"
+    },
+    {
+      "name": "Memory",
+      "description": "",
+      "evolution": "product",
+      "visibility": "medium",
+      "positionxy": "[0.56,0.62]",
+      "labelxy": "[20,-22]"
+    },
+    {
+      "name": "Chains",
+      "description": "",
+      "evolution": "product",
+      "visibility": "high",
+      "positionxy": "[0.45,0.74]",
+      "labelxy": "[22,-21]"
+    },
+    {
+      "name": "OpenAIEmbeddings",
+      "description": "",
+      "evolution": "commodity",
+      "visibility": "medium",
+      "positionxy": "[0.71,0.44]",
+      "labelxy": "[16,-19]"
+    },
+    {
+      "name": "CohereEmbeddings",
+      "description": "",
+      "evolution": "product",
+      "visibility": "medium",
+      "positionxy": "[0.47,0.44]",
+      "labelxy": "[15,-28]"
+    },
+    {
+      "name": "Alpaca",
+      "description": "",
+      "evolution": "product",
+      "visibility": "low",
+      "positionxy": "[0.66,0.12]",
+      "labelxy": "[5,-60]"
+    },
+    {
+      "name": "Laptop",
+      "description": "",
+      "evolution": "product",
+      "visibility": "low",
+      "positionxy": "[0.66,0.04]",
+      "labelxy": "[20,-26]"
+    },
+    {
+      "name": "Vector",
+      "description": "",
+      "evolution": "product",
+      "visibility": "medium",
+      "positionxy": "[0.58,0.48]",
+      "labelxy": "[3,13]"
+    },
+    {
+      "name": "Private Data",
+      "description": "",
+      "evolution": "custom",
+      "visibility": "medium",
+      "positionxy": "[0.27,0.53]",
+      "labelxy": "[-12,-53]"
+    },
+    {
+      "name": "Metadata",
+      "description": "",
+      "evolution": "custom",
+      "visibility": "medium",
+      "positionxy": "[0.35,0.56]",
+      "labelxy": "[-3,13]"
+    },
+    {
+      "name": "Fine Tuning",
+      "description": "",
+      "evolution": "custom",
+      "visibility": "high",
+      "positionxy": "[0.37,0.74]",
+      "labelxy": "[21,-34]"
+    },
+    {
+      "name": "Prompt Templates",
+      "description": "",
+      "evolution": "product",
+      "visibility": "medium",
+      "positionxy": "[0.69,0.63]",
+      "labelxy": "[11,-29]"
+    },
+    {
+      "name": "Chroma",
+      "description": "",
+      "evolution": "product",
+      "visibility": "medium",
+      "positionxy": "[0.57,0.25]",
+      "labelxy": "[25,-25]"
+    },
+    {
+      "name": "Propriety Algos",
+      "description": "",
+      "evolution": "custom",
+      "visibility": "low",
+      "positionxy": "[0.23,0.20]",
+      "labelxy": "[25,-36]"
+    },
+    {
+      "name": "Supabase",
+      "description": "",
+      "evolution": "product",
+      "visibility": "medium",
+      "positionxy": "[0.48,0.25]",
+      "labelxy": "[25,-33]"
+    },
+    {
+      "name": "OpenAI",
+      "description": "",
+      "evolution": "commodity",
+      "visibility": "low",
+      "positionxy": "[0.81,0.15]",
+      "labelxy": "[-10,5]"
+    },
+    {
+      "name": "API",
+      "description": "",
+      "evolution": "commodity",
+      "visibility": "low",
+      "positionxy": "[0.86,0.13]",
+      "labelxy": ""
+    },
+    {
+      "name": "FastTextEmbeddings",
+      "description": "",
+      "evolution": "product",
+      "visibility": "medium",
+      "positionxy": "[0.57,0.44]",
+      "labelxy": "[16,-19]"
+    },
+    {
+      "name": "ANN",
+      "description": "",
+      "evolution": "product",
+      "visibility": "low",
+      "positionxy": "[0.68,0.20]",
+      "labelxy": "[22,-13]"
+    },
+    {
+      "name": "kNN",
+      "description": "",
+      "evolution": "product",
+      "visibility": "low",
+      "positionxy": "[0.64,0.20]",
+      "labelxy": "[24,-15]"
+    },
+    {
+      "name": "SPTAG",
+      "description": "",
+      "evolution": "product",
+      "visibility": "low",
+      "positionxy": "[0.49,0.20]",
+      "labelxy": "[25,-27]"
+    },
+    {
+      "name": "Faiss",
+      "description": "",
+      "evolution": "commodity",
+      "visibility": "low",
+      "positionxy": "[0.75,0.20]",
+      "labelxy": "[21,-19]"
+    },
+    {
+      "name": "HNSW",
+      "description": "",
+      "evolution": "product",
+      "visibility": "low",
+      "positionxy": "[0.60,0.20]",
+      "labelxy": "[23,-17]"
+    },
+    {
+      "name": "Custom Agents",
+      "description": "",
+      "evolution": "custom",
+      "visibility": "medium",
+      "positionxy": "[0.24,0.58]",
+      "labelxy": "[5,20]"
+    },
+    {
+      "name": "Vector Search Algos",
+      "description": "",
+      "evolution": "product",
+      "visibility": "medium",
+      "positionxy": "[0.55,0.21]",
+      "labelxy": "[-45,-61]"
+    },
+    {
+      "name": "Public Data",
+      "description": "",
+      "evolution": "commodity",
+      "visibility": "low",
+      "positionxy": "[0.88,0.10]",
+      "labelxy": ""
+    },
+    {
+      "name": "Compute",
+      "description": "",
+      "evolution": "commodity",
+      "visibility": "low",
+      "positionxy": "[0.75,0.05]",
+      "labelxy": ""
+    },
+    {
+      "name": "University Research",
+      "description": "",
+      "evolution": "genesis",
+      "visibility": "low",
+      "positionxy": "[0.13,0.20]",
+      "labelxy": "[12,-24]"
+    },
+    {
+      "name": "PDF",
+      "description": "",
+      "evolution": "commodity",
+      "visibility": "medium",
+      "positionxy": "[0.74,0.33]",
+      "labelxy": "[24,-21]"
+    },
+    {
+      "name": "Text",
+      "description": "",
+      "evolution": "commodity",
+      "visibility": "medium",
+      "positionxy": "[0.77,0.33]",
+      "labelxy": "[23,-18]"
+    },
+    {
+      "name": "Weaviate",
+      "description": "",
+      "evolution": "product",
+      "visibility": "medium",
+      "positionxy": "[0.62,0.25]",
+      "labelxy": "[24,-23]"
+    },
+    {
+      "name": "Dolly",
+      "description": "",
+      "evolution": "product",
+      "visibility": "low",
+      "positionxy": "[0.64,0.15]",
+      "labelxy": ""
+    },
+    {
+      "name": "HuggingFace",
+      "description": "",
+      "evolution": "commodity",
+      "visibility": "low",
+      "positionxy": "[0.76,0.14]",
+      "labelxy": "[25,-34]"
+    },
+    {
+      "name": "Conversation History",
+      "description": "",
+      "evolution": "custom",
+      "visibility": "high",
+      "positionxy": "[0.33,0.79]",
+      "labelxy": "[-26,-69]"
+    },
+    {
+      "name": "Google Search",
+      "description": "",
+      "evolution": "commodity",
+      "visibility": "medium",
+      "positionxy": "[0.83,0.54]",
+      "labelxy": ""
+    },
+    {
+      "name": "Storage",
+      "description": "",
+      "evolution": "commodity",
+      "visibility": "medium",
+      "positionxy": "[0.74,0.50]",
+      "labelxy": ""
+    },
+    {
+      "name": "Use Cases",
+      "description": "",
+      "evolution": "product",
+      "visibility": "high",
+      "positionxy": "[0.43,0.95]",
+      "labelxy": ""
+    },
+    {
+      "name": "Question Answer Private Data",
+      "description": "",
+      "evolution": "custom",
+      "visibility": "high",
+      "positionxy": "[0.37,0.93]",
+      "labelxy": "[0,-83]"
+    },
+    {
+      "name": "Gaurdrails",
+      "description": "",
+      "evolution": "product",
+      "visibility": "high",
+      "positionxy": "[0.50,0.71]",
+      "labelxy": ""
+    },
+    {
+      "name": "HuggingFaceGPT",
+      "description": "",
+      "evolution": "commodity",
+      "visibility": "low",
+      "positionxy": "[0.73,0.15]",
+      "labelxy": "[-18,-111]"
+    },
+    {
+      "name": "Ethics",
+      "description": "",
+      "evolution": "commodity",
+      "visibility": "medium",
+      "positionxy": "[0.72,0.69]",
+      "labelxy": ""
+    },
+    {
+      "name": "FinOps",
+      "description": "",
+      "evolution": "product",
+      "visibility": "medium",
+      "positionxy": "[0.51,0.59]",
+      "labelxy": "[4,16]"
+    },
+    {
+      "name": "MLOps",
+      "description": "",
+      "evolution": "product",
+      "visibility": "medium",
+      "positionxy": "[0.44,0.59]",
+      "labelxy": "[16,-44]"
+    },
+    {
+      "name": "DataOps",
+      "description": "",
+      "evolution": "product",
+      "visibility": "medium",
+      "positionxy": "[0.49,0.47]",
+      "labelxy": "[21,-48]"
+    },
+    {
+      "name": "ConcreteML",
+      "description": "",
+      "evolution": "custom",
+      "visibility": "medium",
+      "positionxy": "[0.35,0.38]",
+      "labelxy": "[19,-43]"
+    },
+    {
+      "name": "PETs",
+      "description": "",
+      "evolution": "custom",
+      "visibility": "medium",
+      "positionxy": "[0.36,0.49]",
+      "labelxy": ""
+    },
+    {
+      "name": "Embedding PETs",
+      "description": "",
+      "evolution": "custom",
+      "visibility": "medium",
+      "positionxy": "[0.32,0.44]",
+      "labelxy": "[29,-50]"
+    },
+    {
+      "name": "Self Reflection",
+      "description": "",
+      "evolution": "genesis",
+      "visibility": "high",
+      "positionxy": "[0.13,0.74]",
+      "labelxy": "[15,-29]"
+    }
   ],
   "links": [
-    { "source": "Prompt Engineer", "target": "Techniques" },
-    { "source": "Techniques", "target": "Chunks" },
-    { "source": "Chunks", "target": "Text Splitter" },
-    { "source": "Text Splitter", "target": "Embedding" },
-    { "source": "Embedding", "target": "Tools" },
-    { "source": "Tools", "target": "Agents" },
-    { "source": "Agents", "target": "LLMs" },
-    { "source": "LLMs", "target": "LLaMA" },
-    { "source": "LLaMA", "target": "Cloud" },
-    { "source": "Cloud", "target": "Vector DB" },
-    { "source": "Vector DB", "target": "Question Answer" },
-    { "source": "Question Answer", "target": "Question Answer with sources" },
-    { "source": "Question Answer with sources", "target": "Chat Question Answer" },
-    { "source": "Chat Question Answer", "target": "Zapier" },
-    { "source": "Zapier", "target": "Pinecone" },
-    { "source": "Pinecone", "target": "Memory" },
-    { "source": "Memory", "target": "Chains" },
-    { "source": "Chains", "target": "OpenAIEmbeddings" },
-    { "source": "OpenAIEmbeddings", "target": "CohereEmbeddings" },
-    { "source": "CohereEmbeddings", "target": "Alpaca" },
-    { "source": "Alpaca", "target": "Laptop" },
-    { "source": "Laptop", "target": "Vector" },
-    { "source": "Vector", "target": "Private Data" },
-    { "source": "Private Data", "target": "Metadata" },
-    { "source": "Metadata", "target": "Fine Tuning" },
-    { "source": "Fine Tuning", "target": "Prompt Templates" },
-    { "source": "Prompt Templates", "target": "Propriety Data" },
-    { "source": "Propriety Data", "target": "Partnerships" },
-    { "source": "Partnerships", "target": "Customers" },
-    { "source": "Customers", "target": "Developers" },
-    { "source": "Developers", "target": "Research" },
-    { "source": "Research", "target": "APIs" },
-    { "source": "APIs", "target": "Infrastructure" },
-    { "source": "Infrastructure", "target": "Regulations" },
-    { "source": "Regulations", "target": "Competitors" },
-    { "source": "Competitors", "target": "Market Trends" },
-    { "source": "Market Trends", "target": "Open Source" },
-    { "source": "Open Source", "target": "Feedback Loops" }
-  ]
-}
-
-{
-  "nodes": [
-    /* JSON nodes data here */
-  ],
-  "links": [
-    /* JSON links data here */
+    {
+      "source": "PETs",
+      "target": "Private Data"
+    },
+    {
+      "source": "PETs",
+      "target": "ConcreteML"
+    },
+    {
+      "source": "PETs",
+      "target": "Embedding PETs"
+    },
+    {
+      "source": "Prompt Engineer",
+      "target": "Use Cases"
+    },
+    {
+      "source": "Use Cases",
+      "target": "Question Answer with sources"
+    },
+    {
+      "source": "Use Cases",
+      "target": "Chat Question Answer"
+    },
+    {
+      "source": "Use Cases",
+      "target": "Question Answer Private Data"
+    },
+    {
+      "source": "Question Answer",
+      "target": "Chains"
+    },
+    {
+      "source": "Question Answer",
+      "target": "Fine Tuning"
+    },
+    {
+      "source": "Ethics",
+      "target": "Gaurdrails"
+    },
+    {
+      "source": "Prompt Templates",
+      "target": "LLMs"
+    },
+    {
+      "source": "Prompt Templates",
+      "target": "Vector"
+    },
+    {
+      "source": "Techniques",
+      "target": "Gaurdrails"
+    },
+    {
+      "source": "Techniques",
+      "target": "Prompt Templates"
+    },
+    {
+      "source": "Techniques",
+      "target": "Cost Management (MLOps/FinOps)"
+    },
+    {
+      "source": "Chat Question Answer",
+      "target": "Conversation History"
+    },
+    {
+      "source": "Conversation History",
+      "target": "Memory"
+    },
+    {
+      "source": "Chains",
+      "target": "Agents"
+    },
+    {
+      "source": "Agents",
+      "target": "Tools"
+    },
+    {
+      "source": "Agents",
+      "target": "Custom Agents"
+    },
+    {
+      "source": "Agents",
+      "target": "Memory"
+    },
+    {
+      "source": "Agents",
+      "target": "Private Data"
+    },
+    {
+      "source": "Agents",
+      "target": "MLOps"
+    },
+    {
+      "source": "Agents",
+      "target": "FinOps"
+    },
+    {
+      "source": "Agents",
+      "target": "DataOps"
+    },
+    {
+      "source": "llamahub.ai",
+      "target": "Agents"
+    },
+    {
+      "source": "llamahub.ai",
+      "target": "Embedding"
+    },
+    {
+      "source": "llamahub.ai",
+      "target": "Text Splitter"
+    },
+    {
+      "source": "LangChainHub",
+      "target": "Agents"
+    },
+    {
+      "source": "LangChainHub",
+      "target": "Embedding"
+    },
+    {
+      "source": "LangChainHub",
+      "target": "Text Splitter"
+    },
+    {
+      "source": "Custom Agents",
+      "target": "Private Data"
+    },
+    {
+      "source": "Memory",
+      "target": "Storage"
+    },
+    {
+      "source": "Vector",
+      "target": "Question Answer"
+    },
+    {
+      "source": "Chat Question Answer",
+      "target": "Question Answer"
+    },
+    {
+      "source": "Chat Question Answer",
+      "target": "Memory"
+    },
+    {
+      "source": "Question Answer with sources",
+      "target": "Question Answer"
+    },
+    {
+      "source": "Embedding",
+      "target": "Chunks"
+    },
+    {
+      "source": "LLMs",
+      "target": "Public Data"
+    },
+    {
+      "source": "LLMs",
+      "target": "HuggingFaceGPT"
+    },
+    {
+      "source": "Semantic Search",
+      "target": "Vector"
+    },
+    {
+      "source": "Alpaca",
+      "target": "LLMs"
+    },
+    {
+      "source": "Alpaca",
+      "target": "LLaMA"
+    },
+    {
+      "source": "LLaMA",
+      "target": "Laptop"
+    },
+    {
+      "source": "LLaMA",
+      "target": "Compute"
+    },
+    {
+      "source": "Dolly",
+      "target": "Alpaca"
+    },
+    {
+      "source": "Vector DB",
+      "target": "Vector Search Algos"
+    },
+    {
+      "source": "Source Metadata",
+      "target": "Text Splitter"
+    },
+    {
+      "source": "Private Data",
+      "target": "Vector"
+    },
+    {
+      "source": "Private Data",
+      "target": "Metadata"
+    },
+    {
+      "source": "Private Data",
+      "target": "DataOps"
+    },
+    {
+      "source": "Metadata",
+      "target": "Vector"
+    },
+    {
+      "source": "VectorQA with sources",
+      "target": "Metadata"
+    },
+    {
+      "source": "Metadata",
+      "target": "Question Answer with sources"
+    },
+    {
+      "source": "Tools",
+      "target": "Zapier"
+    },
+    {
+      "source": "Tools",
+      "target": "Google Search"
+    },
+    {
+      "source": "Chunks",
+      "target": "Text Splitter"
+    },
+    {
+      "source": "Embedding",
+      "target": "Vector DB"
+    },
+    {
+      "source": "Vector",
+      "target": "Embedding"
+    },
+    {
+      "source": "LLMs",
+      "target": "Compute"
+    },
+    {
+      "source": "LLMs",
+      "target": "HuggingFace"
+    },
+    {
+      "source": "HuggingFace",
+      "target": "Cloud"
+    },
+    {
+      "source": "HuggingFaceGPT",
+      "target": "Compute"
+    },
+    {
+      "source": "HuggingFaceGPT",
+      "target": "HuggingFace"
+    },
+    {
+      "source": "VectorDB",
+      "target": "Cloud"
+    },
+    {
+      "source": "OpenAI",
+      "target": "Cloud"
+    },
+    {
+      "source": "LLMs",
+      "target": "OpenAI"
+    },
+    {
+      "source": "API",
+      "target": "OpenAI"
+    },
+    {
+      "source": "API",
+      "target": "Zapier"
+    },
+    {
+      "source": "API",
+      "target": "HuggingFace"
+    }
   ],
   "evolve": [
     {
-      "id": "Prompt Templates",
-      "value": 0.84,
-      "label": {
-        "x": -23,
-        "y": 14
-      }
+      "name": "Prompt Templates",
+      "description": "",
+      "positionxy": "[14,-23]",
+      "labelxy": "[14,-23]"
     },
     {
-      "id": "Agents",
-      "value": 0.75,
-      "label": {
-        "x": -25,
-        "y": 25
-      }
+      "name": "Agents",
+      "description": "",
+      "positionxy": "[25,-25]",
+      "labelxy": "[25,-25]"
     },
     {
-      "id": "Convertation History",
-      "value": 0.66,
-      "label": {
-        "x": -23,
-        "y": 10
-      }
+      "name": "Conversation History",
+      "description": "",
+      "positionxy": "[10,-23]",
+      "labelxy": "[10,-23]"
+    }
+  ],
+  "markets": [
+    {
+      "name": "llamahub.ai",
+      "description": "",
+      "positionxy": "[0.66,0.72]",
+      "labelxy": "[34,-39]"
+    },
+    {
+      "name": "LangChainHub",
+      "description": "",
+      "positionxy": "[0.27,0.69]",
+      "labelxy": "[-27,-52]"
     }
   ],
   "pipelines": [
     {
-      "id": "Techniques",
-      "value": {
-        "x": 0.1,
-        "y": 0.6
-      }
+      "name": "Techniques",
+      "description": "",
+      "positionxy": "[0.6,0.1]",
+      "labelxy": ""
     },
     {
-      "id": "Vector DB",
-      "value": {
-        "x": 0.4,
-        "y": 0.8
-      }
+      "name": "Vector DB",
+      "description": "",
+      "positionxy": "[0.8,0.40]",
+      "labelxy": ""
     },
     {
-      "id": "Text Splitter",
-      "value": {
-        "x": 0.5,
-        "y": 0.8
-      }
+      "name": "Text Splitter",
+      "description": "",
+      "positionxy": "[0.8,0.50]",
+      "labelxy": ""
     },
     {
-      "id": "Embedding",
-      "value": {
-        "x": 0.3,
-        "y": 0.8
-      }
+      "name": "Embedding",
+      "description": "",
+      "positionxy": "[0.8,0.30]",
+      "labelxy": ""
     },
     {
-      "id": "Compute",
-      "value": {
-        "x": 0.6,
-        "y": 0.9
-      }
+      "name": "Compute",
+      "description": "",
+      "positionxy": "[0.90,0.6]",
+      "labelxy": ""
     },
     {
-      "id": "Vector Search Algos",
-      "value": {
-        "x": 0.1,
-        "y": 0.8
-      }
+      "name": "Vector Search Algos",
+      "description": "",
+      "positionxy": "[0.8,0.1]",
+      "labelxy": ""
     }
-  ]
-}
-
-{
-  "evolve": [
-    /* JSON evolve data here */
   ],
-  "pipelines": [
-    /* JSON pipelines data here */
-  ],
+  "pioneers": [],
   "notes": [
     {
-      "id": "Demand for using private data will increase",
-      "position": {
-        "x": 0.52,
-        "y": 0.22
-      }
-    },
-    /* Other notes data here */
-  ],
-  "market": [
-    {
-      "id": "llamahub.ai",
-      "position": {
-        "x": 0.72,
-        "y": 0.66
-      },
-      "label": {
-        "x": -39,
-        "y": 34
-      }
+      "name": "Demand for using private data will increase",
+      "description": "",
+      "positionxy": "[0.22,0.52]",
+      "labelxy": ""
     },
     {
-      "id": "LangChainHub",
-      "position": {
-        "x": 0.69,
-        "y": 0.27
-      },
-      "label": {
-        "x": -52,
-        "y": -27
-      }
+      "name": "Select based on use case",
+      "description": "",
+      "positionxy": "[0.49,0.28]",
+      "labelxy": ""
+    },
+    {
+      "name": "Prompt Templates bundles $$$ starting to emerge",
+      "description": "",
+      "positionxy": "[0.70,0.64]",
+      "labelxy": ""
+    },
+    {
+      "name": "Many agents available today",
+      "description": "",
+      "positionxy": "[0.40,0.68]",
+      "labelxy": ""
+    },
+    {
+      "name": "Select based on use case",
+      "description": "",
+      "positionxy": "[0.52,0.45]",
+      "labelxy": ""
+    },
+    {
+      "name": "Select based on use case",
+      "description": "",
+      "positionxy": "[0.60,0.34]",
+      "labelxy": ""
+    },
+    {
+      "name": "Support compliance with ethics policies",
+      "description": "",
+      "positionxy": "[0.47,0.70]",
+      "labelxy": ""
+    },
+    {
+      "name": "(Codify Chain of Thought)",
+      "description": "",
+      "positionxy": "[0.42,0.72]",
+      "labelxy": ""
+    },
+    {
+      "name": "Token Cost Management",
+      "description": "",
+      "positionxy": "[0.49,0.58]",
+      "labelxy": ""
+    },
+    {
+      "name": "Repeatable Analytical Pipelines",
+      "description": "",
+      "positionxy": "[0.39,0.57]",
+      "labelxy": ""
+    },
+    {
+      "name": "Chunking key to performant outputs",
+      "description": "",
+      "positionxy": "[0.63,0.39]",
+      "labelxy": ""
+    },
+    {
+      "name": "See DERA Dialog-Enabled Resolving Agents",
+      "description": "",
+      "positionxy": "[0.08,0.71]",
+      "labelxy": ""
     }
+  ],
+  "blueline": [],
+  "style": [
+    "style wardley"
   ],
   "annotations": [
     {
-      "id": "1",
-      "text": "Components not in final positions",
-      "position": {
-        "x": 0.74,
-        "y": 0.08
-      }
+      "name": "annotations [0.08, 0.01]",
+      "description": "",
+      "positionxy": "[0.01,0.08]"
     },
-    /* Other annotations data here */
+    {
+      "number": "1",
+      "name": "Components not in final positions",
+      "description": "",
+      "positionxy": "[0.08,0.74]"
+    },
+    {
+      "number": "2",
+      "name": "Components not in final positions",
+      "description": "",
+      "positionxy": "[0.28,0.444]"
+    },
+    {
+      "number": "3",
+      "name": "Components not in final positions",
+      "description": "",
+      "positionxy": "[0.08,0.2]"
+    },
+    {
+      "number": "4",
+      "name": "Memory is the capacity of remembering previous interactions with the user. Critical for ChatBots",
+      "description": "",
+      "positionxy": "[0.56,0.59]"
+    },
+    {
+      "number": "5",
+      "name": "Focus here. Critical in getting external data not in current LLMs (E.g Google Search)",
+      "description": "",
+      "positionxy": "[0.45,0.64]"
+    },
+    {
+      "number": "6",
+      "name": "Lite LLMs can run locally, or trained for $600 and fine tuned",
+      "description": "",
+      "positionxy": "[0.68,0.1]"
+    },
+    {
+      "number": "7",
+      "name": "Multiple Techniques available, select best fit for use case",
+      "description": "",
+      "positionxy": "[0.515,0.76]"
+    }
+  ],
+  "comments": [
+    "//pioneers, Settlers, Town Planners",
+    "//pioneers [0.80, 0.37, 0.60, 0.59]",
+    "//component Human-in-the-loop (HITL) [0.13, 0.04]",
+    "// Privacy Preserving Components",
+    "// Concrete ML: Open-Source FHE-Based Toolkit That Helps in Preserving Privacy And Enables Secure Machine Learning",
+    "//  https://research.facebook.com/blog/2022/10/mpc-based-machine-learning-achieving-end-to-end-privacy-preserving-machine-learning/",
+    "//component Homomorphic Encryption",
+    "//component Secure Multi-Party Computation (SMPC)",
+    "//component Differential Privacy",
+    "//component Federated Learning",
+    "//component Zero-Knowledge Proofs",
+    "//component Private Information Retrieval",
+    "//component Private Set Intersection (PSI)",
+    "//Question Answer -> Prompt Templates",
+    "//Ethics",
+    "// TO DO: Add Self reflection capabilities to the Wardley Map",
+    "//Self Reflection -> Dynamic Memory",
+    "//component Dynamic Memory [0.62, 0.16] label [-56, -14]",
+    "//evolve Dynamic Memory 0.25 label [-25, 25]",
+    "// Tools that can be used by agents",
+    "//evolve Memory 0.75 label [-25, 25]",
+    "// Notes about the Wardley Map",
+    "// [DERA] (https://arxiv.org/pdf/2303.17071v1.pdf)",
+    "// HuggingGPT: Solving AI Tasks with ChatGPT and its Friends in HuggingFace https://arxiv.org/pdf/2303.17580.pdf",
+    "//note Pioneers [0.91, 0.84]",
+    "//annotation 8,[0.08,0.49] [Link text Here](https://link-url-here.org)"
   ]
 }
-
-
-
