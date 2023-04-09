@@ -156,7 +156,10 @@ def parse_wardley_map(map_text):
         "comments": comments,
     }
 
-map_id='mUJtoSmOfqlfXhNMJP' 
+# Map ID from onlinewardleymapping
+map_id='ERveZkgZz35vWsRRzh'
+
+# Fetch map using onlinewardleymapping api
 url = f"https://api.onlinewardleymaps.com/v1/maps/fetch?id={map_id}"
 response = requests.get(url)
 
