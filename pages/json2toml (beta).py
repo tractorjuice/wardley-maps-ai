@@ -20,7 +20,6 @@ with st.sidebar:
     )
 
 if selected == "JSON to TOML":
-
     st.image("./pages/logo.gif", width=200)
     st.title("JSON to TOML file converter")
     st.write(
@@ -65,21 +64,18 @@ if selected == "JSON to TOML":
         )
         
 elif selected == "WM to TOML":
-    st.title("WM to TOML")
-    
     st.image("./pages/logo.gif", width=200)
     st.title("WM to TOML File Converter")
     st.write(
         """  
             """
     )
-
     st.write(
         """  
     Let's convert your Wardley Map in WM to TOML
             """
     )
-
+    
     st.write(
         """  
             """
