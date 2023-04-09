@@ -298,13 +298,6 @@ elif selected == "WM to JSON":
 
 # Print the JSON
         print(parsed_map)
-    
-        st.info(
-            f"""
-                👆 Upload your wm file.
-                
-            """
-        )
 
         #st.write("JSON CONTENT")
         #st.code(json.loads(json_text))
