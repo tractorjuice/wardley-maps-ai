@@ -33,7 +33,7 @@ if selected == "JSON to TOML":
 
     st.write(
         """  
-    Some 3rd party tools (e.g. Firestore) export secrets as a JSON file, but secrets in Streamlit Cloud expect a TOML. You can convert your JSON files to TOML and export them with this simple tool! 🎈
+    Let's convert your Wardley Map in JSON to TOML
 
             """
     )
