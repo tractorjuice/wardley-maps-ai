@@ -281,7 +281,7 @@ elif selected == "WM to JSON":
     
     # Map ID from onlinewardleymapping
     map_id=''
-    st.text_input(map_id, value="", max_chars=50)
+    st.text_input(map_id, value="", max_chars=50, label="map id")
    
     # Fetch map using onlinewardleymapping api
     url = f"https://api.onlinewardleymaps.com/v1/maps/fetch?id={map_id}"
