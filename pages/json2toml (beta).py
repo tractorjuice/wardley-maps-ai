@@ -311,7 +311,7 @@ elif selected == "WM to JSON":
         
         # Convert the parsed map to JSON
         wardley_map_json = json.dumps(parsed_map, indent=2)
-        toml_content = toml.dumps(wardley_map_json)
+        #toml_content = toml.dumps(wardley_map_json)
         
         st.write("JSON FILE CONTENT")
         st.code(wardley_map_json)
