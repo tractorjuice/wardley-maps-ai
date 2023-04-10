@@ -62,9 +62,9 @@ st.write(query)
 st.write("### Answer:")
 st.write(result['answer'])
 st.write("### Sources:")
-st.write(result['sources'])      
+st.write(result['source_documents'])      
 
-st.write(result)
+#st.write(result)
 
 #from IPython.display import display, Markdown
 #def print_result(result):
