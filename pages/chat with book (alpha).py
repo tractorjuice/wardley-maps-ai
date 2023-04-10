@@ -15,8 +15,6 @@ DOCUMENT_BASE_URL = "https://github.com/tractorjuice/wardley-maps-ai/tree/main/i
 DATA_STORE_DIR = "data_store"
 
 # Upload the files `$DATA_STORE_DIR/index.faiss` and `$DATA_STORE_DIR/index.pkl` to local
-from langchain.embeddings.openai import OpenAIEmbeddings
-from langchain.vectorstores import FAISS
 
 if os.path.exists(DATA_STORE_DIR):
   vector_store = FAISS.load_local(
@@ -24,7 +22,7 @@ if os.path.exists(DATA_STORE_DIR):
       OpenAIEmbeddings()
   )
 else:
-  print(f"Missing files. Upload index.faiss and index.pkl files to {DATA_STORE_DIR} directory first")
+  st.write(f"Missing files. Upload index.faiss and index.pkl files to {DATA_STORE_DIR} directory first")
   
 from langchain.prompts.chat import (
     ChatPromptTemplate,
