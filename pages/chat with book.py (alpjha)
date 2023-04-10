@@ -1,32 +1,28 @@
-import openai
-import llama_index
-from llama_index import LLMPredictor, GPTSimpleVectorIndex, PromptHelper
+import os
 import openai
 import streamlit as st
-import os
-from pathlib import Path
-from gpt_index import download_loader
-
-BASE_PROMPT = [{"role": "system", "content": "You are a helpful assistant."}]
+from langchain.embeddings.openai import OpenAIEmbeddings
+from langchain.vectorstores import FAISS
 
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 
-YoutubeTranscriptReader = download_loader("YoutubeTranscriptReader")
-loader = YoutubeTranscriptReader()
-documents = loader.load_data(ytlinks=['https://www.youtube.com/watch?v=L3wgzl2iUR4'])
+REPO_URL = "https://github.com/tractorjuice/wardley-maps-ai"  # Source URL#
+DOCS_FOLDER = "wmdocs"  # Folder to check out to
+REPO_DOCUMENTS_PATH = "index"  # Set to "" to index the whole data folder
+DOCUMENT_BASE_URL = "https://github.com/tractorjuice/wardley-maps-ai/tree/main/index"  # Actual URL
+DATA_STORE_DIR = "data_store"
 
-index = GPTSimpleVectorIndex.from_documents(documents)
+# Upload the files `$DATA_STORE_DIR/index.faiss` and `$DATA_STORE_DIR/index.pkl` to local
+from langchain.embeddings.openai import OpenAIEmbeddings
+from langchain.vectorstores import FAISS
 
-st.set_page_config(page_title="Intro To Wardley Mapping with AI")
-st.title("Intro To Wardley Mapping with AI")
-st.sidebar.markdown("# Query this video using AI")
-
-st.sidebar.markdown("Developed by Mark Craddock](https://twitter.com/mcraddock)", unsafe_allow_html=True)
-st.sidebar.markdown("Current Version: 0.0.2")
-
-st.video('https://youtu.be/L3wgzl2iUR4') 
-
-text = st.empty()
+if os.path.exists(DATA_STORE_DIR):
+  vector_store = FAISS.load_local(
+      DATA_STORE_DIR,
+      OpenAIEmbeddings()
+  )
+else:
+  print(f"Missing files. Upload index.faiss and index.pkl files to {DATA_STORE_DIR} directory first")
 
 prompt = st.text_input("Prompt", value="What is this video about?")
 
