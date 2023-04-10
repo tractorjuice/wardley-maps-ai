@@ -62,4 +62,8 @@ st.write(result['answer'])
 #st.write(result['sources'])
 st.write("### All relevant sources:")
 source_docs = {' '.join(list(set([doc.metadata['source'] for doc in result['source_documents']])))}
-st.json(source_docs)
+numbers = re.findall(r'\d+', source_docs)
+
+st.write("From pages: ", numbers)
+
+#st.json(source_docs)
