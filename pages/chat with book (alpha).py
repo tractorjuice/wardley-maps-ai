@@ -64,19 +64,8 @@ st.write(result['answer'])
 st.write("### Sources:")
 st.write(result['sources'])
 st.write("### All relevant sources:")
-st.write({' '.join(list(set([doc.metadata['source'] for doc in result['source_documents']])))})
-
-#  {result['sources']}
-#  {' '.join(list(set([doc.metadata['source'] for doc in result['source_documents']])))}
-
-#st.write(result)
-
-#  ### Sources: 
-#  {result['sources']}
-#  ### All relevant sources:
-#  {' '.join(list(set([doc.metadata['source'] for doc in result['source_documents']])))}
-#  """
-#  display(Markdown(output_text))
+source_docs = {' '.join(list(set([doc.metadata['source'] for doc in result['source_documents']])))}
+st.write({source_docs)
 
 if st.button("Send"):
     with st.spinner("Generating response..."):
