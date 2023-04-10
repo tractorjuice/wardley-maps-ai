@@ -60,7 +60,7 @@ result = chain(query)
 st.write("### Question:")
 st.write(quey)
 st.write("### Answer:")
-st.write({result['answer']}
+st.write({result['answer'])
 st.write("### Sources:")
 st.write({result['sources']})      
 #st.write(result)
