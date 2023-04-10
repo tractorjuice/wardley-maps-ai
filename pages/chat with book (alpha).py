@@ -1,6 +1,8 @@
 import os
 import openai
 import streamlit as st
+from langchain.chat_models import ChatOpenAI
+from langchain.chains import RetrievalQAWithSourcesChain
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
 
@@ -23,8 +25,46 @@ if os.path.exists(DATA_STORE_DIR):
   )
 else:
   print(f"Missing files. Upload index.faiss and index.pkl files to {DATA_STORE_DIR} directory first")
+  
+from langchain.prompts.chat import (
+    ChatPromptTemplate,
+    SystemMessagePromptTemplate,
+    HumanMessagePromptTemplate,
+)
 
-prompt = st.text_input("Prompt", value="What is this video about?")
+system_template="""Use the following pieces of context to answer the users question.
+Take note of the sources and include them in the answer in the format: "SOURCES: source1 source2", use "SOURCES" in capital letters regardless of the number of sources.
+If you don't know the answer, just say that "I don't know", don't try to make up an answer.
+----------------
+{summaries}"""
+messages = [
+    SystemMessagePromptTemplate.from_template(system_template),
+    HumanMessagePromptTemplate.from_template("{question}")
+]
+prompt = ChatPromptTemplate.from_messages(messages)
+
+chain_type_kwargs = {"prompt": prompt}
+llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0, max_tokens=256)  # Modify model_name if you have access to GPT-4
+chain = RetrievalQAWithSourcesChain.from_chain_type(
+    llm=llm,
+    chain_type="stuff",
+    retriever=vector_store.as_retriever(),
+    return_source_documents=True,
+    chain_type_kwargs=chain_type_kwargs
+)
+
+from IPython.display import display, Markdown
+def print_result(result):
+  output_text = f"""### Question: 
+  {query}
+  ### Answer: 
+  {result['answer']}
+  ### Sources: 
+  {result['sources']}
+  ### All relevant sources:
+  {' '.join(list(set([doc.metadata['source'] for doc in result['source_documents']])))}
+  """
+  display(Markdown(output_text))
 
 if st.button("Send"):
     with st.spinner("Generating response..."):
