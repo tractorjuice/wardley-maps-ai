@@ -57,7 +57,13 @@ chain = RetrievalQAWithSourcesChain.from_chain_type(
 
 query = "What is the history of Wardley Mapping?"
 result = chain(query)
-st.write(result)
+st.write("### Question:)
+st.write(quey)
+st.write("### Answer:)
+st.write({result['answer']}    
+st.write("### Sources:")
+st.write({result['sources']})      
+#st.write(result)
 
 #from IPython.display import display, Markdown
 #def print_result(result):
