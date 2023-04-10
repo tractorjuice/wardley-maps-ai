@@ -53,8 +53,10 @@ chain = RetrievalQAWithSourcesChain.from_chain_type(
     chain_type_kwargs=chain_type_kwargs
 )
 
-query = st.text_input("Question for the book?", value="What is the history or Wardley Mapping?")
-result = chain(query)
+with st.spinner("Thinking..."):
+    query = st.text_input("Question for the book?", value="What is the history or Wardley Mapping?")
+    result = chain(query)
+    
 #st.write("### Question:")
 #st.write(query)
 st.write("### Answer:")
