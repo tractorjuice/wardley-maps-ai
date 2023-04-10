@@ -54,18 +54,18 @@ llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0, max_tokens=256)  # M
 #    chain_type_kwargs=chain_type_kwargs
 #)
 
-from IPython.display import display, Markdown
-def print_result(result):
-  output_text = f"""### Question: 
-  {query}
-  ### Answer: 
-  {result['answer']}
-  ### Sources: 
-  {result['sources']}
-  ### All relevant sources:
-  {' '.join(list(set([doc.metadata['source'] for doc in result['source_documents']])))}
-  """
-  display(Markdown(output_text))
+#from IPython.display import display, Markdown
+#def print_result(result):
+#  output_text = f"""### Question: 
+#  {query}
+#  ### Answer: 
+#  {result['answer']}
+#  ### Sources: 
+#  {result['sources']}
+#  ### All relevant sources:
+#  {' '.join(list(set([doc.metadata['source'] for doc in result['source_documents']])))}
+#  """
+#  display(Markdown(output_text))
 
 if st.button("Send"):
     with st.spinner("Generating response..."):
