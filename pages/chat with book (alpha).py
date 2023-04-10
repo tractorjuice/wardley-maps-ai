@@ -59,7 +59,7 @@ query = "What is the history of Wardley Mapping?"
 result = chain(query)
 st.write("### Question:")
 st.write(quey)
-st.write("### Answer:)
+st.write("### Answer:")
 st.write({result['answer']}    
 st.write("### Sources:")
 st.write({result['sources']})      
