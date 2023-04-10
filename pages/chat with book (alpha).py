@@ -62,4 +62,4 @@ st.write(result['answer'])
 #st.write(result['sources'])
 st.write("### All relevant sources:")
 source_docs = {' '.join(list(set([doc.metadata['source'] for doc in result['source_documents']])))}
-st.write(source_docs)
+st.json(source_docs)
