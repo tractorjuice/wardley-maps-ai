@@ -65,7 +65,7 @@ st.write("### Sources:")
 st.write(result['sources'])
 st.write("### All relevant sources:")
 source_docs = {' '.join(list(set([doc.metadata['source'] for doc in result['source_documents']])))}
-st.write({source_docs)
+st.write(source_docs)
 
 if st.button("Send"):
     with st.spinner("Generating response..."):
