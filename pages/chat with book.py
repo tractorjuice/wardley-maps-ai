@@ -21,6 +21,8 @@ st.sidebar.markdown("# Query this book using AI")
 
 st.sidebar.markdown("Developed by Mark Craddock](https://twitter.com/mcraddock)", unsafe_allow_html=True)
 st.sidebar.markdown("Current Version: 0.0.2")
+st.sidebar.markdown("Not optimised")
+st.sidebar.markdown("May run out of OpenAI credits")
 
 # Upload the files `$DATA_STORE_DIR/index.faiss` and `$DATA_STORE_DIR/index.pkl` to local
 
