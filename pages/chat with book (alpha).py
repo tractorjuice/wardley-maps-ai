@@ -6,6 +6,9 @@ from langchain.chains import RetrievalQAWithSourcesChain
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
 
+cwd = os.getcwd()
+st.write (cwd)
+
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 REPO_URL = "https://github.com/tractorjuice/wardley-maps-ai"  # Source URL#
