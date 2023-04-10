@@ -6,9 +6,6 @@ from langchain.chains import RetrievalQAWithSourcesChain
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
 
-cwd = os.getcwd()
-st.write (cwd)
-
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 REPO_URL = "https://github.com/tractorjuice/wardley-maps-ai"  # Source URL#
@@ -20,6 +17,7 @@ DATA_STORE_DIR = "data_store"
 # Upload the files `$DATA_STORE_DIR/index.faiss` and `$DATA_STORE_DIR/index.pkl` to local
 
 if os.path.exists(DATA_STORE_DIR):
+  st.write("Loading database")
   vector_store = FAISS.load_local(
       DATA_STORE_DIR,
       OpenAIEmbeddings()
