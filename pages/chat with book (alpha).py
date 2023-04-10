@@ -55,15 +55,16 @@ chain = RetrievalQAWithSourcesChain.from_chain_type(
 
 query = st.text_input("Question for the book?", value="What is the history or Wardley Mapping?")
 result = chain(query)
-st.write("### Question:")
-st.write(query)
+#st.write("### Question:")
+#st.write(query)
 st.write("### Answer:")
 st.write(result['answer'])
 #st.write("### Sources:")
 #st.write(result['sources'])
+
 st.write("### All relevant sources:")
 source_docs = {' '.join(list(set([doc.metadata['source'] for doc in result['source_documents']])))}
 numbers = re.findall(r'\d+', source_docs)
 st.write("From pages: ", numbers)
 
-#st.json(source_docs)
+st.json(source_docs)
