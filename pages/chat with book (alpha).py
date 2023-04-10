@@ -52,6 +52,9 @@ chain = RetrievalQAWithSourcesChain.from_chain_type(
     chain_type_kwargs=chain_type_kwargs
 )
 
+search_result = vector_store.similarity_search_with_score("What is the history of Wardley Maps?")
+st.write(search_result)
+
 #from IPython.display import display, Markdown
 #def print_result(result):
 #  output_text = f"""### Question: 
