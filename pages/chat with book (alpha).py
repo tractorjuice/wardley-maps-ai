@@ -53,7 +53,7 @@ chain = RetrievalQAWithSourcesChain.from_chain_type(
 )
 
 #search_result = vector_store.similarity_search_with_score("What is the history of Wardley Maps?")
-#st.write(search_result)
+st.write(search_result)
 
 query = "What is the history of Wardley Mapping?"
 result = chain(query)
