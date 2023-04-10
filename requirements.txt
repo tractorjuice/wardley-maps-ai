@@ -1,7 +1,9 @@
-langchain
+langchain 0.0.123
 openai
 streamlit
 tiktoken
 llama_index
 gpt_index
 streamlit-option-menu
+faiss-cpu
+pypdf
