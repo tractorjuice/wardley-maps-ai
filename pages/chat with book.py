@@ -15,6 +15,13 @@ REPO_DOCUMENTS_PATH = "index"  # Set to "" to index the whole data folder
 DOCUMENT_BASE_URL = "https://github.com/tractorjuice/wardley-maps-ai/tree/main/index"  # Actual URL
 DATA_STORE_DIR = "data_store"
 
+st.set_page_config(page_title="Chat with Simon Wardley's Book")
+st.title("Chat with Simon Wardley's Book")
+st.sidebar.markdown("# Query this video using AI")
+
+st.sidebar.markdown("Developed by Mark Craddock](https://twitter.com/mcraddock)", unsafe_allow_html=True)
+st.sidebar.markdown("Current Version: 0.0.2")
+
 # Upload the files `$DATA_STORE_DIR/index.faiss` and `$DATA_STORE_DIR/index.pkl` to local
 
 if os.path.exists(DATA_STORE_DIR):
