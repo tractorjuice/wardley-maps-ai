@@ -64,13 +64,3 @@ st.write(result['sources'])
 st.write("### All relevant sources:")
 source_docs = {' '.join(list(set([doc.metadata['source'] for doc in result['source_documents']])))}
 st.write(source_docs)
-
-if st.button("Send"):
-    with st.spinner("Generating response..."):
-        
-        response = index.query(prompt)
-        text.text_area("Messages", response, height=250)
-
-if st.button("Clear"):
-    st.session_state["messages"] = BASE_PROMPT
-    show_messages(text)
