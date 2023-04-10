@@ -17,7 +17,7 @@ DATA_STORE_DIR = "data_store"
 # Upload the files `$DATA_STORE_DIR/index.faiss` and `$DATA_STORE_DIR/index.pkl` to local
 
 if os.path.exists(DATA_STORE_DIR):
-  st.write("Loading database")
+  #st.write("Loading database")
   vector_store = FAISS.load_local(
       DATA_STORE_DIR,
       OpenAIEmbeddings()
@@ -44,13 +44,13 @@ prompt = ChatPromptTemplate.from_messages(messages)
 
 chain_type_kwargs = {"prompt": prompt}
 llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0, max_tokens=256)  # Modify model_name if you have access to GPT-4
-#chain = RetrievalQAWithSourcesChain.from_chain_type(
-#    llm=llm,
-#    chain_type="stuff",
-#    retriever=vector_store.as_retriever(),
-#    return_source_documents=True,
-#    chain_type_kwargs=chain_type_kwargs
-#)
+chain = RetrievalQAWithSourcesChain.from_chain_type(
+    llm=llm,
+    chain_type="stuff",
+    retriever=vector_store.as_retriever(),
+    return_source_documents=True,
+    chain_type_kwargs=chain_type_kwargs
+)
 
 #from IPython.display import display, Markdown
 #def print_result(result):
