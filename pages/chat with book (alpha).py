@@ -58,7 +58,7 @@ chain = RetrievalQAWithSourcesChain.from_chain_type(
 query = "What is the history of Wardley Mapping?"
 result = chain(query)
 st.write("### Question:")
-st.write(quey)
+st.write(query)
 st.write("### Answer:")
 st.write(result['answer'])
 st.write("### Sources:")
