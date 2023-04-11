@@ -66,6 +66,15 @@ Question Answer -> Techniques
 Question Answer with sources -> Techniques
 Question Answer Private Data -> Techniques
 
+//Bluelines
+Prompt Engineer+<>Use Cases
+Use Cases+<>Question Answer Private Data
+Question Answer Private Data+<>Techniques
+Techniques+<>Agents
+Agents+<>Private Data
+Private Data+<>PETs
+PETs+<>FHE
+
 
 //pioneers, Settlers, Town Planners
 //pioneers [0.80, 0.37, 0.60, 0.59]
