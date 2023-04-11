@@ -214,7 +214,7 @@ note Support compliance with ethics policies [0.70, 0.47]
 note (Codify Chain of Thought) [0.72, 0.42]
 note Token Cost Management [0.58, 0.49]
 note Repeatable Analytical Pipelines [0.57, 0.39]
-note Chunking key to performant outputs [0.39, 0.63]
+note Chunking key to performant outputs [0.40, 0.62]
 // [DERA] (https://arxiv.org/pdf/2303.17071v1.pdf)
 note See DERA Dialog-Enabled Resolving Agents [0.71, 0.08]
 // HuggingGPT: Solving AI Tasks with ChatGPT and its Friends in HuggingFace https://arxiv.org/pdf/2303.17580.pdf
@@ -224,7 +224,7 @@ annotations [0.08, 0.01]
 annotation 1,[0.74,0.08] Components not in final positions
 annotation 2,[0.444,0.28] Components not in final positions
 annotation 3,[0.2, 0.08] Components not in final positions
-annotation 4,[0.59,0.56] Memory is the capacity of remembering previous interactions with the user. Critical for ChatBots
+annotation 4,[0.63,0.57] Memory is the capacity of remembering previous interactions with the user. Critical for ChatBots
 annotation 5,[0.64,0.45] Focus here. Critical in getting external data not in current LLMs (E.g Google Search)
 annotation 6,[0.1,0.68] Lite LLMs can run locally, or trained for $600 and fine tuned
 annotation 7,[0.76,0.515] Multiple Techniques available, select best fit for use case
