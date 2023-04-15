@@ -9,8 +9,14 @@ from langchain.chat_models import ChatOpenAI
 from langchain.chains import RetrievalQAWithSourcesChain
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
+from langchain.prompts.chat import (
+    ChatPromptTemplate,
+    SystemMessagePromptTemplate,
+    HumanMessagePromptTemplate,
+)
 
 openai.api_key = st.secrets["OPENAI_API_KEY"]
+DATA_STORE_DIR = "data_store"
 
 model = "gpt-3.5-turbo"
 
@@ -22,6 +28,31 @@ st.sidebar.markdown("Developed by Mark Craddock](https://twitter.com/mcraddock)"
 st.sidebar.markdown("Current Version: 0.0.2")
 st.sidebar.markdown("Not optimised")
 st.sidebar.markdown("May run out of OpenAI credits")
+
+if os.path.exists(DATA_STORE_DIR):
+  #st.write("Loading database")
+  vector_store = FAISS.load_local(
+      DATA_STORE_DIR,
+      OpenAIEmbeddings()
+  )
+else:
+  st.write(f"Missing files. Upload index.faiss and index.pkl files to {DATA_STORE_DIR} directory first")
+
+system_template="""You are SimonGPT a strategy researcher based in the UK.
+            “Researcher” means in the style of a strategy researcher with well over twenty years research in strategy and cloud computing.
+            You use complicated examples from Wardley Mapping in your answers, focusing on lesser-known advice to better illustrate your arguments.
+            Your language should be for a 12 year old to understand.
+            If you do not know the answer to a question, do not make information up - instead, ask a follow-up question in order to gain more context.
+            Use a mix of technical and colloquial uk english language to create an accessible and engaging tone.
+            Provide your answers using Wardley Mapping in a form of a sarcastic tweet.
+            """
+messages = [
+    SystemMessagePromptTemplate.from_template(system_template),
+    HumanMessagePromptTemplate.from_template("{question}")
+    ]
+prompt = ChatPromptTemplate.from_messages(messages)
+
+
 
 def get_initial_message():
     messages=[
