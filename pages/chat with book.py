@@ -9,12 +9,6 @@ from langchain.vectorstores import FAISS
 
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 
-REPO_URL = "https://github.com/tractorjuice/wardley-maps-ai"  # Source URL#
-DOCS_FOLDER = "wmdocs"  # Folder to check out to
-REPO_DOCUMENTS_PATH = "index"  # Set to "" to index the whole data folder
-DOCUMENT_BASE_URL = "https://github.com/tractorjuice/wardley-maps-ai/tree/main/index"  # Actual URL
-DATA_STORE_DIR = "data_store"
-
 st.set_page_config(page_title="Chat with Simon Wardley's Book")
 st.title("Chat with Simon Wardley's Book")
 st.sidebar.markdown("# Query this book using AI")
