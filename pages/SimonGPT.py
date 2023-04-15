@@ -40,7 +40,7 @@ def ChatGPT(user_query):
                                   max_tokens = 1024,
                                   n = 1,
                                   temperature = 0.5,
-                                  openai_api_key = OPENAI_API_KEY
+                                  openai_api_key = openai_api_key
                                       )
     response = completion.choices[0].text
     return response
