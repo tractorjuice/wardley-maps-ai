@@ -47,7 +47,7 @@ system_template="""You are SimonGPT a strategy researcher based in the UK.
 
 messages = [
     SystemMessagePromptTemplate.from_template(system_template),
-    HumanMessagePromptTemplate.from_template("{question}")
+    HumanMessagePromptTemplate.from_template("{"I want to learn about Wardley Mapping"}")
     ]
 prompt = ChatPromptTemplate.from_messages(messages)
 #print("prompt")
