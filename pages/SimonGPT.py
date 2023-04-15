@@ -4,7 +4,7 @@ import openai
 
 # Set the model engine and your OpenAI API key
 model_engine = "text-davinci-003"
-OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
+openai_api_key = st.secrets["OPENAI_API_KEY"]
 
 st.title("Chatting with ChatGPT")
 st.sidebar.header("Instructions")
