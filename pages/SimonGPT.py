@@ -40,6 +40,7 @@ def update_chat(messages, role, content):
 
 if 'generated' not in st.session_state:
     st.session_state['generated'] = []
+    
 if 'past' not in st.session_state:
     st.session_state['past'] = []
 
@@ -60,6 +61,7 @@ if query:
 if st.session_state['generated']:
 
     for i in range(len(st.session_state['generated'])-1, -1, -1):
-        message(st.session_state['past'][i], is_user=True, key=str(i) + '_user')
         message(st.session_state["generated"][i], key=str(i))
+        message(st.session_state['past'][i], is_user=True, key=str(i) + '_user')
+
   
