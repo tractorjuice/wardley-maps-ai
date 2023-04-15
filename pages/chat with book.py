@@ -18,7 +18,8 @@ st.sidebar.markdown("Current Version: 0.0.2")
 st.sidebar.markdown("Not optimised")
 st.sidebar.markdown("May run out of OpenAI credits")
 
-# Upload the files `$DATA_STORE_DIR/index.faiss` and `$DATA_STORE_DIR/index.pkl` to local
+# Get datastore
+DATA_STORE_DIR = "data_store"
 
 if os.path.exists(DATA_STORE_DIR):
   #st.write("Loading database")
