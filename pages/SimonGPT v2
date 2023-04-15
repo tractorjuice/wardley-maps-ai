@@ -62,12 +62,12 @@ chain = RetrievalQAWithSourcesChain.from_chain_type(
     chain_type_kwargs=chain_type_kwargs
 )
 
-with st.spinner("Thinking..."):
-    query = st.text_input("Question for the book?", value="What is the history or Wardley Mapping?")
-    result = chain(query)
+#with st.spinner("Thinking..."):
+#    query = st.text_input("Question for the book?", value="What is the history or Wardley Mapping?")
+#    result = chain(query)
     
-st.write("### Answer:")
-st.write(result['answer'])
+#st.write("### Answer:")
+#st.write(result['answer'])
 
 #-------------------------------
 
@@ -87,16 +87,16 @@ def get_initial_message():
         ]
     return messages
 
-def get_chatgpt_response(messages, model="gpt-3.5-turbo"):
-    response = openai.ChatCompletion.create(
-    model=model,
-    messages=messages
-    )
-    return response['choices'][0]['message']['content']
+#def get_chatgpt_response(messages, model="gpt-3.5-turbo"):
+#    response = openai.ChatCompletion.create(
+#    model=model,
+#    messages=messages
+#    )
+#    return response['choices'][0]['message']['content']
 
-def update_chat(messages, role, content):
-    messages.append({"role": role, "content": content})
-    return messages
+#def update_chat(messages, role, content):
+#    messages.append({"role": role, "content": content})
+#    return messages
 
 if 'generated' not in st.session_state:
     st.session_state['generated'] = []
@@ -106,8 +106,8 @@ if 'past' not in st.session_state:
 
 query = st.text_input("Question: ", "What is Wardley Mapping?", key="input")
 
-if 'messages' not in st.session_state:
-    st.session_state['messages'] = get_initial_message()
+#if 'messages' not in st.session_state:
+#    st.session_state['messages'] = get_initial_message()
 
 if query:
     with st.spinner("generating..."):
