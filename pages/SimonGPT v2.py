@@ -62,13 +62,6 @@ chain = RetrievalQAWithSourcesChain.from_chain_type(
     chain_type_kwargs=chain_type_kwargs
 )
 
-#with st.spinner("Thinking..."):
-#    query = st.text_input("Question for the book?", value="What is the history or Wardley Mapping?")
-#    result = chain(query)
-    
-#st.write("### Answer:")
-#st.write(result['answer'])
-
 #-------------------------------
 
 def get_initial_message():
@@ -87,16 +80,13 @@ def get_initial_message():
         ]
     return messages
 
-#def get_chatgpt_response(messages, model="gpt-3.5-turbo"):
-#    response = openai.ChatCompletion.create(
-#    model=model,
-#    messages=messages
-#    )
-#    return response['choices'][0]['message']['content']
+def get_chatgpt_response(messages, model="gpt-3.5-turbo"):
+    response = response = chain(query)
+    return response
 
-#def update_chat(messages, role, content):
-#    messages.append({"role": role, "content": content})
-#    return messages
+def update_chat(messages, role, content):
+    messages.append({"role": role, "content": content})
+    return messages
 
 if 'generated' not in st.session_state:
     st.session_state['generated'] = []
@@ -111,20 +101,21 @@ query = st.text_input("Question: ", "What is Wardley Mapping?", key="input")
 
 if query:
     with st.spinner("generating..."):
-        messages = st.session_state['messages']
-        messages = update_chat(messages, "user", query)
-        response = get_chatgpt_response(messages, model)
+        #messages = st.session_state['messages']
+        #messages = update_chat(messages, "user", query)
+        #response = get_chatgpt_response(messages, model)
         
-        #response = chain(query)
+        response = chain(query)
+        st.write(response)
         
-        messages = update_chat(messages, "assistant", response)
-        st.session_state.past.append(query)
-        st.session_state.generated.append(response)
+        #messages = update_chat(messages, "assistant", response)
+        #st.session_state.past.append(query)
+        #st.session_state.generated.append(response)
 
-if st.session_state['generated']:
+#if st.session_state['generated']:
 
-    for i in range(len(st.session_state['generated'])-1, -1, -1):
-        message(st.session_state["generated"][i], key=str(i))
-        message(st.session_state['past'][i], is_user=True, key=str(i) + '_user')
+    #for i in range(len(st.session_state['generated'])-1, -1, -1):
+        #message(st.session_state["generated"][i], key=str(i))
+        #message(st.session_state['past'][i], is_user=True, key=str(i) + '_user')
 
  
