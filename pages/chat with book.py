@@ -63,7 +63,7 @@ with st.spinner("Thinking..."):
     
 st.write("### Answer:")
 st.write(result['answer'])
-st.write(result)
+#st.write(result)
 #st.write("### Sources:")
 #st.write(result['sources'])
 #st.write("### All relevant sources:")
