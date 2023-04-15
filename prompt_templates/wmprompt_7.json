@@ -1,5 +1,0 @@
-{
-    "_type": "prompt",
-    "input_variables": ["maptitle", "component"],
-    "template": "Create a pararagh about this component in this Wardley Map on {maptitle}. {component}"
-}

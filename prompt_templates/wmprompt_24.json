@@ -1,8 +1,0 @@
-{
-    "_type": "prompt",
-    "input_variables": [""],
-    "template": """
-    
-    Using the following Wardley Map, what is the impact will removing LLMs?
-    """
-}

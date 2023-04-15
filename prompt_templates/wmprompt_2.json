@@ -1,5 +1,0 @@
-{
-    "_type": "prompt",
-    "input_variables": ["maptitle","pipeline"],
-    "template": "What is this pipeline in this Wardley Map about {maptitle}. {pipeline}"
-}

@@ -1,8 +1,0 @@
-{
-    "_type": "prompt",
-    "input_variables": [""],
-    "template": """
-    
-    Who is the user in this wardley map
-    """
-}
