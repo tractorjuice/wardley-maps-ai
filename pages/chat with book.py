@@ -44,7 +44,7 @@ If you don't know the answer, just say that "I don't know", don't try to make up
 messages = [
     SystemMessagePromptTemplate.from_template(system_template),
     HumanMessagePromptTemplate.from_template("{question}")
-]
+    ]
 prompt = ChatPromptTemplate.from_messages(messages)
 
 chain_type_kwargs = {"prompt": prompt}
