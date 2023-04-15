@@ -2,6 +2,8 @@
 import streamlit as st
 import openai
 
+OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
+
 st.title("Chatting with ChatGPT")
 st.sidebar.header("Instructions")
 st.sidebar.info(
