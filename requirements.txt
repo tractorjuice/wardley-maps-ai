@@ -8,3 +8,4 @@ gpt_index
 streamlit-option-menu
 faiss-cpu
 pypdf
+python-dotenv
