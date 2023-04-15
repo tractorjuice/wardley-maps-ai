@@ -16,7 +16,6 @@ st.sidebar.info(
 
 # Set the model engine and your OpenAI API key
 model_engine = "text-davinci-003"
-openai.api_key = "your_secret_key" #follow step 4 to get a secret_key
 
 def main():
     '''
