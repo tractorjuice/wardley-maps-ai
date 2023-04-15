@@ -16,7 +16,7 @@ model = "gpt-3.5-turbo"
 
 st.set_page_config(page_title="Chat with SimonGPT")
 st.title("Chat with SimonGPT")
-st.sidebar.markdown("#Query this book using AI")
+#st.sidebar.markdown("#Query this book using AI")
 
 st.sidebar.markdown("Developed by Mark Craddock](https://twitter.com/mcraddock)", unsafe_allow_html=True)
 st.sidebar.markdown("Current Version: 0.0.2")
