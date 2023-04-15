@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()
 import openai
 
-st.title("Chatbot : Chat with SimonGPT")
+st.title("Chat with SimonGPT")
 model = "gpt-3.5-turbo"
 
 def get_initial_message():
