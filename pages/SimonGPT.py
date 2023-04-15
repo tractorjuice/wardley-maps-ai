@@ -1,50 +1,44 @@
 # Importing required packages
 import streamlit as st
+from streamlit_chat import message
+from utils import get_initial_message, get_chatgpt_response, update_chat
+import os
+from dotenv import load_dotenv
+load_dotenv()
 import openai
 
-# Set the model engine and your OpenAI API key
-model_engine = "text-davinci-003"
-openai_api_key = st.secrets["OPENAI_API_KEY"]
+st.title("Chatbot : ChatGPT and Streamlit Chat")
+st.subheader("AI Tutor:")
 
-st.title("Chatting with ChatGPT")
-st.sidebar.header("Instructions")
-st.sidebar.info(
-    '''This is a web application that allows you to interact with 
-       the OpenAI API's implementation of the ChatGPT model.
-       Enter a **query** in the **text box** and **press enter** to receive 
-       a **response** from the ChatGPT
-       '''
-    )
+model = st.selectbox(
+    "Select a model",
+    ("gpt-3.5-turbo", "gpt-4")
+)
 
-def main():
-    '''
-    This function gets the user input, pass it to ChatGPT function and 
-    displays the response
-    '''
-    # Get user input
-    user_query = st.text_input("Enter query here, to exit enter :q", "what is Python?")
-    if user_query != ":q" or user_query != "":
-        # Pass the query to the ChatGPT function
-        response = ChatGPT(user_query)
-        return st.write(f"{user_query} {response}")
+if 'generated' not in st.session_state:
+    st.session_state['generated'] = []
+if 'past' not in st.session_state:
+    st.session_state['past'] = []
 
-def ChatGPT(user_query):
-    ''' 
-    This function uses the OpenAI API to generate a response to the given 
-    user_query using the ChatGPT model
-    '''
-    # Use the OpenAI API to generate a response
-    completion = openai.Completion.create(
-                                  engine = model_engine,
-                                  prompt = user_query,
-                                  max_tokens = 1024,
-                                  n = 1,
-                                  temperature = 0.5,
-                                  openai_api_key = openai_api_key
-                                      )
-    response = completion.choices[0].text
-    return response
+query = st.text_input("Query: ", key="input")
 
+if 'messages' not in st.session_state:
+    st.session_state['messages'] = get_initial_message()
 
-# call the main function
-main() 
+if query:
+    with st.spinner("generating..."):
+        messages = st.session_state['messages']
+        messages = update_chat(messages, "user", query)
+        response = get_chatgpt_response(messages, model)
+        messages = update_chat(messages, "assistant", response)
+        st.session_state.past.append(query)
+        st.session_state.generated.append(response)
+
+if st.session_state['generated']:
+
+    for i in range(len(st.session_state['generated'])-1, -1, -1):
+        message(st.session_state['past'][i], is_user=True, key=str(i) + '_user')
+        message(st.session_state["generated"][i], key=str(i))
+
+    with st.expander("Show Messages"):
+        st.write(messages)
