@@ -30,7 +30,6 @@ st.sidebar.markdown("Not optimised")
 st.sidebar.markdown("May run out of OpenAI credits")
 
 if os.path.exists(DATA_STORE_DIR):
-  #st.write("Loading database")
   vector_store = FAISS.load_local(
       DATA_STORE_DIR,
       OpenAIEmbeddings()
@@ -52,7 +51,24 @@ messages = [
     ]
 prompt = ChatPromptTemplate.from_messages(messages)
 
+chain_type_kwargs = {"prompt": prompt}
+llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0, max_tokens=256)  # Modify model_name if you have access to GPT-4
+chain = RetrievalQAWithSourcesChain.from_chain_type(
+    llm=llm,
+    chain_type="stuff",
+    retriever=vector_store.as_retriever(),
+    return_source_documents=True,
+    chain_type_kwargs=chain_type_kwargs
+)
 
+with st.spinner("Thinking..."):
+    query = st.text_input("Question for the book?", value="What is the history or Wardley Mapping?")
+    result = chain(query)
+    
+st.write("### Answer:")
+st.write(result['answer'])
+
+#-------------------------------
 
 def get_initial_message():
     messages=[
@@ -97,7 +113,10 @@ if query:
     with st.spinner("generating..."):
         messages = st.session_state['messages']
         messages = update_chat(messages, "user", query)
-        response = get_chatgpt_response(messages, model)
+        #response = get_chatgpt_response(messages, model)
+        
+        response = chain(query)
+        
         messages = update_chat(messages, "assistant", response)
         st.session_state.past.append(query)
         st.session_state.generated.append(response)
