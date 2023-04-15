@@ -8,8 +8,6 @@ load_dotenv()
 import openai
 
 st.title("Chatbot : Chat with SimonGPT")
-st.subheader("Research Tutor:")
-
 model = "gpt-3.5-turbo"
 
 def get_initial_message():
@@ -47,7 +45,7 @@ if 'generated' not in st.session_state:
 if 'past' not in st.session_state:
     st.session_state['past'] = []
 
-query = st.text_input("Query: ", key="input")
+query = st.text_input("Question: ", key="input")
 
 if 'messages' not in st.session_state:
     st.session_state['messages'] = get_initial_message()
