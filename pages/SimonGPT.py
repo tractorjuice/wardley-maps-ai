@@ -10,7 +10,7 @@ import openai
 st.title("Chatbot : Chat with SimonGPT")
 st.subheader("Research Tutor:")
 
-model = gpt-3.5-turbo"
+model = "gpt-3.5-turbo"
 
 def get_initial_message():
     messages=[
