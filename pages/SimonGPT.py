@@ -2,6 +2,8 @@
 import streamlit as st
 import openai
 
+# Set the model engine and your OpenAI API key
+model_engine = "text-davinci-003"
 OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
 
 st.title("Chatting with ChatGPT")
@@ -13,9 +15,6 @@ st.sidebar.info(
        a **response** from the ChatGPT
        '''
     )
-
-# Set the model engine and your OpenAI API key
-model_engine = "text-davinci-003"
 
 def main():
     '''
@@ -41,6 +40,7 @@ def ChatGPT(user_query):
                                   max_tokens = 1024,
                                   n = 1,
                                   temperature = 0.5,
+                                  openai_api_key = OPENAI_API_KEY
                                       )
     response = completion.choices[0].text
     return response
