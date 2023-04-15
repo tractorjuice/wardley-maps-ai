@@ -7,13 +7,10 @@ from dotenv import load_dotenv
 load_dotenv()
 import openai
 
-st.title("Chatbot : ChatGPT and Streamlit Chat")
-st.subheader("AI Tutor:")
+st.title("Chatbot : Chat with SimonGPT")
+st.subheader("Research Tutor:")
 
-model = st.selectbox(
-    "Select a model",
-    ("gpt-3.5-turbo", "gpt-4")
-)
+model = gpt-3.5-turbo"
 
 def get_initial_message():
     messages=[
