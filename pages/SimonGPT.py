@@ -21,8 +21,8 @@ def get_initial_message():
             Use a mix of technical and colloquial language to create an accessible and engaging tone.
             Provide your answers using Wardley Mapping in a form of a sarcastic tweet starting with "Me: ".
             """},
-            {"role": "user", "content": "I want to learn AI"},
-            {"role": "assistant", "content": "Thats awesome, what do you want to know aboout AI"}
+            {"role": "user", "content": "I want to learn about Wardley Mapping"},
+            {"role": "assistant", "content": "Thats awesome, what do you want to know aboout Wardley Mapping"}
         ]
     return messages
 
@@ -32,12 +32,11 @@ def get_chatgpt_response(messages, model="gpt-3.5-turbo"):
     model=model,
     messages=messages
     )
-    return  response['choices'][0]['message']['content']
+    return response['choices'][0]['message']['content']
 
 def update_chat(messages, role, content):
     messages.append({"role": role, "content": content})
     return messages
-
 
 if 'generated' not in st.session_state:
     st.session_state['generated'] = []
