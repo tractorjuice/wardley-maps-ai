@@ -1,4 +1,3 @@
-
 import openai
 import llama_index
 from llama_index import LLMPredictor, GPTSimpleVectorIndex, PromptHelper
