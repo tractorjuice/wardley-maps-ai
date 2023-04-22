@@ -35,8 +35,8 @@ if submit_button:
         st.write(f"**Answer:** {answer}")
 
         # Display the first URL as a YouTube video
-        first_url = response_json["source_urls"][0]
-        st.video(first_url)
+        #first_url = response_json["source_urls"][0]
+        #st.video(first_url)
 
         # Display source URLs
         st.write("**Source URLs:**")
