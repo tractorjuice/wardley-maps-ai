@@ -15,7 +15,7 @@ prompt = st.text_input("Prompt", value="What is this video about?")
 
 # Set your query parameters
 query_params = {
-    "query": "What is inertia?",
+    "query": "What is inertia?"
 }
 
 
