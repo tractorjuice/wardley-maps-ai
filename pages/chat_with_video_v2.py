@@ -19,15 +19,6 @@ query_params = {
 }
 
 
-# Check if the request was successful
-if response.status_code == 200:
-    # Process the JSON data
-    data = response.json()
-    st.video('https://youtu.be/KkePAhnkHeg') 
-    print(data)
-else:
-    print(f"API request failed with status code: {response.status_code}")
-
 text = st.empty()
 
 if st.button("Send"):
@@ -35,9 +26,17 @@ if st.button("Send"):
         
         # Send the GET request with query parameters
         response = requests.get(api_url, params=query_params)
-        st.json(response)
         
-        text.text_area("Messages", response, height=250)
+        # Check if the request was successful
+        if response.status_code == 200:
+            # Process the JSON data
+            data = response.json()
+            st.video('https://youtu.be/KkePAhnkHeg') 
+            st.write(data)
+        else:
+            print(f"API request failed with status code: {response.status_code}")
+            st.json(response)
+            text.text_area("Messages", response, height=250)
 
 if st.button("Clear"):
     st.session_state["messages"] = BASE_PROMPT
