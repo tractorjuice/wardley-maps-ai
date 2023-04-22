@@ -30,18 +30,19 @@ if submit_button:
         # Parse the JSON response
         response_json = json.loads(response)
 
-        # Display answer and source URLs
+        # Display answer
         answer = response_json["answer"]
-        source_urls = response_json["source_urls"]
-
         st.write(f"**Answer:** {answer}")
-        st.write("**Source URLs:**")
-        for url in source_urls:
-            st.write(url)
 
         # Display the first URL as a YouTube video
-        first_url = source_urls[0]
+        first_url = response_json["source_urls"][0]
         st.video(first_url)
+
+        # Display source URLs
+        st.write("**Source URLs:**")
+        source_urls_list = response_json["source_urls"]
+        for index, url in enumerate(source_urls_list):
+            st.write(f"{index + 1}. [{url}]({url})")
         
 if st.button("Clear"):
     st.session_state["messages"] = BASE_PROMPT
