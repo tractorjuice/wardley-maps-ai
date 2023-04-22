@@ -35,6 +35,7 @@ if st.button("Send"):
         
         # Send the GET request with query parameters
         response = requests.get(api_url, params=query_params)
+        st.json(response)
         
         text.text_area("Messages", response, height=250)
 
