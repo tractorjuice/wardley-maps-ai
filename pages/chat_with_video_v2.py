@@ -18,8 +18,6 @@ query_params = {
     "query": "What is inertia?",
 }
 
-# Send the GET request with query parameters
-response = requests.get(api_url, params=query_params)
 
 # Check if the request was successful
 if response.status_code == 200:
@@ -35,7 +33,9 @@ text = st.empty()
 if st.button("Send"):
     with st.spinner("Generating response..."):
         
-        response = index.query(prompt)
+        # Send the GET request with query parameters
+        response = requests.get(api_url, params=query_params)
+        
         text.text_area("Messages", response, height=250)
 
 if st.button("Clear"):
