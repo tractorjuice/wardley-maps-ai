@@ -27,7 +27,15 @@ if st.button("Send"):
             "qa",
             query=prompt
         )
-        st.json(response)
+
+        # Display answer and source URLs
+        answer = response["answer"]
+        source_urls = response["source_urls"]
+
+        st.write(f"**Answer:** {answer}")
+        st.write("**Source URLs:**")
+        for url in source_urls:
+            st.write(url)
         
 if st.button("Clear"):
     st.session_state["messages"] = BASE_PROMPT
