@@ -23,10 +23,11 @@ text = st.empty()
 if st.button("Send"):
     with st.spinner("Generating response..."):
         # Invoke the method
-        resp = pkg.invoke(
+        response = pkg.invoke(
             "qa",
             query=prompt
         )
+        st.json(response)
         
 if st.button("Clear"):
     st.session_state["messages"] = BASE_PROMPT
