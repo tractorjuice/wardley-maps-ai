@@ -1,5 +1,6 @@
 import streamlit as st
 from steamship import Steamship
+import json
 
 st.set_page_config(page_title="Intro To Wardley Mapping with AI")
 st.title("Intro To Wardley Mapping with AI")
@@ -28,9 +29,12 @@ if st.button("Send"):
             query=prompt
         )
 
+        # Parse the JSON response
+        response_json = json.loads(response)
+
         # Display answer and source URLs
-        answer = response["answer"]
-        source_urls = response["source_urls"]
+        answer = response_json["answer"]
+        source_urls = response_json["source_urls"]
 
         st.write(f"**Answer:** {answer}")
         st.write("**Source URLs:**")
