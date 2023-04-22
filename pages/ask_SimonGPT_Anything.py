@@ -16,7 +16,7 @@ pkg = Steamship.use(
 )
 
 with st.form(key='query_form'):
-    prompt = st.text_input("", value="What is inertia?")
+    prompt = st.text_input("Question", value="What is inertia?")
     submit_button = st.form_submit_button(label='Send')
 
 if submit_button:
