@@ -40,6 +40,7 @@ if submit_button:
 
         # Display source URLs
         st.write("**Source URLs:**")
+        st.write("Relevant content should start within 30 seconds from the videos below")
         source_urls_list = response_json["source_urls"]
         for index, url in enumerate(source_urls_list):
             st.write(f"{index + 1}. [{url}]({url})")
