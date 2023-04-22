@@ -16,11 +16,11 @@ pkg = Steamship.use(
 )
 
 
-prompt = st.text_input("Prompt", value="What is inertia?")
+with st.form(key='query_form'):
+    prompt = st.text_input("Prompt", value="What is inertia?")
+    submit_button = st.form_submit_button(label='Send')
 
-text = st.empty()
-
-if st.button("Send"):
+if submit_button:
     with st.spinner("Generating response..."):
         # Invoke the method
         response = pkg.invoke(
@@ -39,7 +39,7 @@ if st.button("Send"):
         st.write("**Source URLs:**")
         for url in source_urls:
             st.write(url)
-            
+
         # Display the first URL as a YouTube video
         first_url = source_urls[0]
         st.video(first_url)
