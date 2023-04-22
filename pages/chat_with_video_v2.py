@@ -40,6 +40,10 @@ if st.button("Send"):
         st.write("**Source URLs:**")
         for url in source_urls:
             st.write(url)
+            
+        # Display the first URL as a YouTube video
+        first_url = source_urls[0]
+        st.video(first_url)
         
 if st.button("Clear"):
     st.session_state["messages"] = BASE_PROMPT
