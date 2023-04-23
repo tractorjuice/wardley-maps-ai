@@ -15,6 +15,19 @@ pkg = Steamship.use(
     api_key = st.secrets["STEAMSHIP_API_KEY"]
 )
 
+custom_css = '''
+<style>
+body {
+    background-color: #f5f5f5;
+}
+h1 {
+    color: #4a4a4a;
+}
+</style>
+'''
+st.markdown(custom_css, unsafe_allow_html=True)
+
+
 with st.form(key='query_form'):
     prompt = st.text_input("Question", value="What is inertia?")
     submit_button = st.form_submit_button(label='Send')
