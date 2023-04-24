@@ -1,9 +1,7 @@
 import openai
 import llama_index
 from llama_index import LLMPredictor, GPTSimpleVectorIndex, PromptHelper
-import openai
 import streamlit as st
-import os
 from pathlib import Path
 from gpt_index import download_loader
 
