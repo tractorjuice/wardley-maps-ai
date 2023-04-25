@@ -37,9 +37,9 @@ if submit_button:
         st.write("Relevant content should start within 30 seconds from the videos below")
         for i in range(len(response_json['source_urls'])):
             st.write(f"Source {i+1}:")
-            st.markdown(f"**Title:** {data['source_title'][i]}")
-            st.markdown(f"**Author:** {data['source_author'][i]}")
-            st.markdown(f"**URL:** {data['source_urls'][i]}")
+            st.markdown(f"**Title:** {response_json['source_title'][i]}")
+            st.markdown(f"**Author:** {response_json['source_author'][i]}")
+            st.markdown(f"**URL:** {response_json['source_urls'][i]}")
             st.write("")
 
         # Display source URLs
