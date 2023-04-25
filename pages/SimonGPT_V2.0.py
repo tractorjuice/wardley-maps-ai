@@ -7,6 +7,8 @@ st.title("Ask SimonGPT Anything")
 st.sidebar.markdown("# Query this video using AI")
 st.sidebar.markdown("Developed by Mark Craddock](https://twitter.com/mcraddock)", unsafe_allow_html=True)
 st.sidebar.markdown("Current Version: 0.0.2")
+st.sidebar.markdown("1M+ Vectors")
+
     
 # Load the package instance stub.
 pkg = Steamship.use(
