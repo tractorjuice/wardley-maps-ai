@@ -11,7 +11,7 @@ st.sidebar.markdown("Current Version: 0.0.2")
 # Load the package instance stub.
 pkg = Steamship.use(
     "wardleymapsbok",
-    instance_handle="wardleymapsbok-1c4",
+    instance_handle="wardleymapsbok-cjg",
     api_key = st.secrets["STEAMSHIP_API_KEY"]
 )
 
