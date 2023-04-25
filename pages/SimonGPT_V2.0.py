@@ -45,7 +45,7 @@ if submit_button:
                 st.markdown(f"**URL:** {response_json['source_urls'][i]}")
             st.write("")
             
-        st.write.json(response_json)
+        st.json(response_json)
 
         # Display source URLs
         #st.write("**Source URLs:**")
