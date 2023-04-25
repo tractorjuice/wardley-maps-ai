@@ -44,14 +44,6 @@ if submit_button:
             if 'source_urls' in response_json and len(response_json['source_urls']) > i:
                 st.markdown(f"**URL:** {response_json['source_urls'][i]}")
             st.write("")
-            
-        st.json(response_json)
-
-        # Display source URLs
-        #st.write("**Source URLs:**")
-        #source_urls_list = response_json["source_urls"]
-        #for index, url in enumerate(source_urls_list):
-        #    st.write(f"{index + 1}. [{url}]({url})")
         
 if st.button("Clear"):
     st.session_state["messages"] = BASE_PROMPT
