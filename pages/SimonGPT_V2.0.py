@@ -44,6 +44,8 @@ if submit_button:
             if 'source_urls' in response_json and len(response_json['source_urls']) > i:
                 st.markdown(f"**URL:** {response_json['source_urls'][i]}")
             st.write("")
+            
+        st.write.json(response_json)
 
         # Display source URLs
         #st.write("**Source URLs:**")
