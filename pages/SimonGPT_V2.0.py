@@ -15,6 +15,7 @@ pkg = Steamship.use(
     api_key = st.secrets["STEAMSHIP_API_KEY"]
 )
 
+
 with st.form(key='query_form'):
     prompt = st.text_input("Question", value="What is inertia?")
     submit_button = st.form_submit_button(label='Send')
@@ -33,17 +34,19 @@ if submit_button:
         # Display answer
         answer = response_json["answer"]
         st.write(f"**Answer:** {answer}")
-
-        # Display the first URL as a YouTube video
-        #first_url = response_json["source_urls"][0]
-        #st.video(first_url)
+        st.write("Relevant content should start within 30 seconds from the videos below")
+        for i in range(len(data['source_urls'])):
+            st.write(f"Source {i+1}:")
+            st.markdown(f"**Title:** {data['source_title'][i]}"
+            st.markdown(f"**Author:** {data['source_author'][i]}")
+            st.markdown(f"**URL:** {data['source_urls'][i]}")
+            st.write("")
 
         # Display source URLs
-        st.write("**Source URLs:**")
-        st.write("Relevant content should start within 30 seconds from the videos below")
-        source_urls_list = response_json["source_urls"]
-        for index, url in enumerate(source_urls_list):
-            st.write(f"{index + 1}. [{url}]({url})")
+        #st.write("**Source URLs:**")
+        #source_urls_list = response_json["source_urls"]
+        #for index, url in enumerate(source_urls_list):
+        #    st.write(f"{index + 1}. [{url}]({url})")
         
 if st.button("Clear"):
     st.session_state["messages"] = BASE_PROMPT
