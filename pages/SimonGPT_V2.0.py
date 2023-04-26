@@ -44,7 +44,7 @@ if submit_button:
             if 'source_author' in response_json and len(response_json['source_author']) > i:
                 st.markdown(f"**Author:** {response_json['source_author'][i]}")
             if 'source_urls' in response_json and len(response_json['source_urls']) > i:
-                st.markdown(f"**URL:** {response_json['source_urls'][i]}")
+                st.markdown(f"**URL:** https://www.youtube.com/watch?v={response_json['source_urls'][i]}")
             st.write("")
         
 if st.button("Clear"):
