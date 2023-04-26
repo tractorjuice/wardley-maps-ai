@@ -36,7 +36,7 @@ if submit_button:
         # Display answer
         answer = response_json["answer"]
         st.write(f"**Answer:** {answer}")
-        st.write("Relevant content should start within 30 seconds from the videos below")
+        st.write("Relevant content should start within 10 seconds from the videos below")
 
         for i in range(len(response_json['source_urls'])):
             source_container = st.container()
