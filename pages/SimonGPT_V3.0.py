@@ -44,18 +44,20 @@ if submit_button:
         with col1:
             st.write("Wardley Content")
             for i in range(len(response_json['source_urls'])):
-                source_container = st.container()
-                with source_container:
-                    st.write(f"Source {i+1}:")
-                    if 'source_title' in response_json and len(response_json['source_title']) > i:
-                        st.write("**Title:**", response_json['source_title'][i])
-                    if 'source_author' in response_json and len(response_json['source_author']) > i:
-                        st.write("**Author:**", response_json['source_author'][i])
-                    if 'source_urls' in response_json and len(response_json['source_urls']) > i:
-                        st.write("**URL:**", f"https://www.youtube.com/watch?v={response_json['source_urls'][i]}")
-                    if 'source_description' in response_json and len(response_json['source_description']) > i:
-                        st.write("**Description:**", response_json['source_description'][i])
-                    st.write("")
+                source_title = response_json.get('source_title', [''])[i].lower()
+                if 'simon' in source_title:
+                    source_container = st.container()
+                        with source_container:
+                        st.write(f"Source {i+1}:")
+                        if 'source_title' in response_json and len(response_json['source_title']) > i:
+                            st.write("**Title:**", response_json['source_title'][i])
+                        if 'source_author' in response_json and len(response_json['source_author']) > i:
+                            st.write("**Author:**", response_json['source_author'][i])
+                        if 'source_urls' in response_json and len(response_json['source_urls']) > i:
+                            st.write("**URL:**", f"https://www.youtube.com/watch?v={response_json['source_urls'][i]}")
+                        if 'source_description' in response_json and len(response_json['source_description']) > i:
+                            st.write("**Description:**", response_json['source_description'][i])
+                        st.write("")
 
         # Second column
         with col2:
