@@ -47,13 +47,12 @@ if submit_button:
                 if 'source_author' in response_json and len(response_json['source_author']) > i:
                     st.write("**Author:**", response_json['source_author'][i])
                 if 'source_urls' in response_json and len(response_json['source_urls']) > i:
-                    with st.beta_row():
-                        st.write("**URL:**", f"https://www.youtube.com/watch?v={response_json['source_urls'][i]}")
+                    with st.beta_container():
+                        with st.beta_container().layout("row"):
+                            st.write("**URL:**", f"https://www.youtube.com/watch?v={response_json['source_urls'][i]}")
                 if 'source_description' in response_json and len(response_json['source_description']) > i:
                     st.write("**Description:**", response_json['source_description'][i])
                 st.write("")
-
-
         
 if st.button("Clear"):
     st.session_state["messages"] = BASE_PROMPT
