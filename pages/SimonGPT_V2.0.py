@@ -37,15 +37,28 @@ if submit_button:
         answer = response_json["answer"]
         st.write(f"**Answer:** {answer}")
         st.write("Relevant content should start within 30 seconds from the videos below")
+
         for i in range(len(response_json['source_urls'])):
-            st.write(f"Source {i+1}:")
-            if 'source_title' in response_json and len(response_json['source_title']) > i:
-                st.markdown(f"*Title:** {response_json['source_title'][i]}")
-            if 'source_author' in response_json and len(response_json['source_author']) > i:
-                st.markdown(f"*Author:** {response_json['source_author'][i]}")
-            if 'source_urls' in response_json and len(response_json['source_urls']) > i:
-                st.markdown(f"*URL:** https://www.youtube.com/watch?v={response_json['source_urls'][i]}")
-            st.write("")
+            source_container = st.beta_container()
+            with source_container:
+                st.write(f"Source {i+1}:")
+                source_column1, source_column2 = st.beta_columns([2, 3])
+                if 'source_title' in response_json and len(response_json['source_title']) > i:
+                    with source_column1:
+                        st.write("**Title:**")
+                    with source_column2:
+                        st.write(response_json['source_title'][i])
+                if 'source_author' in response_json and len(response_json['source_author']) > i:
+                    with source_column1:
+                        st.write("**Author:**")
+                    with source_column2:
+                        st.write(response_json['source_author'][i])
+                if 'source_urls' in response_json and len(response_json['source_urls']) > i:
+                    with source_column1:
+                        st.write("**URL:**")
+                    with source_column2:
+                        st.write(f"https://www.youtube.com/watch?v={response_json['source_urls'][i]}")
+                st.write("")
         
 if st.button("Clear"):
     st.session_state["messages"] = BASE_PROMPT
