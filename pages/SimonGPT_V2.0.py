@@ -13,7 +13,7 @@ st.sidebar.markdown("1M+ Vectors")
 # Load the package instance stub.
 pkg = Steamship.use(
     "wardleymapsbok",
-    instance_handle="wardleymapsbok-e2j",
+    instance_handle="wardleymapsbok-3fe",
     api_key = st.secrets["STEAMSHIP_API_KEY"]
 )
 
