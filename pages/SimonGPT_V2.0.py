@@ -10,12 +10,16 @@ st.sidebar.markdown("Current Version: 0.0.2")
 st.sidebar.markdown("1M+ Vectors")
 
     
-# Load the package instance stub.
-pkg = Steamship.use(
-    "wardleymapsbok",
-    instance_handle="wardleymapsbok-3fe",
-    api_key = st.secrets["STEAMSHIP_API_KEY"]
-)
+if "pkg" not in st.session_state:
+    # Load the package instance stub.
+    st.session_state["pkg"] = Steamship.use(
+        "wardleymapsbok",
+        instance_handle="wardleymapsbok-e2j",
+        api_key = st.secrets["STEAMSHIP_API_KEY"]
+    )
+
+# Access the package instance stub
+pkg = st.session_state["pkg"]
 
 
 with st.form(key='query_form'):
