@@ -22,13 +22,14 @@ with st.form(key='query_form'):
     prompt = st.text_input("Question", value="What is inertia?")
     submit_button = st.form_submit_button(label='Send')
 
-if submit_button:
-    with st.spinner("Generating response..."):
-        # Invoke the method
-        response = pkg.invoke(
-            "qa",
-            query=prompt
-        )
+# Load the package instance stub only if it has not been loaded before
+if "pkg" not in st.session_state:
+    # Load the package instance stub.
+    st.session_state.pkg = Steamship.use(
+        "wardleymapsbok",
+        instance_handle="wardleymapsbok-e2j",
+        api_key = st.secrets["STEAMSHIP_API_KEY"]
+    )
 
         # Parse the JSON response
         response_json = json.loads(response)
