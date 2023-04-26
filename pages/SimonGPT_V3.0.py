@@ -64,9 +64,10 @@ if submit_button:
             st.write("Community Content")
             for i in range(len(response_json['source_urls'])):
                 source_title = response_json.get('source_title', [''])[i].lower()
-                source_container = st.container()
-                with source_container:
-                    st.write(f"Source {i+1}:")
+                if 'simon' not in source_title:
+                    source_container = st.container()
+                    with source_container:
+                        st.write(f"Source {i+1}:")
                         if 'source_title' in response_json and len(response_json['source_title']) > i:
                             st.write("**Title:**", response_json['source_title'][i])
                         if 'source_author' in response_json and len(response_json['source_author']) > i:
