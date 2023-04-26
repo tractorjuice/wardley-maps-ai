@@ -9,19 +9,6 @@ st.sidebar.markdown("Developed by Mark Craddock](https://twitter.com/mcraddock)"
 st.sidebar.markdown("Current Version: 0.0.2")
 st.sidebar.markdown("1M+ Vectors")
 
-    
-# Load the package instance stub.
-pkg = Steamship.use(
-    "wardleymapsbok",
-    instance_handle="wardleymapsbok-e2j",
-    api_key = st.secrets["STEAMSHIP_API_KEY"]
-)
-
-
-with st.form(key='query_form'):
-    prompt = st.text_input("Question", value="What is inertia?")
-    submit_button = st.form_submit_button(label='Send')
-
 # Load the package instance stub only if it has not been loaded before
 if "pkg" not in st.session_state:
     # Load the package instance stub.
@@ -30,6 +17,18 @@ if "pkg" not in st.session_state:
         instance_handle="wardleymapsbok-e2j",
         api_key = st.secrets["STEAMSHIP_API_KEY"]
     )
+
+with st.form(key='query_form'):
+    prompt = st.text_input("Question", value="What is inertia?")
+    submit_button = st.form_submit_button(label='Send')
+
+if submit_button:
+    with st.spinner("Generating response..."):
+        # Invoke the method
+        response = st.session_state.pkg.invoke(
+            "qa",
+            query=prompt
+        )
 
         # Parse the JSON response
         response_json = json.loads(response)
@@ -54,7 +53,7 @@ if "pkg" not in st.session_state:
                 st.write("")
 
 
-        
 if st.button("Clear"):
     st.session_state["messages"] = BASE_PROMPT
     show_messages(text)
+
