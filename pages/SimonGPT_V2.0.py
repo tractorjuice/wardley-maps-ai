@@ -42,7 +42,7 @@ if submit_button:
             source_container = st.beta_container()
             with source_container:
                 st.write(f"Source {i+1}:")
-                source_column1, source_column2 = st.beta_columns([1, 2])
+                source_column1, source_column2 = st.beta_columns([1, 3])
                 if 'source_title' in response_json and len(response_json['source_title']) > i:
                     with source_column1:
                         st.write("**Title:**")
