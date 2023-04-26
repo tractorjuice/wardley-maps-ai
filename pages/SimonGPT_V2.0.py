@@ -42,23 +42,17 @@ if submit_button:
             source_container = st.beta_container()
             with source_container:
                 st.write(f"Source {i+1}:")
-                source_column1, source_column2 = st.beta_columns([2, 3])
                 if 'source_title' in response_json and len(response_json['source_title']) > i:
-                    with source_column1:
-                        st.write("**Title:**")
-                    with source_column2:
-                        st.write(response_json['source_title'][i])
+                    st.write("**Title:**", response_json['source_title'][i])
                 if 'source_author' in response_json and len(response_json['source_author']) > i:
-                    with source_column1:
-                        st.write("**Author:**")
-                    with source_column2:
-                        st.write(response_json['source_author'][i])
+                    st.write("**Author:**", response_json['source_author'][i])
                 if 'source_urls' in response_json and len(response_json['source_urls']) > i:
-                    with source_column1:
-                        st.write("**URL:**")
-                    with source_column2:
-                        st.write(f"https://www.youtube.com/watch?v={response_json['source_urls'][i]}")
+                    with st.beta_container(layout="row"):
+                        st.write("**URL:**", f"https://www.youtube.com/watch?v={response_json['source_urls'][i]}")
+                if 'source_description' in response_json and len(response_json['source_description']) > i:
+                    st.write("**Description:**", response_json['source_description'][i])
                 st.write("")
+
 
         
 if st.button("Clear"):
