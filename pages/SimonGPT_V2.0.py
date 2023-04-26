@@ -42,7 +42,7 @@ if submit_button:
             source_container = st.beta_container()
             with source_container:
                 st.write(f"Source {i+1}:")
-                source_column1, source_column2 = st.beta_columns([2, 3])
+                source_column1, source_column2 = st.beta_columns([1, 2])
                 if 'source_title' in response_json and len(response_json['source_title']) > i:
                     with source_column1:
                         st.write("**Title:**")
@@ -58,7 +58,12 @@ if submit_button:
                         st.write("**URL:**")
                     with source_column2:
                         st.write(f"https://www.youtube.com/watch?v={response_json['source_urls'][i]}")
+                if 'source_description' in response_json and len(response_json['source_description']) > i:
+                    with source_container:
+                        st.write("**Description:**")
+                        st.write(response_json['source_description'][i])
                 st.write("")
+
         
 if st.button("Clear"):
     st.session_state["messages"] = BASE_PROMPT
