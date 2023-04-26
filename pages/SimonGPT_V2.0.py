@@ -9,18 +9,14 @@ st.sidebar.markdown("Developed by Mark Craddock](https://twitter.com/mcraddock)"
 st.sidebar.markdown("Current Version: 0.0.2")
 st.sidebar.markdown("1M+ Vectors")
 
-    
+# Load the package instance stub only if it has not been loaded before
 if "pkg" not in st.session_state:
     # Load the package instance stub.
-    st.session_state["pkg"] = Steamship.use(
+    st.session_state.pkg = Steamship.use(
         "wardleymapsbok",
-        instance_handle="wardleymapsbok-e2j",
+        instance_handle="wardleymapsbok-3fe",
         api_key = st.secrets["STEAMSHIP_API_KEY"]
     )
-
-# Access the package instance stub
-pkg = st.session_state["pkg"]
-
 
 with st.form(key='query_form'):
     prompt = st.text_input("Question", value="What is inertia?")
@@ -40,38 +36,49 @@ if submit_button:
         # Display answer
         answer = response_json["answer"]
         st.write(f"**Answer:** {answer}")
-        st.write("Relevant content should start within 10 seconds from the videos below")
 
-        num_sources = len(response_json['source_urls'])
-        num_cols = 2
-        num_rows = (num_sources + num_cols - 1) // num_cols
+        # Split the output into two columns
+        col1, col2 = st.columns(2)
 
-        sources = [
-            {
-                "title": response_json['source_title'][i],
-                "author": response_json['source_author'][i],
-                "url": f"https://www.youtube.com/watch?v={response_json['source_urls'][i]}",
-                "description": response_json['source_description'][i]
-            }
-            for i in range(num_sources)
-        ]
+        # First column
+        with col1:
+            st.write("Wardley Content")
+            for i in range(len(response_json['source_urls'])):
+                source_title = response_json.get('source_title', [''])[i].lower()
+                if 'simon' in source_title:
+                    source_container = st.container()
+                    with source_container:
+                        st.write(f"Source {i+1}:")
+                        if 'source_title' in response_json and len(response_json['source_title']) > i:
+                            st.write("**Title:**", response_json['source_title'][i])
+                        if 'source_author' in response_json and len(response_json['source_author']) > i:
+                            st.write("**Author:**", response_json['source_author'][i])
+                        if 'source_urls' in response_json and len(response_json['source_urls']) > i:
+                            st.write("**URL:**", f"https://www.youtube.com/watch?v={response_json['source_urls'][i]}")
+                        if 'source_description' in response_json and len(response_json['source_description']) > i:
+                            st.write("**Description:**", response_json['source_description'][i])
+                        st.write("")
 
-        # Split sources into two columns
-        cols = st.beta_columns(num_cols)
-        for i, col in enumerate(cols):
-            for j in range(num_rows):
-                source_index = j * num_cols + i
-                if source_index < num_sources:
-                    source = sources[source_index]
-                    col.write(f"Source {source_index+1}:")
-                    col.write("**Title:**", source["title"])
-                    col.write("**Author:**", source["author"])
-                    col.write("**URL:**", source["url"])
-                    col.write("**Description:**", source["description"])
-                    col.write("")
+        # Second column
+        with col2:
+            st.write("Community Content")
+            for i in range(len(response_json['source_urls'])):
+                source_title = response_json.get('source_title', [''])[i].lower()
+                if 'simon' not in source_title:
+                    source_container = st.container()
+                    with source_container:
+                        st.write(f"Source {i+1}:")
+                        if 'source_title' in response_json and len(response_json['source_title']) > i:
+                            st.write("**Title:**", response_json['source_title'][i])
+                        if 'source_author' in response_json and len(response_json['source_author']) > i:
+                            st.write("**Author:**", response_json['source_author'][i])
+                        if 'source_urls' in response_json and len(response_json['source_urls']) > i:
+                            st.write("**URL:**", f"https://www.youtube.com/watch?v={response_json['source_urls'][i]}")
+                        if 'source_description' in response_json and len(response_json['source_description']) > i:
+                            st.write("**Description:**", response_json['source_description'][i])
+                        st.write("")
 
 
-        
 if st.button("Clear"):
     st.session_state["messages"] = BASE_PROMPT
     show_messages(text)
