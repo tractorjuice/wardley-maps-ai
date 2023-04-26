@@ -163,8 +163,7 @@ def parse_wardley_map(map_text):
     }
 
 st.set_page_config(
-    page_title="JSON to TOML file converter",
-    page_icon="✔️",
+    page_title="JSON to TOML file converter"
 )
 
 with st.sidebar:
