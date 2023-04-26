@@ -177,7 +177,6 @@ with st.sidebar:
     )
 
 if selected == "JSON to TOML":
-    st.image("./pages/logo.gif", width=200)
     st.title("JSON to TOML file converter")
     st.write(
         """  
@@ -221,7 +220,6 @@ if selected == "JSON to TOML":
         )
         
 elif selected == "WM to TOML":
-    st.image("./pages/logo.gif", width=200)
     st.title("WM to TOML Converter")
     st.write(
         """  
@@ -301,9 +299,6 @@ elif selected == "WM to JSON":
 
 # Print the JSON
         print(parsed_map)
-
-        #st.write("JSON CONTENT")
-        #st.code(json.loads(json_text))
         
         # Convert the parsed map to JSON
         wardley_map_json = json.dumps(parsed_map, indent=2)
