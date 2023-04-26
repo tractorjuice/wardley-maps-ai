@@ -42,7 +42,7 @@ if submit_button:
 
         # First column
         with col1:
-            st.write("Relevant content should start within 10 seconds from the videos below")
+            st.write("Wardley Content")
             for i in range(len(response_json['source_urls'])):
                 source_container = st.container()
                 with source_container:
@@ -59,7 +59,7 @@ if submit_button:
 
         # Second column
         with col2:
-            st.write("Second column content goes here")
+            st.write("Community Content")
 
 
 if st.button("Clear"):
