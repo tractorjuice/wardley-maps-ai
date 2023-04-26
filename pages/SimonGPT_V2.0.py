@@ -39,7 +39,7 @@ if submit_button:
         st.write("Relevant content should start within 30 seconds from the videos below")
 
         for i in range(len(response_json['source_urls'])):
-            source_container = st.beta_container()
+            source_container = st.container()
             with source_container:
                 st.write(f"Source {i+1}:")
                 if 'source_title' in response_json and len(response_json['source_title']) > i:
