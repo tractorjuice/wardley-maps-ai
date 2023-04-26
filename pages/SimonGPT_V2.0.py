@@ -25,7 +25,7 @@ with st.form(key='query_form'):
 if submit_button:
     with st.spinner("Generating response..."):
         # Invoke the method
-        response = pkg.invoke(
+        response = st.session_state.pkg.invoke(
             "qa",
             query=prompt
         )
@@ -38,19 +38,33 @@ if submit_button:
         st.write(f"**Answer:** {answer}")
         st.write("Relevant content should start within 10 seconds from the videos below")
 
-        for i in range(len(response_json['source_urls'])):
-            source_container = st.container()
-            with source_container:
-                st.write(f"Source {i+1}:")
-                if 'source_title' in response_json and len(response_json['source_title']) > i:
-                    st.write("**Title:**", response_json['source_title'][i])
-                if 'source_author' in response_json and len(response_json['source_author']) > i:
-                    st.write("**Author:**", response_json['source_author'][i])
-                if 'source_urls' in response_json and len(response_json['source_urls']) > i:
-                    st.write("**URL:**", f"https://www.youtube.com/watch?v={response_json['source_urls'][i]}")
-                if 'source_description' in response_json and len(response_json['source_description']) > i:
-                    st.write("**Description:**", response_json['source_description'][i])
-                st.write("")
+        num_sources = len(response_json['source_urls'])
+        num_cols = 2
+        num_rows = (num_sources + num_cols - 1) // num_cols
+
+        sources = [
+            {
+                "title": response_json['source_title'][i],
+                "author": response_json['source_author'][i],
+                "url": f"https://www.youtube.com/watch?v={response_json['source_urls'][i]}",
+                "description": response_json['source_description'][i]
+            }
+            for i in range(num_sources)
+        ]
+
+        # Split sources into two columns
+        cols = st.beta_columns(num_cols)
+        for i, col in enumerate(cols):
+            for j in range(num_rows):
+                source_index = j * num_cols + i
+                if source_index < num_sources:
+                    source = sources[source_index]
+                    col.write(f"Source {source_index+1}:")
+                    col.write("**Title:**", source["title"])
+                    col.write("**Author:**", source["author"])
+                    col.write("**URL:**", source["url"])
+                    col.write("**Description:**", source["description"])
+                    col.write("")
 
 
         
