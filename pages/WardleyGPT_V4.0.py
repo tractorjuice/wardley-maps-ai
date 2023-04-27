@@ -1,5 +1,6 @@
 import streamlit as st
 from steamship import Steamship
+from streamlit_player import st_player
 import json
 
 st.set_page_config(page_title="Ask WardleyGPT")
