@@ -48,7 +48,7 @@ if submit_button:
                 if 'source_title' in response_json and len(response_json['source_title']) > i:
                     st.write("**Title:**", response_json['source_title'][i])
                 if 'source_author' in response_json and len(response_json['source_author']) > i:
-                    st.write("**Author:**", response_json['source_author'][
+                    st.write("**Author:**", response_json['source_author'][i])
                 if 'source_description' in response_json and len(response_json['source_description']) > i:
                     st.write("**Description:**", response_json['source_description'][i])
                 if 'source_urls' in response_json and len(response_json['source_urls']) > i:
