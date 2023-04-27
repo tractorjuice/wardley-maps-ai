@@ -39,36 +39,22 @@ if submit_button:
         answer = response_json["answer"]
         st.write(f"**Answer:** {answer}")
 
-        # Split the output into two columns
-        col1, col2 = st.columns(2)
-
-        # First column
-        with col1:
-            st.write("Content from Simon Wardley")
-            for i in range(len(response_json['source_urls'])):
-                source_title = response_json.get('source_title', [''])[i].lower()
-                source_container = st.container()
-                with source_container:
-                    st.write(f"Source {i+1}:")
-                    if 'source_title' in response_json and len(response_json['source_title']) > i:
-                        st.write("**Title:**", response_json['source_title'][i])
-                    if 'source_author' in response_json and len(response_json['source_author']) > i:
-                        st.write("**Author:**", response_json['source_author'][i])
-                    if 'source_description' in response_json and len(response_json['source_description']) > i:
-                        st.write("**Description:**", response_json['source_description'][i])
-                    if 'source_urls' in response_json and len(response_json['source_urls']) > i:
-                        video_id = "https://www.youtube.com/watch?feature=share&v=" + response_json['source_urls'][i]
-                        #st.write(video_id)
-                        st_player(video_id, height=150)
-                        st.write("")
-
-        # Second column
-        with col2:
-            for i in range(len(response_json['source_urls'])):
+        st.write("Content from Simon Wardley")
+        for i in range(len(response_json['source_urls'])):
+            source_title = response_json.get('source_title', [''])[i].lower()
+            source_container = st.container()
+            with source_container:
+                st.write(f"Source {i+1}:")
+                if 'source_title' in response_json and len(response_json['source_title']) > i:
+                    st.write("**Title:**", response_json['source_title'][i])
+                if 'source_author' in response_json and len(response_json['source_author']) > i:
+                    st.write("**Author:**", response_json['source_author'][
+                if 'source_description' in response_json and len(response_json['source_description']) > i:
+                    st.write("**Description:**", response_json['source_description'][i])
                 if 'source_urls' in response_json and len(response_json['source_urls']) > i:
                     video_id = "https://www.youtube.com/watch?feature=share&v=" + response_json['source_urls'][i]
-                    #st.write(video_id)
                     st_player(video_id, height=150)
+                    st.write("")
                 
 if st.button("Clear"):
     st.session_state["messages"] = BASE_PROMPT
