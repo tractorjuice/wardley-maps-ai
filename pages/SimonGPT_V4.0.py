@@ -61,8 +61,11 @@ if submit_button:
 
         # Second column
         with col2:
-            st.write("")
-
+            if response_json['source_urls']:
+                video_url = f"https://www.youtube.com/watch?v={response_json['source_urls'][0]}"
+                st.video(video_url)
+            else:
+                st.write("No video available.")
 
 if st.button("Clear"):
     st.session_state["messages"] = BASE_PROMPT
