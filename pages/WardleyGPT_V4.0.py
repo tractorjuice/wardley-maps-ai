@@ -2,11 +2,12 @@ import streamlit as st
 from steamship import Steamship
 import json
 
-st.set_page_config(page_title="Ask SimonGPT")
-st.title("Ask SimonGPT Anything")
+st.set_page_config(page_title="Ask WardleyGPT")
+st.title("Ask WardleyGPT Anything")
 st.sidebar.markdown("# Query this video using AI")
 st.sidebar.markdown("Developed by Mark Craddock](https://twitter.com/mcraddock)", unsafe_allow_html=True)
 st.sidebar.markdown("Current Version: 0.0.2")
+st.sidebar.markdown("Wardley Mapping Community Content")
 st.sidebar.markdown("1M+ Vectors")
 
 # Load the package instance stub only if it has not been loaded before
