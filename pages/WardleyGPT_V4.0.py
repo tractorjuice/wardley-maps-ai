@@ -39,7 +39,7 @@ if submit_button:
         answer = response_json["answer"]
         st.write(f"**Answer:** {answer}")
 
-        st.write("Content from Simon Wardley")
+        st.write("Content from Wardley Community")
         for i in range(len(response_json['source_urls'])):
             source_title = response_json.get('source_title', [''])[i].lower()
             source_container = st.container()
