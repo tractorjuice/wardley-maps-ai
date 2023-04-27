@@ -43,7 +43,7 @@ if submit_button:
 
         # First column
         with col1:
-            st.write("Wardley Content")
+            st.write("Content from Simon Wardley")
             for i in range(len(response_json['source_urls'])):
                 source_title = response_json.get('source_title', [''])[i].lower()
                 source_container = st.container()
