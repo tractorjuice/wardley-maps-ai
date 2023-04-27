@@ -54,7 +54,7 @@ if submit_button:
                     if 'source_author' in response_json and len(response_json['source_author']) > i:
                         st.write("**Author:**", response_json['source_author'][i])
                     if 'source_urls' in response_json and len(response_json['source_urls']) > i:
-                        st.write("**URL:**", f"https://www.youtube.com/watch?v={response_json['source_urls'][i]}")
+                        st.write("**URL:**", f"https://www.youtube.com/watch?feature=share&v={response_json['source_urls'][i]}")
                     if 'source_description' in response_json and len(response_json['source_description']) > i:
                         st.write("**Description:**", response_json['source_description'][i])
                     st.write("")
@@ -62,9 +62,11 @@ if submit_button:
         # Second column
         with col2:
             for i in range(len(response_json['source_urls'])):
-                if 'source_urls' in response_json and len(response_json['source_urls']) > i:
-                    st.video(f"https://www.youtube.com/watch?v={response_json['source_urls'][i]}")
+                if 'source_urls' in response_json and len(response_json['source_urls']) > i
+                st.write("f"https://www.youtube.com/watch/{response_json['source_urls'][i]}?feature=share")
 
+                
+                
 if st.button("Clear"):
     st.session_state["messages"] = BASE_PROMPT
     show_messages(text)
