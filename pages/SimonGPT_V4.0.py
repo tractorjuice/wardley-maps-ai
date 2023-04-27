@@ -1,5 +1,6 @@
 import streamlit as st
 from steamship import Steamship
+from streamlit_player import st_player
 import json
 
 st.set_page_config(page_title="Ask SimonGPT")
@@ -65,7 +66,7 @@ if submit_button:
                 if 'source_urls' in response_json and len(response_json['source_urls']) > i:
                     video_id = "https://www.youtube.com/watch?feature=share&v=" + response_json['source_urls'][i]
                     st.write(video_id)
-                    st.video(video_id)
+                    st.player(video_id)
                 
 if st.button("Clear"):
     st.session_state["messages"] = BASE_PROMPT
