@@ -62,7 +62,7 @@ if submit_button:
         # Second column
         with col2:
             for i in range(len(response_json['source_urls'])):
-                if 'source_urls' in response_json and len(response_json['source_urls']) > i
+                if 'source_urls' in response_json and len(response_json['source_urls']) > i:
                     st.write("f"https://www.youtube.com/watch/{response_json['source_urls'][i]}?feature=share")
                 
 if st.button("Clear"):
