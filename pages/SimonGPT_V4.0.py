@@ -56,14 +56,18 @@ if submit_button:
                         st.write("**Author:**", response_json['source_author'][i])
                     if 'source_description' in response_json and len(response_json['source_description']) > i:
                         st.write("**Description:**", response_json['source_description'][i])
-                    st.write("")
+                    if 'source_urls' in response_json and len(response_json['source_urls']) > i:
+                        video_id = "https://www.youtube.com/watch?feature=share&v=" + response_json['source_urls'][i]
+                        #st.write(video_id)
+                        st_player(video_id, height=150)
+                        st.write("")
 
         # Second column
         with col2:
             for i in range(len(response_json['source_urls'])):
                 if 'source_urls' in response_json and len(response_json['source_urls']) > i:
                     video_id = "https://www.youtube.com/watch?feature=share&v=" + response_json['source_urls'][i]
-                    st.write(video_id)
+                    #st.write(video_id)
                     st_player(video_id, height=150)
                 
 if st.button("Clear"):
