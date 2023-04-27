@@ -63,8 +63,9 @@ if submit_button:
         with col2:
             for i in range(len(response_json['source_urls'])):
                 if 'source_urls' in response_json and len(response_json['source_urls']) > i:
-                    st.write(f"https://www.youtube.com/watch?feature=share&v={response_json['source_urls'][i]}")
-                    st.video(f"https://www.youtube.com/watch?feature=share&v={response_json['source_urls'][i]}")
+                    video_id = https://www.youtube.com/watch?feature=share&v={response_json['source_urls'][i]}
+                    st.write(video_id)
+                    st.video(video_id)
                 
 if st.button("Clear"):
     st.session_state["messages"] = BASE_PROMPT
