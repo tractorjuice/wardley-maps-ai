@@ -63,7 +63,7 @@ if submit_button:
         with col2:
             for i in range(len(response_json['source_urls'])):
                 if 'source_urls' in response_json and len(response_json['source_urls']) > i:
-                    st.video("**URL:**", f"https://www.youtube.com/watch?v={response_json['source_urls'][i]}")
+                    st.video(f"https://www.youtube.com/watch?v={response_json['source_urls'][i]}")
 
 if st.button("Clear"):
     st.session_state["messages"] = BASE_PROMPT
