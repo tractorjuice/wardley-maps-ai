@@ -45,8 +45,6 @@ if submit_button:
             source_container = st.container()
             with source_container:
                 st.write(f"Source {i+1}:")
-                if 'source_description' in response_json and len(response_json['source_description']) > i:
-                    st.write("**Description:**", response_json['source_description'][i])
                 if 'source_urls' in response_json and len(response_json['source_urls']) > i:
                     video_id = "https://www.youtube.com/watch?feature=share&v=" + response_json['source_urls'][i]
                     st_player(video_id, height=150)
