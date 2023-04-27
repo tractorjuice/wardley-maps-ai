@@ -62,7 +62,7 @@ if submit_button:
         # Second column
         with col2:
             if response_json['source_urls']:
-                video_url = f"https://www.youtube.com/watch?v={response_json['source_urls'][0]}""
+                video_url = f"https://www.youtube.com/watch?v={response_json['source_urls'][0]}"
                 st.video(video_url)
             else:
                 st.write("No video available.")
