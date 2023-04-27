@@ -66,7 +66,7 @@ if submit_button:
                 if 'source_urls' in response_json and len(response_json['source_urls']) > i:
                     video_id = "https://www.youtube.com/watch?feature=share&v=" + response_json['source_urls'][i]
                     st.write(video_id)
-                    st.player(video_id)
+                    st_player(video_id)
                 
 if st.button("Clear"):
     st.session_state["messages"] = BASE_PROMPT
