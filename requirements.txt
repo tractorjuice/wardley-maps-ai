@@ -10,3 +10,4 @@ faiss-cpu
 pypdf
 python-dotenv
 steamship
+streamlit-player
