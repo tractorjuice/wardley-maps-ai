@@ -292,13 +292,9 @@ elif selected == "WM to JSON":
         map_data = response.json()
         wardley_map_text = map_data['text']
 
-# Parse the Wardley map text
+        # Parse the Wardley map text
         parsed_map = parse_wardley_map(wardley_map_text)
-
-
-# Print the JSON
-        print(parsed_map)
-        
+   
         # Convert the parsed map to JSON
         wardley_map_json = json.dumps(parsed_map, indent=2)
         st.write("JSON FILE CONTENT")
