@@ -30,7 +30,6 @@ component Prompt Templates [0.63, 0.69] label [-29, 11]
 component Chroma [0.25, 0.57] label [-25, 25]
 component Propriety Algos [0.20, 0.23] label [-36, 25]
 component Supabase [0.25, 0.48] label [-33, 25]
-component OpenAI [0.15, 0.81] label [5, -10]
 component API [0.13, 0.86]
 component FastTextEmbeddings [0.44, 0.57] label [-19, 16]
 component ANN [0.20, 0.68] label [-13, 22]
@@ -253,5 +252,6 @@ annotation 6,[0.1,0.68] LLMs can run locally, or trained for $600 and fine tuned
 annotation 7,[0.76,0.515] Multiple Techniques available, select best fit for use case
 //annotation 8,[0.08,0.49] [Link text Here](https://link-url-here.org)
 
+market OpenAI [0.14, 0.81] label [11, -21]
 market llamahub.ai [0.72, 0.66] label [-39, 34]
 market LangChainHub [0.66, 0.29] label [-52, -27]
