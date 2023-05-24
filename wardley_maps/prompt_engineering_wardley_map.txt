@@ -7,7 +7,7 @@ component Text Splitter [0.34, 0.67]
 component Embedding [0.45, 0.59]
 component Tools [0.59, 0.73] label [-19, 24]
 component Agents [0.67, 0.44] label [-22, 20]
-component LLMs [0.18, 0.71]
+component LLMs [0.17, 0.69] inertia
 component LLaMA [0.09, 0.67] label [-52, 7]
 component Cloud [0.04, 0.87] label [-16, 21]
 component Vector DB [0.26, 0.52] label [-31, -16]
@@ -47,14 +47,14 @@ component PDF [0.33, 0.74] label [-21, 24]
 component Text [0.33, 0.77] label [-18, 23]
 component Weaviate [0.25, 0.62] label [-23, 24]
 component Dolly [0.15, 0.64]
-component HuggingFace [0.14, 0.76] label [-34, 25]
+component HuggingFace [0.11, 0.78] label [-34, 25]
 component Conversation History [0.79, 0.33] label [-69, -26]
 component Google Search [0.54, 0.83]
 component Storage [0.50, 0.74]
 component Use Cases [0.97, 0.44]
 component Question Answer Private Data [0.93, 0.37] label [-83, 0]
 component Gaurdrails [0.71, 0.50]
-component HuggingFaceGPT [0.15, 0.73] label [-66, -15]
+component HuggingFaceGPT [0.13, 0.74] label [-66, -15]
 component Ethics [0.69, 0.72]
 component FinOps [0.59, 0.51] label [16, 4]
 component MLOps [0.59, 0.44] label [-44, 16]
@@ -65,10 +65,15 @@ component User Interface [0.88, 0.53] label [-55, -10]
 component Bubble.io [0.87, 0.78] label [-44, 23]
 component Vercel [0.87, 0.76] label [-23, -24]
 component Steamlit [0.87, 0.74] label [-31, 23]
-component FLowise.ai [0.82, 0.60] label [-36, 23]
+component Flowise.ai [0.82, 0.60] label [-36, 23]
 component Steamship [0.82, 0.66] label [-31, 23]
 component Apache NiFi [0.82, 0.78] label [-40, 23]
+component llamahub.ai [0.64, 0.63]
+component LangChainHub [0.62, 0.22]
 component Pipeline Development [0.83, 0.55] label [-36, -37]
+component Tree of Toughts [0.74, 0.24] label [-33, 12]
+component Value Chain Prompting [0.74, 0.20] label [-26, 13]
+component Mobile [0.04, 0.82] label [-27, 25]
 
 pipeline User Interface [0.5, 0.8]
 pipeline Pipeline Development [0.4, 0.8]
@@ -137,13 +142,12 @@ Prompt Templates -> LLMs
 Prompt Templates -> Vector
 Techniques -> Gaurdrails
 Techniques -> Prompt Templates
-Techniques -> Cost Management (MLOps/FinOps)
 
 Chat Question Answer -> Conversation History
 Conversation History -> Memory
 
 // TO DO: Add Self reflection capabilities to the Wardley Map
-component Self Reflection [0.74, 0.13] label [-29, 15]
+component Self Reflection [0.74, 0.16] label [-30, 18]
 //Self Reflection -> Dynamic Memory
 //component Dynamic Memory [0.62, 0.16] label [-56, -14]
 //evolve Dynamic Memory 0.25 label [-25, 25]
@@ -176,8 +180,7 @@ Embedding -> Chunks
 
 LLMs -> Public Data
 LLMs -> HuggingFaceGPT
-
-Semantic Search -> Vector
+evolve LLMs 0.8
 
 Alpaca -> LLMs
 Alpaca -> LLaMA
@@ -186,13 +189,10 @@ LLaMA -> Compute
 Dolly -> Alpaca
 Vector DB -> Vector Search Algos
 
-Source Metadata -> Text Splitter
 Private Data -> Vector
 Private Data -> Metadata
 Private Data -> DataOps
 Metadata -> Vector
-
-VectorQA with sources -> Metadata
 Metadata -> Question Answer with sources
 
 // Tools that can be used by agents
@@ -209,7 +209,7 @@ HuggingFace -> Cloud
 HuggingFaceGPT -> Compute
 HuggingFaceGPT -> HuggingFace
 
-VectorDB -> Cloud
+Vector DB -> Cloud
 OpenAI-> Cloud
 LLMs -> OpenAI
 
@@ -233,12 +233,13 @@ note Many agents available today [0.68, 0.40]
 note Select based on use case [0.45, 0.52]
 note Select based on use case [0.34, 0.60]
 note Support compliance with ethics policies [0.70, 0.47]
-note (Codify Chain of Thought) [0.72, 0.42]
 note Token Cost Management [0.58, 0.49]
 note Repeatable Analytical Pipelines [0.57, 0.39]
-note Chunking key to performant outputs [0.40, 0.62]
+note Chunking key to performant outputs [0.39, 0.56]
+note Open Source is an Accelerator [0.16, 0.71]
+note Inertia is a decelerator [0.18, 0.72]
 // [DERA] (https://arxiv.org/pdf/2303.17071v1.pdf)
-note See DERA Dialog-Enabled Resolving Agents [0.71, 0.08]
+note See DERA Dialog-Enabled Resolving Agents [0.71, 0.06]
 // HuggingGPT: Solving AI Tasks with ChatGPT and its Friends in HuggingFace https://arxiv.org/pdf/2303.17580.pdf
 //note Pioneers [0.91, 0.84]
 
@@ -248,9 +249,9 @@ annotation 2,[0.444,0.28] Components not in final positions
 annotation 3,[0.2, 0.08] Components not in final positions
 annotation 4,[0.63,0.57] Memory is the capacity of remembering previous interactions with the user. Critical for ChatBots
 annotation 5,[0.64,0.45] Focus here. Critical in getting external data not in current LLMs (E.g Google Search)
-annotation 6,[0.1,0.68] Lite LLMs can run locally, or trained for $600 and fine tuned
+annotation 6,[0.1,0.68] LLMs can run locally, or trained for $600 and fine tuned
 annotation 7,[0.76,0.515] Multiple Techniques available, select best fit for use case
 //annotation 8,[0.08,0.49] [Link text Here](https://link-url-here.org)
 
 market llamahub.ai [0.72, 0.66] label [-39, 34]
-market LangChainHub [0.69, 0.27] label [-52, -27]
+market LangChainHub [0.66, 0.29] label [-52, -27]
