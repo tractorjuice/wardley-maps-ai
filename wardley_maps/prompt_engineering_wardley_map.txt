@@ -23,7 +23,7 @@ component CohereEmbeddings [0.44, 0.47] label [-28, 15]
 component Alpaca [0.12, 0.66] label [-60, 5]
 component Laptop [0.04, 0.66] label [-26, 20]
 component Vector [0.48, 0.58] label [13, 3]
-component Private Data [0.53, 0.27] label [-53, -12]
+component Private Data [0.54, 0.28] label [-53, -12]
 component Metadata [0.56, 0.35] label [13, -3]
 component Fine Tuning [0.74, 0.37] label [-34, 21]
 component Prompt Templates [0.63, 0.69] label [-29, 11]
@@ -35,7 +35,8 @@ component FastTextEmbeddings [0.44, 0.57] label [-19, 16]
 component ANN [0.20, 0.68] label [-13, 22]
 component kNN [0.20, 0.64] label [-15, 24]
 component SPTAG [0.20, 0.49] label [-27, 25]
-component Faiss [0.20, 0.75] label [-19, 21]
+component Faiss [0.20, 0.76] label [-19, 21]
+component Faiss DB [0.25, 0.76] label [-30, 26]
 component HNSW [0.20, 0.60] label [-17, 23]
 component Custom Agents [0.58, 0.24] label [20, 5]
 component Vector Search Algos [0.21, 0.55] label [-61, -45]
@@ -74,6 +75,9 @@ component Pipeline Development [0.83, 0.55] label [-36, -37]
 component Tree of Toughts [0.74, 0.24] label [-33, 12]
 component Value Chain Prompting [0.74, 0.20] label [-26, 13]
 component Mobile [0.04, 0.82] label [-27, 25]
+component CapeChat [0.88, 0.38]
+component CapeChat API [0.83, 0.21] label [-49, -13]
+
 
 pipeline User Interface [0.5, 0.8]
 pipeline Pipeline Development [0.4, 0.8]
@@ -97,6 +101,11 @@ Question Answer Private Data -> Techniques
 //pioneers [0.80, 0.37, 0.60, 0.59]
 
 // Privacy Preserving Components
+Question Answer Private Data -> CapeChat
+CapeChat -> CapeChat API
+CapeChat API -> Private Data
+CapeChat API -> PETs
+CapeChat API -> Embedding
 // Concrete ML: Open-Source FHE-Based Toolkit That Helps in Preserving Privacy And Enables Secure Machine Learning
 //  https://research.facebook.com/blog/2022/10/mpc-based-machine-learning-achieving-end-to-end-privacy-preserving-machine-learning/
 //component Homomorphic Encryption
@@ -239,7 +248,7 @@ note Chunking key to performant outputs [0.39, 0.56]
 note Open Source is an Accelerator [0.15, 0.71]
 note Inertia is a decelerator [0.17, 0.71]
 // [DERA] (https://arxiv.org/pdf/2303.17071v1.pdf)
-note See DERA Dialog-Enabled Resolving Agents [0.71, 0.06]
+note See DERA Dialog-Enabled Resolving Agents [0.70, 0.06]
 // HuggingGPT: Solving AI Tasks with ChatGPT and its Friends in HuggingFace https://arxiv.org/pdf/2303.17580.pdf
 //note Pioneers [0.91, 0.84]
 
@@ -255,4 +264,4 @@ annotation 7,[0.76,0.515] Multiple Techniques available, select best fit for use
 
 market OpenAI [0.13, 0.80] label [11, -21]
 market llamahub.ai [0.72, 0.66] label [-39, 34]
-market LangChainHub [0.66, 0.29] label [-52, -27]
+market LangChainHub [0.67, 0.32] label [-52, -27]
