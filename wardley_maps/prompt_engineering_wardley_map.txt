@@ -77,6 +77,7 @@ component Value Chain Prompting [0.74, 0.20] label [-26, 13]
 component Mobile [0.04, 0.82] label [-27, 25]
 component CapeChat [0.88, 0.38]
 component CapeChat API [0.83, 0.21] label [-49, -13]
+component AWS Nitro Enclaves [0.09, 0.85]
 
 
 pipeline User Interface [0.5, 0.8]
@@ -106,6 +107,7 @@ CapeChat -> CapeChat API
 CapeChat API -> Private Data
 CapeChat API -> PETs
 CapeChat API -> Embedding
+AWS Nitro Enclaves -> Cloud
 // Concrete ML: Open-Source FHE-Based Toolkit That Helps in Preserving Privacy And Enables Secure Machine Learning
 //  https://research.facebook.com/blog/2022/10/mpc-based-machine-learning-achieving-end-to-end-privacy-preserving-machine-learning/
 //component Homomorphic Encryption
