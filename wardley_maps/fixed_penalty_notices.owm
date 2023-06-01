@@ -1,0 +1,60 @@
+title Fixed Penalty Notices (FPNs)
+anchor Law Enforcement [0.99, 0.62]
+component Speed Cameras [0.96, 0.72] label [-23, 25]
+component CCTV [0.88, 0.88] label [-43, 23]
+component ANPR Systems [0.88, 0.83] label [-13, 24]
+component Traffic Wardens [0.88, 0.78] label [-37, 24]
+component Police Officers [0.88, 0.46] label [-31, 22]
+component Online Portal [0.88, 0.32] label [-38, 21]
+component Postal System [0.88, 0.23] label [-31, 23]
+component Court System [0.88, 0.62] label [-15, 22]
+component Legislation [0.89, 0.73]
+component Digital Databases [0.73, 0.72] label [-35, 20]
+component Vehicle Registration [0.82, 0.40]
+component Licence Points [0.76, 0.75] label [11, 4]
+component Fines [0.93, 0.37] label [-25, 14]
+component Legal Advice [0.46, 0.58]
+component Public Awareness [0.46, 0.75]
+component Appeal Process [0.88, 0.54] label [-14, 23]
+component Offender Rehabilitation [0.88, 0.51] label [-18, 22]
+component Traffic Management [0.42, 0.66]
+
+pipeline Legislation [0.2, 0.9]
+evolve Digital Databases 0.7 label [-28, 15]
+
+Law Enforcement -> Legislation
+Law Enforcement -> Fines
+Legislation -> Speed Cameras
+Speed Cameras -> Fines
+Fines -> Court System
+
+component Offence Recording [0.85, 0.58] label [9, 16]
+component Offender Identification [0.80, 0.69]
+component Fine Collection [0.77, 0.71] label [3, -9]
+Offender Identification -> Fine Collection
+Fine Collection -> Licence Points
+Licence Points -> Digital Databases
+
+//Offence Recording
+component Evidence Gathering [0.74, 0.57]
+component Reporting [0.69, 0.67] label [-21, 23]
+component Data Analysis [0.65, 0.52] label [-16, 25]
+component Offence Verification [0.65, 0.43]
+component AI [0.56, 0.46]
+component Sensors [0.61, 0.71] label [-15, 25]
+component Legislation [0.45, 0.44] label [-23, 26]
+component Communication Networks [0.38, 0.76] label [-20, 27]
+
+Offence Recording -> Evidence Gathering
+Evidence Gathering -> Offender Identification
+evolve Evidence Gathering 0.74
+Offence Recording -> Data Analysis
+Data Analysis -> AI
+AI -> Sensors
+evolve Data Analysis 0.74
+component Mobile Devices [0.53, 0.77] label [13, 3]
+component Recording Equipment [0.60, 0.59] label [-32, 24]
+Reporting -> Recording Equipment
+Recording Equipment -> Mobile Devices
+
+style wardley
