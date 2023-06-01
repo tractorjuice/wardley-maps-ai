@@ -1,0 +1,54 @@
+title Microsoft Fabric
+component Microsoft Fabric [0.94, 0.76]
+component Azure Synapse Analytics [0.93, 0.44]
+component Mapping Data Flows [0.89, 0.55]
+component Power BI [0.91, 0.88]
+component Notebooks [0.84, 0.88]
+component Data Activator [0.80, 0.82]
+component Data Flow (Gen 1) [0.77, 0.70]
+component Data Flow (Gen 2) [0.80, 0.74]
+component Azure Machine Learning [0.62, 0.63] label [-30, 18]
+component Data Science [0.64, 0.78] label [-44, 34]
+component Data Explorer [0.71, 0.68] label [-35, 21]
+component Realtime Analytics [0.71, 0.76] label [-27, 9]
+component Pipelines [0.67, 0.63]
+component Spark [0.61, 0.70]
+component SQL Dedicated [0.41, 0.67]
+component Warehouse [0.36, 0.78]
+component SQL Endpoint [0.33, 0.80]
+component SQL Serverless [0.45, 0.88]
+component Data Lake (Gen 2) [0.31, 0.68] label [5, -10]
+component OneLake [0.32, 0.87]
+component Data Analysis [0.72, 0.70]
+
+Azure Synapse Analytics -> Mapping Data Flows
+Azure Synapse Analytics -> Notebooks
+Azure Synapse Analytics -> Data Flow (Gen 1)
+Azure Synapse Analytics -> Data Explorer
+Azure Synapse Analytics -> Pipelines
+Azure Synapse Analytics -> Spark
+Azure Synapse Analytics -> SQL Dedicated
+Azure Synapse Analytics -> SQL Serverless
+
+Microsoft Fabric -> Power BI
+Microsoft Fabric -> Notebooks
+Microsoft Fabric -> Data Activator
+Microsoft Fabric -> Data Flow (Gen 2)
+Microsoft Fabric -> OneLake
+Microsoft Fabric -> Realtime Analytics
+Microsoft Fabric -> Data Science
+Microsoft Fabric -> Pipelines
+
+Spark -> OneLake
+Warehouse -> OneLake
+SQL Endpoint -> OneLake
+Data Science -> Azure Machine Learning
+Warehouse -> SQL Dedicated
+SQL Serverless -> Data Lake (Gen 2)
+OneLake -> Data Lake (Gen 2)
+
+evolve Pipelines 0.75
+evolve Spark 0.80
+evolve Data Flow (Gen 1) 0.80
+
+pipeline Data Analysis [0.6, 0.8]
